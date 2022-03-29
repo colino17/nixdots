@@ -11,8 +11,6 @@
   boot.loader.grub.version = 2;
   boot.loader.grub.device = "/dev/sda";
 
-  # networking.hostName = "nixos"; # Define your hostname.
-
   # TIMEZONE
   time.timeZone = "Canada/Atlantic";
 
@@ -20,6 +18,9 @@
   networking.useDHCP = false;
   networking.interfaces.enp12s0.useDHCP = true;
   networking.interfaces.wlp3s0.useDHCP = true;
+  networking.hostName = "nixos";
+
+
 
   # Select internationalisation properties.
   # i18n.defaultLocale = "en_US.UTF-8";
@@ -28,94 +29,77 @@
   #   keyMap = "us";
   # };
 
-  # Enable the X11 windowing system.
-  services.xserver.enable = true;
 
   # GNOME DESKTOP
+  services.xserver.enable = true;
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
   # Configure keymap in X11
   # services.xserver.layout = "us";
   # services.xserver.xkbOptions = "eurosign:e";
 
+
   # Enable CUPS to print documents.
   # services.printing.enable = true;
+  
 
-  # Enable sound.
-  # sound.enable = true;
+  # Enable touchpad support (enabled default in most desktopManager).
+  # services.xserver.libinput.enable = true;
+
+  # SOUND
   hardware.pulseaudio.enable = false;
-# Remove sound.enable or turn it off if you had it set previously, it seems to cause conflicts with pipewire
   sound.enable = false;
-
-# rtkit is optional but recommended
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
-  # If you want to use JACK applications, uncomment this
-  #jack.enable = true;
-
-  # use the example session manager (no others are packaged yet so this is enabled by default,
-  # no need to redefine it in your config for now)
     media-session.enable = true;
   };
 
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
+  # USERS
   users.users.colino17 = {
     isNormalUser = true;
-    extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [ "wheel" ];
 };
 
   # PACKAGES
   environment.systemPackages = with pkgs; [
-    youtube-dl 
+  # Base
     wget
-    firefox
     curl
-    vscodium
-    gnome.file-roller
-    gnome.eog
+    htop
+    nfs-utils
+    neofetch
+    cmatrix
+  # Media
+    youtube-dl
+    mpv
+    ffmpeg
+  # Web
+    google-chrome
+    discord
+  # System
     baobab
     gnome.gnome-system-monitor
     gnome.gnome-terminal
-    cmatrix
+    gnome.eog
+  # Editors
+    vscodium
     gimp
+  # File Management
     gnome.nautilus
-    mpv
+    gnome.file-roller
     szyszka
-    discord    
   ];
-
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
-
-  # List services that you want to enable:
-
+  
+  # STEAM SUPPORT
+    programs.steam.enable = true;
+    
   # SSH SUPPORT
   services.openssh.enable = true;
-
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
-
-  # This value determines the NixOS release from which the default
-  # settings for stateful data, like file locations and database versions
-  # on your system were taken. It‘s perfectly fine and recommended to leave
-  # this value at the release version of the first install of this system.
-  # Before changing this value read the documentation for this option
-  # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
 
  # SYSTEM VERSION AND UPDATES
   system.stateVersion = "21.11"; # Did you read the comment?
