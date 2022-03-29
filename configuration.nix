@@ -96,7 +96,7 @@
   ];
   
   # STEAM SUPPORT
-    programs.steam.enable = true;
+  programs.steam.enable = true;
     
   # SSH SUPPORT
   services.openssh.enable = true;
