@@ -124,3 +124,5 @@
   system.autoUpgrade.enable = true;
   system.autoUpgrade.allowReboot = true;
   nixpkgs.config.allowUnfree = true;
+
+}
