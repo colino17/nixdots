@@ -37,6 +37,22 @@
   # Configure keymap in X11
   # services.xserver.layout = "us";
   # services.xserver.xkbOptions = "eurosign:e";
+  services.xserver.desktopManager.gnome = {
+    extraGSettingsOverrides = ''
+      # Change default background
+      [org.gnome.desktop.background]
+      picture-uri='file://${pkgs.nixos-artwork.wallpapers.mosaic-blue.gnomeFilePath}'
+
+      # Favorite apps in gnome-shell
+      [org.gnome.shell]
+      favorite-apps=['org.gnome.Photos.desktop', 'org.gnome.Nautilus.desktop']
+    '';
+
+  extraGSettingsOverridePackages = [
+    pkgs.gsettings-desktop-schemas # for org.gnome.desktop
+    pkgs.gnome.gnome-shell # for org.gnome.shell
+  ];
+};
 
 
   # Enable CUPS to print documents.
