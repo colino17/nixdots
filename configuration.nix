@@ -19,8 +19,7 @@
   networking.interfaces.enp12s0.useDHCP = true;
   networking.interfaces.wlp3s0.useDHCP = true;
   networking.hostName = "nixos";
-
-
+  services.tailscale = { enable = true; };
 
   # Select internationalisation properties.
   # i18n.defaultLocale = "en_US.UTF-8";
@@ -90,6 +89,8 @@
     nfs-utils
     neofetch
     cmatrix
+  # Network
+    tailscale
   # Media
     youtube-dl
     mpv
@@ -102,6 +103,7 @@
     gnome.gnome-system-monitor
     gnome.gnome-terminal
     gnome.eog
+    gnome.gnome-tweaks
   # Editors
     vscodium
     gimp
