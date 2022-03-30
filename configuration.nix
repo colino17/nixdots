@@ -128,6 +128,21 @@
 ### SSH SUPPORT ###
 ###################
   services.openssh.enable = true;
+  
+###################
+### NFS SUPPORT ###
+###################
+  
+{
+  fileSystems."/mnt/Storage" = {
+    device = "server:/Storage";
+    fsType = "nfs";
+  };
+  fileSystems."/mnt/Backup" = {
+    device = "server:/Backup";
+    fsType = "nfs";
+  };
+}
 
 ##################################
 ### SYSTEM VERSION AND UPDATES ###
