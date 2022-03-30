@@ -132,17 +132,16 @@
 ###################
 ### NFS SUPPORT ###
 ###################
-  
-{
   fileSystems."/mnt/Storage" = {
     device = "server:/Storage";
     fsType = "nfs";
+    options = [ "x-systemd.automount" "noauto" ];
   };
   fileSystems."/mnt/Backup" = {
     device = "server:/Backup";
     fsType = "nfs";
+    options = [ "x-systemd.automount" "noauto" ];
   };
-}
 
 ##################################
 ### SYSTEM VERSION AND UPDATES ###
