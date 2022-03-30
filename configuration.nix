@@ -1,42 +1,46 @@
 { config, pkgs, ... }:
 
+################
+### IMPORTS ###
+################
 {
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
     ];
 
-  # BOOTLOADER - BIOS
+#########################
+### BOOTLOADER - BIOS ###
+#########################
   boot.loader.grub.enable = true;
   boot.loader.grub.version = 2;
   boot.loader.grub.device = "/dev/sda";
 
-  # TIMEZONE
+################
+### TIMEZONE ###
+################
   time.timeZone = "Canada/Atlantic";
 
-  # NETWORKING
+##################
+### NETWORKING ###
+##################
   networking.useDHCP = false;
   networking.interfaces.enp12s0.useDHCP = true;
   networking.interfaces.wlp3s0.useDHCP = true;
   networking.hostName = "nixos";
   services.tailscale = { enable = true; };
 
-  # Select internationalisation properties.
-  # i18n.defaultLocale = "en_US.UTF-8";
-  # console = {
-  #   font = "Lat2-Terminus16";
-  #   keyMap = "us";
-  # };
-
-
-  # GNOME DESKTOP
+#####################
+### GNOME DESKTOP ###
+#####################
   services.xserver.enable = true;
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
   services.gnome.core-utilities.enable = false;
-  # Configure keymap in X11
-  # services.xserver.layout = "us";
-  # services.xserver.xkbOptions = "eurosign:e";
+
+######################
+### GNOME SETTINGS ###
+######################
   services.xserver.desktopManager.gnome = {
     extraGSettingsOverrides = ''
       # Change default background
@@ -48,21 +52,20 @@
       favorite-apps=['org.gnome.Photos.desktop', 'org.gnome.Nautilus.desktop']
     '';
 
-  extraGSettingsOverridePackages = [
-    pkgs.gsettings-desktop-schemas # for org.gnome.desktop
-    pkgs.gnome.gnome-shell # for org.gnome.shell
-  ];
-};
+    extraGSettingsOverridePackages = [
+      pkgs.gsettings-desktop-schemas # for org.gnome.desktop
+      pkgs.gnome.gnome-shell # for org.gnome.shell
+      ];
+    };
+    
+################
+### PRINTING ###
+################  
+  services.printing.enable = false;
 
-
-  # Enable CUPS to print documents.
-  # services.printing.enable = true;
-  
-
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
-
-  # SOUND
+#############
+### SOUND ###
+#############
   hardware.pulseaudio.enable = false;
   sound.enable = false;
   security.rtkit.enable = true;
@@ -73,56 +76,63 @@
     pulse.enable = true;
     media-session.enable = true;
   };
-
-
-  # USERS
+  
+#############
+### USERS ###
+#############
   users.users.colin = {
     isNormalUser = true;
     extraGroups = [ "wheel" ];
-};
+  };
 
-  # PACKAGES
+################
+### PACKAGES ###
+################
   environment.systemPackages = with pkgs; [
-  # Base
     wget
     curl
     htop
+    etcher
     nfs-utils
     neofetch
     cmatrix
-  # Network
     tailscale
-  # Media
     youtube-dl
-    mpv
+    mpv-unwrapped
     ffmpeg
-  # Web
     google-chrome
     discord
-  # System
     baobab
     gnome.gnome-system-monitor
     gnome.gnome-terminal
     gnome.eog
     gnome.gnome-tweaks
     gnome.dconf-editor
-  # Editors
-    sublime
+    lighttable
+    gnome.gedit
+    lite
+    lite-xl
+    vscode
     gimp
-  # File Management
     gnome.nautilus
     gnome.file-roller
     szyszka
   ];
-  
-  # STEAM SUPPORT
+
+#####################
+### STEAM SUPPORT ###
+#####################  
   programs.steam.enable = true;
-    
-  # SSH SUPPORT
+
+###################
+### SSH SUPPORT ###
+###################
   services.openssh.enable = true;
 
- # SYSTEM VERSION AND UPDATES
-  system.stateVersion = "21.11"; # Did you read the comment?
+##################################
+### SYSTEM VERSION AND UPDATES ###
+##################################
+  system.stateVersion = "21.11";
   system.autoUpgrade.enable = true;
   system.autoUpgrade.allowReboot = true;
   nixpkgs.config.allowUnfree = true;
