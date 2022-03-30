@@ -33,6 +33,7 @@
   services.xserver.enable = true;
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
+  services.gnome.core-utilities.enable = false;
   # Configure keymap in X11
   # services.xserver.layout = "us";
   # services.xserver.xkbOptions = "eurosign:e";
@@ -75,7 +76,7 @@
 
 
   # USERS
-  users.users.colino17 = {
+  users.users.colin = {
     isNormalUser = true;
     extraGroups = [ "wheel" ];
 };
@@ -104,8 +105,9 @@
     gnome.gnome-terminal
     gnome.eog
     gnome.gnome-tweaks
+    gnome.dconf-editor
   # Editors
-    vscodium
+    sublime
     gimp
   # File Management
     gnome.nautilus
@@ -124,5 +126,4 @@
   system.autoUpgrade.enable = true;
   system.autoUpgrade.allowReboot = true;
   nixpkgs.config.allowUnfree = true;
-
 }
