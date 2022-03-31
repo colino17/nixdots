@@ -1,3 +1,36 @@
+{ config, pkgs, ... }:
+
+{
+  home.username = "colin";
+  home.homeDirectory = "/home/colin";
+  home.stateVersion = "22.05";
+
+  # Let Home Manager install and manage itself.
+  programs.home-manager.enable = true;
+}  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   home-manager.users.my_username = {
     /* Here goes your home-manager config, eg home.packages = [ pkgs.foo ]; */
   };
