@@ -3,19 +3,43 @@
 ################
 ### IMPORTS ###
 ################
+let
+  home-manager = builtins.fetchTarball "https://github.com/nix-community/home-manager/archive/master.tar.gz";
+in
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [
       ./hardware-configuration.nix
+      (import "${home-manager}/nixos")
+      ./home.nix
     ];
 
 #########################
 ### BOOTLOADER - BIOS ###
 #########################
-  boot.loader.grub.enable = true;
-  boot.loader.grub.version = 2;
-  boot.loader.grub.device = "/dev/sda";
+  boot.loader.grub = {
+    enable = true;
+    version = 2;
+    device = "/dev/sda";
+  };
 
+#########################
+### BOOTLOADER - UEFI ###
+#########################
+#  boot.loader.systemd-boot = {
+#    enable = true;
+#    configurationLimit = 3;
+#    editor = false;
+#  };
+
+#############
+### USERS ###
+#############
+  users.users.colin = {
+    isNormalUser = true;
+    extraGroups = [ "wheel" ];
+  };
+  
 ################
 ### TIMEZONE ###
 ################
@@ -24,71 +48,27 @@
 ##################
 ### NETWORKING ###
 ##################
-  networking.useDHCP = false;
-  networking.interfaces.enp12s0.useDHCP = true;
-  networking.interfaces.wlp3s0.useDHCP = true;
-  networking.hostName = "nixos";
+  networking = {
+    useDHCP = false;
+    interfaces.enp12s0.useDHCP = true;
+    interfaces.wlp3s0.useDHCP = true;
+    hostName = "nixos";
+  };
+  
+###########
+### VPN ###
+###########
   services.tailscale = { enable = true; };
 
 #####################
 ### GNOME DESKTOP ###
 #####################
-  services.xserver.enable = true;
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
   services.gnome.core-utilities.enable = false;
-
-######################
-### GNOME SETTINGS ###
-######################
-  services.xserver.desktopManager.gnome = {
-    extraGSettingsOverrides = ''
-      [org.gnome.desktop.background]
-      picture-uri='file://${pkgs.nixos-artwork.wallpapers.mosaic-blue.gnomeFilePath}'
-     
-      [org.gnome.settings-daemon.plugins.media-keys]
-      custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/' '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/' '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/' '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/' '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/' '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom5/']
-
-      [org.gnome.settings-daemon.plugins.media-keys.custom-keybindings.custom0]
-      binding='<Super>t'
-      command='gnome-terminal'
-      name='open-terminal' 
-      
-      [org.gnome.settings-daemon.plugins.media-keys.custom-keybindings.custom1]
-      binding='<Super>e'
-      command='nautilus'
-      name='open-files'
-      
-      [org.gnome.settings-daemon.plugins.media-keys.custom-keybindings.custom2]
-      binding='<Super>w'
-      command='epiphany'
-      name='open-web'
-      
-      [org.gnome.settings-daemon.plugins.media-keys.custom-keybindings.custom3]
-      binding='<Super>d'
-      command='discord'
-      name='open-discord'
-      
-      [org.gnome.settings-daemon.plugins.media-keys.custom-keybindings.custom4]
-      binding='<Super>g'
-      command='gimp'
-      name='open-gimp'
-      
-      [org.gnome.settings-daemon.plugins.media-keys.custom-keybindings.custom5]
-      binding='<Super>m'
-      command='gnome-terminal --maximize -- bash -c cmatrix -bas'
-      name='enter-matrix'
-      
-      [org.gnome.shell]
-      favorite-apps=['org.gnome.Epiphany.desktop', 'org.gnome.Nautilus.desktop', 'org.gnome.Terminal.desktop', 'gimp.desktop', 'discord.desktop', 'steam.desktop']
-    '';
-
-    extraGSettingsOverridePackages = [
-      pkgs.gsettings-desktop-schemas
-      pkgs.gnome.gnome-shell
-      pkgs.gnome.gnome-settings-daemon
-      ];
-    };
+  services.xserver = {
+    enable = true;
+    displayManager.gdm.enable = true;
+    desktopManager.gnome.enable = true;
+  };
 
 ################
 ### PRINTING ###
@@ -108,18 +88,11 @@
     pulse.enable = true;
     media-session.enable = true;
   };
-  
-#############
-### USERS ###
-#############
-  users.users.colin = {
-    isNormalUser = true;
-    extraGroups = [ "wheel" ];
-  };
 
 ################
 ### PACKAGES ###
 ################
+  nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
     wget
     curl
@@ -160,8 +133,9 @@
 ##################################
 ### SYSTEM VERSION AND UPDATES ###
 ##################################
-  system.stateVersion = "21.11";
-  system.autoUpgrade.enable = true;
-  system.autoUpgrade.allowReboot = true;
-  nixpkgs.config.allowUnfree = true;
+  system = {
+    stateVersion = "21.11";
+    autoUpgrade.enable = true;
+    autoUpgrade.allowReboot = true;
+  };
 }
