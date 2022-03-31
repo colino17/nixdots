@@ -49,7 +49,7 @@
 
       # Favorite apps in gnome-shell
       [org.gnome.shell]
-      favorite-apps=['org.gnome.Photos.desktop', 'org.gnome.Nautilus.desktop']
+      favorite-apps=['org.gnome.Epiphany.desktop', 'org.gnome.Nautilus.desktop', 'org.gnome.Terminal.desktop', 'gimp.desktop', 'discord.desktop', 'steam.desktop']
     '';
 
     extraGSettingsOverridePackages = [
@@ -100,7 +100,6 @@
     youtube-dl
     mpv-unwrapped
     ffmpeg
-    google-chrome
     discord
     baobab
     gnome.gnome-system-monitor
@@ -108,15 +107,12 @@
     gnome.eog
     gnome.gnome-tweaks
     gnome.dconf-editor
-    lighttable
     gnome.gedit
-    lite
-    lite-xl
-    vscode
     gimp
     gnome.nautilus
     gnome.file-roller
     szyszka
+    epiphany
   ];
 
 #####################
@@ -128,20 +124,6 @@
 ### SSH SUPPORT ###
 ###################
   services.openssh.enable = true;
-  
-###################
-### NFS SUPPORT ###
-###################
-  fileSystems."/mnt/Storage" = {
-    device = "server:/Storage";
-    fsType = "nfs";
-    options = [ "x-systemd.automount" "noauto" ];
-  };
-  fileSystems."/mnt/Backup" = {
-    device = "server:/Backup";
-    fsType = "nfs";
-    options = [ "x-systemd.automount" "noauto" ];
-  };
 
 ##################################
 ### SYSTEM VERSION AND UPDATES ###
