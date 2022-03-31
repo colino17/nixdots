@@ -108,11 +108,11 @@ in
     discord
     baobab
     gnome.gnome-system-monitor
-    gnome.gnome-terminal
+    gnome-console
     gnome.eog
     gnome.gnome-tweaks
     gnome.dconf-editor
-    gnome.gedit
+    gnome-text-editor
     gimp
     gnome.nautilus
     gnome.file-roller
@@ -134,7 +134,7 @@ in
 ### SYSTEM VERSION AND UPDATES ###
 ##################################
   system = {
-    stateVersion = "21.11";
+    stateVersion = "22.05";
     autoUpgrade.enable = true;
     autoUpgrade.allowReboot = true;
   };
