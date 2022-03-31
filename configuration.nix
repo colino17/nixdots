@@ -90,14 +90,6 @@
       ];
     };
 
-services.xserver.desktopManager.gnome3 = {
-    extraGSettingsOverridePackages = with pkgs; [ gnome3.gnome-settings-daemon ];
-    extraGSettingsOverrides = ''
-
-
-
-
-
 ################
 ### PRINTING ###
 ################  
