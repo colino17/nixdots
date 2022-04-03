@@ -3,15 +3,11 @@
 ################
 ### IMPORTS ###
 ################
-let
-  home-manager = builtins.fetchTarball "https://github.com/nix-community/home-manager/archive/master.tar.gz";
-in
 {
   imports =
     [
       ./hardware-configuration.nix
-      (import "${home-manager}/nixos")
-      ./home.nix
+      (import "${builtins.fetchTarball https://github.com/nix-community/home-manager/archive/master.tar.gz}/nixos")
     ];
 
 #########################
@@ -39,7 +35,41 @@ in
     isNormalUser = true;
     extraGroups = [ "wheel" ];
   };
-  
+
+####################
+### HOME MANAGER ###
+####################
+  home-manager.users.colin = { pkg, ...}: {
+    programs.bash.enable = true;
+    dconf.settings = {
+      "org/gnome/settings-daemon/plugins/media-keys" = {
+        custom-keybindings = [
+          "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
+          "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/"
+          "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/"
+        ];
+      };   
+      "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
+        binding = "<Super>t";
+        command = "kgx";
+        name = "open-terminal";
+      };
+      "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" = {
+        "binding" = "<Super>e";
+        "command" = "nautilus";
+        "name" = "files";
+      };
+      "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2" = {
+        "binding" = "<Super>w";
+        "command" = "google-chrome-stable";
+        "name" = "browser";
+      };
+#      "org/gnome/desktop/wm/keybindings" = {
+#        "close" = "['<Super>q']";
+#      };
+    };
+  };   
+ 
 ################
 ### TIMEZONE ###
 ################
@@ -64,6 +94,8 @@ in
 ### GNOME DESKTOP ###
 #####################
   services.gnome.core-utilities.enable = false;
+#  environment.gnome.excludePackages = [ pkgs.gnome-tour ];
+  services.dbus.packages = [ pkgs.dconf ];
   services.xserver = {
     enable = true;
     displayManager.gdm.enable = true;
@@ -73,7 +105,7 @@ in
 ################
 ### PRINTING ###
 ################  
-  services.printing.enable = false;
+  services.printing.enable = true;
 
 #############
 ### SOUND ###
@@ -86,7 +118,6 @@ in
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
-    media-session.enable = true;
   };
 
 ################
@@ -97,15 +128,14 @@ in
     wget
     curl
     htop
-    etcher
+#    etcher
     nfs-utils
     neofetch
     cmatrix
     tailscale
     youtube-dl
-    mpv-unwrapped
     ffmpeg
-    discord
+#    discord
     baobab
     gnome.gnome-system-monitor
     gnome-console
@@ -117,7 +147,12 @@ in
     gnome.nautilus
     gnome.file-roller
     szyszka
-    epiphany
+    google-chrome
+    home-manager
+    qogir-icon-theme
+    paper-icon-theme
+    numix-icon-theme-circle
+    celluloid
   ];
 
 #####################
@@ -134,7 +169,7 @@ in
 ### SYSTEM VERSION AND UPDATES ###
 ##################################
   system = {
-    stateVersion = "22.05";
+    stateVersion = "21.11";
     autoUpgrade.enable = true;
     autoUpgrade.allowReboot = true;
   };
