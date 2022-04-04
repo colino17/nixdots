@@ -1,5 +1,24 @@
 { config, pkgs, ... }:
 
+#################
+### TODO LIST ###
+#################
+# Remove unwanted gnome apps (ex: gnome-tour)
+# Fix etcher/electron dependency issue
+# Split Gnome config into separate file and/or add Sway config
+# Investigate VFIO config
+# Investigate Gnome Shell extensions (ex: POP tiling extension)
+# Expand Home-Manager config
+# Fix Super-Q keybinding
+# Create Raspberry Pi config with full tailscale config
+# Investigate variables
+# Add GPRename
+# Investigate garbage cleanup
+# Create dev box build
+# RDP stuff in gnome
+
+
+
 ################
 ### IMPORTS ###
 ################
@@ -47,6 +66,8 @@
           "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
           "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/"
           "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/"
+          "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/"
+          "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/"
         ];
       };   
       "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
@@ -57,12 +78,25 @@
       "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" = {
         "binding" = "<Super>e";
         "command" = "nautilus";
-        "name" = "files";
+        "name" = "open-files";
       };
       "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2" = {
         "binding" = "<Super>w";
         "command" = "google-chrome-stable";
-        "name" = "browser";
+        "name" = "open-browser";
+      };
+      "org.gnome.settings-daemon.plugins.media-keys.custom-keybindings.custom3" = {
+        "binding" = "<Super>d";
+        "command" = "discord";
+        "name" = "open-discord";
+      };
+      "org.gnome.settings-daemon.plugins.media-keys.custom-keybindings.custom4" = {
+        "binding" = "<Super>g";
+        "command" = "gimp";
+        "name" = "open-gimp";
+      };
+      "org.gnome.shell"
+        "favorite-apps" = "['org.gnome.Nautilus.desktop', 'google-chrome-stable.desktop', 'org.gnome.Console.desktop', 'gimp.desktop', 'discord.desktop', 'steam.desktop']";
       };
 #      "org/gnome/desktop/wm/keybindings" = {
 #        "close" = "['<Super>q']";
@@ -128,7 +162,6 @@
     wget
     curl
 #    etcher ###electron dependency currently broken on unstable channel###
-#    szyszka ###this doesn't show up in gnome launcher and must be launched through the terminal###
     nfs-utils
     neofetch
     cmatrix
@@ -136,7 +169,7 @@
     youtube-dl
     ffmpeg
     discord
-    baobab
+#    baobab
     gnome.gnome-system-monitor
     gnome-console
     gnome.eog
@@ -150,6 +183,9 @@
     home-manager
     numix-icon-theme-circle
     celluloid
+    mupdf
+    metamorphose2
+    szyszka ###this doesn't show up in gnome launcher and must be launched through the terminal###
   ];
 
 #####################
