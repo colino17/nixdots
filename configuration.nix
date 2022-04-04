@@ -17,8 +17,6 @@
 # Create dev box build
 # RDP stuff in gnome
 
-
-
 ################
 ### IMPORTS ###
 ################
@@ -59,7 +57,12 @@
 ### HOME MANAGER ###
 ####################
   home-manager.users.colin = { pkg, ...}: {
-    programs.bash.enable = true;
+    programs = {
+      bash = {
+        enable = true;
+        initExtra = "neofetch";
+      };
+    };
     dconf.settings = {
       "org/gnome/settings-daemon/plugins/media-keys" = {
         custom-keybindings = [
