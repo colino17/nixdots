@@ -94,7 +94,7 @@
 ### GNOME DESKTOP ###
 #####################
   services.gnome.core-utilities.enable = false;
-#  environment.gnome.excludePackages = [ pkgs.gnome-tour ];
+  environment.gnome.excludePackages = [ pkgs.gnome-tour ];
   services.dbus.packages = [ pkgs.dconf ];
   services.xserver = {
     enable = true;
@@ -127,30 +127,27 @@
   environment.systemPackages = with pkgs; [
     wget
     curl
-    htop
-#    etcher
+#    etcher ###electron dependency currently broken on unstable channel###
+#    szyszka ###this doesn't show up in gnome launcher and must be launched through the terminal###
     nfs-utils
     neofetch
     cmatrix
     tailscale
     youtube-dl
     ffmpeg
-#    discord
+    discord
     baobab
     gnome.gnome-system-monitor
     gnome-console
     gnome.eog
     gnome.gnome-tweaks
-    gnome.dconf-editor
+#    gnome.dconf-editor
     gnome-text-editor
     gimp
     gnome.nautilus
     gnome.file-roller
-    szyszka
     google-chrome
     home-manager
-    qogir-icon-theme
-    paper-icon-theme
     numix-icon-theme-circle
     celluloid
   ];
