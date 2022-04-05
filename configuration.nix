@@ -9,7 +9,6 @@
 # Investigate VFIO config
 # Investigate Gnome Shell extensions (ex: POP tiling extension)
 # Expand Home-Manager config
-# Fix Super-Q keybinding
 # Create Raspberry Pi config with full tailscale config
 # Investigate variables
 # Add GPRename
@@ -88,22 +87,31 @@
         "command" = "google-chrome-stable";
         "name" = "open-browser";
       };
-      "org.gnome.settings-daemon.plugins.media-keys.custom-keybindings.custom3" = {
+      "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3" = {
         "binding" = "<Super>d";
         "command" = "discord";
         "name" = "open-discord";
       };
-      "org.gnome.settings-daemon.plugins.media-keys.custom-keybindings.custom4" = {
+      "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4" = {
         "binding" = "<Super>g";
         "command" = "gimp";
         "name" = "open-gimp";
       };
-      "org.gnome.shell"
-        "favorite-apps" = "['org.gnome.Nautilus.desktop', 'google-chrome-stable.desktop', 'org.gnome.Console.desktop', 'gimp.desktop', 'discord.desktop', 'steam.desktop']";
+      "org/gnome/shell" = {
+        "favorite-apps" = [
+          "org.gnome.Nautilus.desktop"
+          "google-chrome.desktop"
+          "org.gnome.Console.desktop"
+          "gimp.desktop"
+          "discord.desktop"
+          "steam.desktop"
+        ];
       };
-#      "org/gnome/desktop/wm/keybindings" = {
-#        "close" = "['<Super>q']";
-#      };
+      "org/gnome/desktop/wm/keybindings" = {
+        "close" = [
+          "<Super>q"
+        ];
+      };
     };
   };   
  
@@ -172,12 +180,11 @@
     youtube-dl
     ffmpeg
     discord
-#    baobab
     gnome.gnome-system-monitor
     gnome-console
     gnome.eog
     gnome.gnome-tweaks
-#    gnome.dconf-editor
+    gnome.dconf-editor
     gnome-text-editor
     gimp
     gnome.nautilus
@@ -186,8 +193,7 @@
     home-manager
     numix-icon-theme-circle
     celluloid
-    mupdf
-    metamorphose2
+    evince
     szyszka ###this doesn't show up in gnome launcher and must be launched through the terminal###
   ];
 
