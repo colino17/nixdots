@@ -116,7 +116,38 @@
       };
     };
     home.file.".config/neofetch/config.conf".text = ''
-      Hello World!
+      print_info() {
+          info "System" distro
+          info "Kernel" kernel
+          info "Environment" de
+          info "Uptime" uptime
+          info "Packages" packages
+          info "CPU" cpu
+          info "GPU" gpu
+          info "Memory" memory
+          info "Disk" disk
+          info "Local IP" local_ip
+          info "Public IP" public_ip
+
+          info cols
+      }
+
+      distro_shorthand="off"
+      os_arch="off"
+      uptime_shorthand="tiny"
+      package_managers="on"
+      public_ip_host="https://ident.me"
+      de_version="on"
+      disk_subtitle="none"
+      colors=(distro)
+      separator=" =="
+      ascii_distro="auto"
+      ascii_colors=(distro)
+      image_size="auto"
+      
+      # Distros: auto, NixOS, OpenSUSE, Raspbian, GalliumOS, LFS, macos, Trisquel, openSUSE_Tumbleweed, steamos, SmartOS, SalentOS, Radix, Proxmox, Peppermint, Minix
+      # Ascii Colors: (distro) or (4 6 1 8 8 6)
+      # Image size:  'auto', '00px', '00%', 'none'
     '';
   };   
  
