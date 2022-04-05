@@ -72,30 +72,32 @@
           "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/"
         ];
       };   
-      "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
-        binding = "<Super>t";
-        command = "kgx";
-        name = "open-terminal";
-      };
-      "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" = {
-        "binding" = "<Super>e";
-        "command" = "nautilus";
-        "name" = "open-files";
-      };
-      "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2" = {
-        "binding" = "<Super>w";
-        "command" = "google-chrome-stable";
-        "name" = "open-browser";
-      };
-      "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3" = {
-        "binding" = "<Super>d";
-        "command" = "discord";
-        "name" = "open-discord";
-      };
-      "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4" = {
-        "binding" = "<Super>g";
-        "command" = "gimp";
-        "name" = "open-gimp";
+      "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings" = {
+        custom0 = {
+          binding = "<Super>t";
+          command = "kgx";
+          name = "open-terminal";
+        };
+        custom1 = {
+          binding = "<Super>e";
+          command = "nautilus";
+          name = "open-files";
+        };
+        custom2 = {
+          binding = "<Super>w";
+          command = "google-chrome-stable";
+          name = "open-browser";
+        };
+        custom3 = {
+          binding = "<Super>d";
+          command = "discord";
+          name = "open-discord";
+        };
+        custom4 = {
+          binding = "<Super>g";
+          command = "gimp";
+          name = "open-gimp";
+        };
       };
       "org/gnome/shell" = {
         "favorite-apps" = [
@@ -113,6 +115,9 @@
         ];
       };
     };
+    home.file.".config/neofetch/config.conf".text = ''
+      Hello World!
+    '';
   };   
  
 ################
