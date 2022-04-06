@@ -161,8 +161,8 @@
      █▀█ █▀█ █▀█ █▄▄ █░░ █▀▀ █▀▄▀█
      █▀▀ █▀▄ █▄█ █▄█ █▄▄ ██▄ █░▀░█
     
-       ${c1}  ▄▄  █░█ ▄▀█ █░░ █▀ █▀▀ █▄█
-         ░░  █▀█ █▀█ █▄▄ ▄█ ██▄ ░█░
+           ▄▄  █░█ ▄▀█ █░░ █▀ █▀▀ █▄█
+           ░░  █▀█ █▀█ █▄▄ ▄█ ██▄ ░█░
     '';
   };   
  
@@ -241,6 +241,7 @@
     gnome.nautilus
     gnome.file-roller
     google-chrome
+    firefox
     home-manager
     numix-icon-theme-circle
     celluloid
