@@ -59,7 +59,8 @@
     programs = {
       bash = {
         enable = true;
-        initExtra = "neofetch";
+        initExtra = "neofetch --ascii ~/.config/neofetch/halsey.txt --ascii_colors 3 2
+";
       };
     };
     dconf.settings = {
@@ -146,6 +147,22 @@
       # Distros: auto, NixOS, OpenSUSE, Raspbian, GalliumOS, LFS, macos, Trisquel, openSUSE_Tumbleweed, steamos, SmartOS, SalentOS, Radix, Proxmox, Peppermint, Minix
       # Ascii Colors: (distro) or (4 6 1 8 8 6)
       # Image size:  'auto', '00px', '00%', 'none'
+    '';
+    home.file.".config/neofetch/halsey.txt".text = ''
+     █ ▀ █▀▄▀█   █▄░█ █▀█ ▀█▀  
+     █ ░ █░▀░█   █░▀█ █▄█ ░█░  
+    
+     ▄▀█   █▀▄▀█ ▄▀█ █▀█ ▀█▀ █▄█ █▀█  
+     █▀█   █░▀░█ █▀█ █▀▄ ░█░ ░█░ █▀▄  
+    
+     █ ▀ █▀▄▀█   ▄▀█  
+     █ ░ █░▀░█   █▀█  
+    
+     █▀█ █▀█ █▀█ █▄▄ █░░ █▀▀ █▀▄▀█
+     █▀▀ █▀▄ █▄█ █▄█ █▄▄ ██▄ █░▀░█
+    
+       ${c1}  ▄▄  █░█ ▄▀█ █░░ █▀ █▀▀ █▄█
+         ░░  █▀█ █▀█ █▄▄ ▄█ ██▄ ░█░
     '';
   };   
  
