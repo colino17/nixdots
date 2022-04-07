@@ -23,6 +23,7 @@
   imports =
     [
       ./hardware-configuration.nix
+      ./home.nix
       (import "${builtins.fetchTarball https://github.com/nix-community/home-manager/archive/master.tar.gz}/nixos")
     ];
 
