@@ -240,13 +240,11 @@
     gimp
     gnome.nautilus
     gnome.file-roller
-    google-chrome
     firefox
     home-manager
     numix-icon-theme-circle
     celluloid
     evince
-    szyszka ###this doesn't show up in gnome launcher and must be launched through the terminal###
   ];
 
 #####################
