@@ -1,101 +1,120 @@
 { config, pkgs, ... }:
 
 {
-  home.username = "colin";
-  home.homeDirectory = "/home/colin";
-  home.stateVersion = "22.05";
-  programs.home-manager.enable = true;
-  
-  programs.emacs = {
-    enable = true;
-    extraPackages = epkgs: [
-      epkgs.nix-mode
-      epkgs.magit
-    ];
-  };
-  
-  
-}  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  home-manager.users.my_username = {
-    /* Here goes your home-manager config, eg home.packages = [ pkgs.foo ]; */
-  };
-  
-  
-  
-  
-######################
-### GNOME SETTINGS ###
-######################
-  services.xserver.desktopManager.gnome = {
-    extraGSettingsOverrides = ''
-      [org.gnome.desktop.background]
-      picture-uri='file://${pkgs.nixos-artwork.wallpapers.mosaic-blue.gnomeFilePath}'
-     
-      [org.gnome.settings-daemon.plugins.media-keys]
-      custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/' '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/' '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/' '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/' '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/' '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom5/']
-
-      [org.gnome.settings-daemon.plugins.media-keys.custom-keybindings.custom0]
-      binding='<Super>t'
-      command='gnome-terminal'
-      name='open-terminal' 
-      
-      [org.gnome.settings-daemon.plugins.media-keys.custom-keybindings.custom1]
-      binding='<Super>e'
-      command='nautilus'
-      name='open-files'
-      
-      [org.gnome.settings-daemon.plugins.media-keys.custom-keybindings.custom2]
-      binding='<Super>w'
-      command='epiphany'
-      name='open-web'
-      
-      [org.gnome.settings-daemon.plugins.media-keys.custom-keybindings.custom3]
-      binding='<Super>d'
-      command='discord'
-      name='open-discord'
-      
-      [org.gnome.settings-daemon.plugins.media-keys.custom-keybindings.custom4]
-      binding='<Super>g'
-      command='gimp'
-      name='open-gimp'
-      
-      [org.gnome.settings-daemon.plugins.media-keys.custom-keybindings.custom5]
-      binding='<Super>m'
-      command='gnome-terminal --maximize -- bash -c cmatrix -bas'
-      name='enter-matrix'
-      
-      [org.gnome.shell]
-      favorite-apps=['org.gnome.Epiphany.desktop', 'org.gnome.Nautilus.desktop', 'org.gnome.Terminal.desktop', 'gimp.desktop', 'discord.desktop', 'steam.desktop']
-    '';
-
-    extraGSettingsOverridePackages = [
-      pkgs.gsettings-desktop-schemas
-      pkgs.gnome.gnome-shell
-      pkgs.gnome.gnome-settings-daemon
-      ];
+####################
+### HOME MANAGER ###
+####################
+  home-manager.users.colin = { pkg, ...}: {
+    programs = {
+      bash = {
+        enable = true;
+        initExtra = "neofetch --ascii ~/.config/neofetch/halsey.txt --ascii_colors 3 2";
+      };
     };
-  
-  
+######################
+### DCONF SETTINGS ###
+######################
+    dconf.settings = {
+      "org/gnome/settings-daemon/plugins/media-keys" = {
+        custom-keybindings = [
+          "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
+          "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/"
+          "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/"
+          "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/"
+          "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/"
+        ];
+      };   
+      "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
+        binding = "<Super>t";
+        command = "kgx";
+        name = "open-terminal";
+      };
+      "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" = {
+        "binding" = "<Super>e";
+        "command" = "nautilus";
+        "name" = "open-files";
+      };
+      "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2" = {
+        "binding" = "<Super>w";
+        "command" = "firefox";
+        "name" = "open-browser";
+      };
+      "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3" = {
+        "binding" = "<Super>d";
+        "command" = "discord";
+        "name" = "open-discord";
+      };
+      "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4" = {
+        "binding" = "<Super>g";
+        "command" = "gimp";
+        "name" = "open-gimp";
+      };
+      "org/gnome/desktop/wm/keybindings" = {
+        "close" = [
+          "<Super>q"
+        ];
+      };
+      "org/gnome/shell" = {
+        "favorite-apps" = [
+          "org.gnome.Nautilus.desktop"
+          "firefox.desktop"
+          "org.gnome.Console.desktop"
+          "gimp.desktop"
+          "discord.desktop"
+          "steam.desktop"
+        ];
+      };
+    };
+    
+################
+### NEOFETCH ###
+################
+    home.file.".config/neofetch/config.conf".text = ''
+      print_info() {
+          info "System" distro
+          info "Kernel" kernel
+          info "Environment" de
+          info "Uptime" uptime
+          info "Packages" packages
+          info "CPU" cpu
+          info "GPU" gpu
+          info "Memory" memory
+          info "Disk" disk
+          info "Local IP" local_ip
+          info "Public IP" public_ip
+
+          info cols
+      }
+
+      distro_shorthand="off"
+      os_arch="off"
+      uptime_shorthand="tiny"
+      package_managers="off"
+      public_ip_host="https://ident.me"
+      de_version="on"
+      disk_subtitle="none"
+      colors=(distro)
+      separator=" =="
+      ascii_distro="auto"
+      ascii_colors=(distro)
+      image_size="auto"
+    '';
+    home.file.".config/neofetch/halsey.txt".text = ''
+     █ ▀ █▀▄▀█   █▄░█ █▀█ ▀█▀  
+     █ ░ █░▀░█   █░▀█ █▄█ ░█░  
+    
+     ▄▀█   █▀▄▀█ ▄▀█ █▀█ ▀█▀ █▄█ █▀█  
+     █▀█   █░▀░█ █▀█ █▀▄ ░█░ ░█░ █▀▄  
+    
+     █ ▀ █▀▄▀█   ▄▀█  
+     █ ░ █░▀░█   █▀█  
+    
+     █▀█ █▀█ █▀█ █▄▄ █░░ █▀▀ █▀▄▀█
+     █▀▀ █▀▄ █▄█ █▄█ █▄▄ ██▄ █░▀░█
+    
+           ▄▄  █░█ ▄▀█ █░░ █▀ █▀▀ █▄█
+           ░░  █▀█ █▀█ █▄▄ ▄█ ██▄ ░█░
+    '';
+  };   
+
+}  
