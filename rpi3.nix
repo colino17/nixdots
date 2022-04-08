@@ -9,23 +9,18 @@
       ./hardware-configuration.nix
     ];
 
-#########################
-### BOOTLOADER - BIOS ###
-#########################
-  boot.loader.grub = {
+##################
+### BOOTLOADER ###
+##################
+  boot.loader.grub.enable = false;
+  boot.loader.raspberryPi = {
     enable = true;
-    version = 2;
-    device = "/dev/sda";
+    version = 3;
+    firmwareConfig = ''
+      disable_splash=1
+      
+    '';
   };
-
-#########################
-### BOOTLOADER - UEFI ###
-#########################
-#  boot.loader.systemd-boot = {
-#    enable = true;
-#    configurationLimit = 3;
-#    editor = false;
-#  };
 
 #############
 ### USERS ###
@@ -45,8 +40,15 @@
 ##################
   networking = {
     useDHCP = false;
-    interfaces.enp12s0.useDHCP = true;
-    interfaces.wlp3s0.useDHCP = true;
+    interfaces.eth0.ipv4.addresses = [ {
+      address = "192.168.0.22";
+      prefixLength = 24;
+    } ];
+    defaultGateway = "192.168.0.1";
+    nameservers = [
+      "8.8.8.8"
+      "8.8.1.1"
+    ];
     hostName = "pivpn";
   };
   
@@ -54,6 +56,13 @@
 ### VPN ###
 ###########
   services.tailscale = { enable = true; };
+
+###############
+### ADGUARD ###
+###############
+  services.adguardhome = {
+    enable = true;
+    
 
 ################
 ### PACKAGES ###
