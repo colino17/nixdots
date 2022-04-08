@@ -1,5 +1,8 @@
 { config, pkgs, ... }:
 
+# https://nixos.wiki/wiki/NixOS_on_ARM/Raspberry_Pi_3
+## Write image to SD Card (and USB drive??)
+## 
 # Use aarch64 image for Raspberry Pi 3 - https://hydra.nixos.org/job/nixos/release-21.11/nixos.sd_image.aarch64-linux
 # Tailscale subnets - https://tailscale.com/kb/1019/subnets/
 ### "sudo tailscale up --advertise-routes=10.0.0.0/24,10.0.1.0/24" on router
@@ -28,6 +31,16 @@
       core_freq=250
       program_usb_boot_mode=1
     '';
+  };
+  
+##################
+### FILESYSTEM ###
+##################
+  fileSystems = {
+    "/" = {
+      device = "/dev/disk/by-label/NIXOS_SD";
+      fsType = "ext4";
+    };
   };
 
 #############
