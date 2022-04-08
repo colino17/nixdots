@@ -1,7 +1,9 @@
 { config, pkgs, ... }:
 
-# Use aarch64 image for Raspberry Pi 3
-
+# Use aarch64 image for Raspberry Pi 3 - https://hydra.nixos.org/job/nixos/release-21.11/nixos.sd_image.aarch64-linux
+# Tailscale subnets - https://tailscale.com/kb/1019/subnets/
+### "sudo tailscale up --advertise-routes=10.0.0.0/24,10.0.1.0/24" on router
+### "sudo tailscale up --accept-routes" on specific Linux clients
 
 ################
 ### IMPORTS ###
@@ -23,6 +25,8 @@
     version = 3;
     firmwareConfig = ''
       disable_splash=1
+      core_freq=250
+      program_usb_boot_mode=1
     '';
   };
 
@@ -77,6 +81,7 @@
   environment.systemPackages = with pkgs; [
     wget
     curl
+    libraspberrypi
   ];
   
 ###################
