@@ -107,6 +107,7 @@
 ### PACKAGES ###
 ################
   nixpkgs.config.allowUnfree = true;
+  documentation.nixos.enable = false;
   environment.systemPackages = with pkgs; [
     wget
     curl
