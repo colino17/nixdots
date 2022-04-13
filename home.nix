@@ -81,10 +81,10 @@
         "edge-tiling" = true;
       };
       "org/gnome/desktop/background" = {
-        "picture-uri" = "/home/colin/.wallpapers/beach.jpg";
+        "picture-uri" = "/home/colin/.nixdots/wallpapers/beach.jpg";
       };
       "org/gnome/desktop/screensaver" = {
-        "picture-uri" = "/home/colin/.wallpapers/beach.jpg";
+        "picture-uri" = "/home/colin/.nixdots/wallpapers/beach.jpg";
       };
     };
     
