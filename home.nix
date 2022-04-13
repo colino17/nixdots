@@ -53,7 +53,7 @@
         "close" = [
           "<Super>q"
         ];
-      };
+      };     
       "org/gnome/shell" = {
         "favorite-apps" = [
           "org.gnome.Nautilus.desktop"
@@ -63,6 +63,12 @@
           "discord.desktop"
           "steam.desktop"
         ];
+        "enabled-extensions" = [
+          "places-menu@gnome-shell-extensions.gcampax.github.com"
+        ];
+      };
+      "org/gnome/mutter" = {
+        "edge-tiling" = true;
       };
     };
     
