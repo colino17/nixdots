@@ -15,7 +15,7 @@
 ##################
 ### WALLPAPERS ###
 ##################
-    home.file.".nixdots".source = = fetchFromGitHub {
+    home.file.".nixdots".source = fetchFromGitHub {
      owner = "colino17";
      repo = "nixos-configs";
      rev = "main";
