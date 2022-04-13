@@ -11,6 +11,16 @@
         initExtra = "neofetch --ascii ~/.config/neofetch/halsey.txt --ascii_colors 3 2";
       };
     };
+    
+##################
+### WALLPAPERS ###
+##################
+    home.file.".nixdots".source = = fetchFromGitHub {
+     owner = "colino17";
+     repo = "nixos-configs";
+     rev = "main";
+  };
+
 ######################
 ### DCONF SETTINGS ###
 ######################
@@ -69,6 +79,12 @@
       };
       "org/gnome/mutter" = {
         "edge-tiling" = true;
+      };
+      "org/gnome/desktop/background" = {
+        "picture-uri" = "/home/colin/.wallpapers/beach.jpg";
+      };
+      "org/gnome/desktop/screensaver" = {
+        "picture-uri" = "/home/colin/.wallpapers/beach.jpg";
       };
     };
     
