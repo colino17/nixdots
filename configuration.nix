@@ -111,11 +111,9 @@
   environment.systemPackages = with pkgs; [
     wget
     curl
-#    etcher ###electron dependency currently broken on unstable channel###
     nfs-utils
     neofetch
     cmatrix
-#    tailscale
     youtube-dl
     ffmpeg
     discord
@@ -128,7 +126,7 @@
     gimp
     gnome.nautilus
     gnome.file-roller
-    firefox
+    firefox-wayland
     home-manager
     numix-icon-theme-circle
     celluloid
