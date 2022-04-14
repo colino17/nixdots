@@ -5,15 +5,9 @@
 #################
 # Remove unwanted gnome apps (ex: gnome-tour)
 # Fix etcher/electron dependency issue
-# Split Gnome config into separate file and/or add Sway config
 # Investigate VFIO config
-# Investigate Gnome Shell extensions (ex: POP tiling extension)
-# Expand Home-Manager config
-# Create Raspberry Pi config with full tailscale config
 # Investigate variables
 # Add GPRename
-# Investigate garbage cleanup
-# Create dev box build
 # RDP stuff in gnome
 
 ################
@@ -29,38 +23,7 @@
 #      ./devices/dev.nix
 #      ./devices/desktop.nix
 #      ./devices/server.nix
-      ./packages/base.nix
-      ./packages/desktop.nix
-      ./packages/dev.nix
-#      ./packages/pi.nix
-      ./packages/desktops/gnome.nix
-#      ./packages/desktops/sway.nix
-      ./services/vpn.nix
-      ./services/games.nix
-      ./services/base.nix
-#      ./services/bootloader/uefi.nix
-      ./services/bootloader/bios.nix
-      ./home.nix
-      (import "${builtins.fetchTarball https://github.com/nix-community/home-manager/archive/master.tar.gz}/nixos")
     ];
-
-#########################
-### BOOTLOADER - BIOS ###
-#########################
-  boot.loader.grub = {
-    enable = true;
-    version = 2;
-    device = "/dev/sda";
-  };
-
-#########################
-### BOOTLOADER - UEFI ###
-#########################
-#  boot.loader.systemd-boot = {
-#    enable = true;
-#    configurationLimit = 3;
-#    editor = false;
-#  };
 
 #############
 ### USERS ###
@@ -74,88 +37,6 @@
 ### TIMEZONE ###
 ################
   time.timeZone = "Canada/Atlantic";
-
-##################
-### NETWORKING ###
-##################
-  networking = {
-    useDHCP = false;
-    interfaces.enp12s0.useDHCP = true;
-    interfaces.wlp3s0.useDHCP = true;
-    hostName = "nixos";
-  };
-  
-###########
-### VPN ###
-###########
-  services.tailscale = { enable = true; };
-
-#####################
-### GNOME DESKTOP ###
-#####################
-  services.gnome.core-utilities.enable = false;
-  environment.gnome.excludePackages = [ pkgs.gnome-tour ];
-  services.dbus.packages = [ pkgs.dconf ];
-  services.xserver = {
-    enable = true;
-    displayManager.gdm.enable = true;
-    desktopManager.gnome.enable = true;
-  };
-
-################
-### PRINTING ###
-################  
-  services.printing.enable = true;
-
-#############
-### SOUND ###
-#############
-  hardware.pulseaudio.enable = false;
-  sound.enable = false;
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-  };
-
-################
-### PACKAGES ###
-################
-  nixpkgs.config.allowUnfree = true;
-  documentation.nixos.enable = false;
-  environment.systemPackages = with pkgs; [
-    wget
-    curl
-    rsync
-    nfs-utils
-    neofetch
-    cmatrix
-    youtube-dl
-    ffmpeg
-    discord
-    gnome.gnome-system-monitor
-    gnome-console
-    gnome.eog
-    gnome.gnome-tweaks
-    gnome.dconf-editor
-    gnome-text-editor
-    gimp
-    gnome.nautilus
-    gnome.file-roller
-    firefox-wayland
-    home-manager
-    numix-icon-theme-circle
-    celluloid
-    evince
-    google-fonts
-  ];
-
-#####################
-### STEAM SUPPORT ###
-#####################  
-  programs.steam.enable = true;
 
 ###################
 ### SSH SUPPORT ###
