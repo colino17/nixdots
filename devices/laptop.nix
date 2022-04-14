@@ -10,8 +10,7 @@
       ./services/vpn.nix
       ./services/games.nix
       ./services/base.nix
-#      ./services/bootloader/uefi.nix
-      ./services/bootloader/bios.nix
+      ./services/bootloader/uefi.nix
       ./home.nix
       (import "${builtins.fetchTarball https://github.com/nix-community/home-manager/archive/master.tar.gz}/nixos")
     ];
