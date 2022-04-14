@@ -1,6 +1,14 @@
 { config, pkgs, ... }:
 
 {
+  services.gnome.core-utilities.enable = false;
+  services.dbus.packages = [ pkgs.dconf ];
+  services.xserver = {
+    enable = true;
+    displayManager.gdm.enable = true;
+    desktopManager.gnome.enable = true;
+  };
+
   environment.systemPackages = with pkgs; [
     gnome.gnome-system-monitor
     gnome-console
