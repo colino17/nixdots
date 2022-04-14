@@ -111,6 +111,7 @@
   environment.systemPackages = with pkgs; [
     wget
     curl
+    git
     nfs-utils
     neofetch
     cmatrix
