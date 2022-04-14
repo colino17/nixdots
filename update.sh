@@ -16,3 +16,7 @@ sleep 1
 rm -r nixdots-main
 sleep 1
 rm main.zip
+sleep 1
+
+# REAPPLY PERMISSIONS
+chmod +x update.sh
