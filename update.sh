@@ -9,7 +9,7 @@ unzip main.zip
 sleep 1
 
 # MOVE CONFIGS TO CURRENT DIRECTORY
-mv nixdots-main/* .
+rsync -a nixdots-main/* .
 sleep 1
 
 # CLEANUP
