@@ -132,6 +132,7 @@
     numix-icon-theme-circle
     celluloid
     evince
+    google-fonts
   ];
 
 #####################
