@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# A small script which can be placed in /etc/nixos and when executed it will pull configs, wallpapers, dots, etc from Github.
+# It uses rsync instead of mv so it is able to overwrite and update full directories
+# Possibly add an if else condition so that it uses mv on first run if rsync is not available
+# This is an alternative to git clone that avoids some of the pitfalls of that tool such as overwriting non-empty directories
+
 # PULL CONFIGS
 wget https://github.com/colino17/nixdots/archive/refs/heads/main.zip
 sleep 1
