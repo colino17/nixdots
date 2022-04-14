@@ -43,19 +43,6 @@
     };
   };
 
-#############
-### USERS ###
-#############
-  users.users.colin = {
-    isNormalUser = true;
-    extraGroups = [ "wheel" ];
-  };
-
-################
-### TIMEZONE ###
-################
-  time.timeZone = "Canada/Atlantic";
-
 ##################
 ### NETWORKING ###
 ##################
@@ -71,7 +58,7 @@
       "8.8.8.8"
       "8.8.1.1"
     ];
-    hostName = "pivpn";
+    hostName = "cerberus";
   };
   
 ###########
