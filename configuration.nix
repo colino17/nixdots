@@ -23,6 +23,23 @@
   imports =
     [
       ./hardware-configuration.nix
+#      ./devices/pi3.nix
+#      ./devices/pi2.nix
+#      ./devices/laptop.nix
+#      ./devices/dev.nix
+#      ./devices/desktop.nix
+#      ./devices/server.nix
+      ./packages/base.nix
+      ./packages/desktop.nix
+      ./packages/dev.nix
+#      ./packages/pi.nix
+      ./packages/desktops/gnome.nix
+#      ./packages/desktops/sway.nix
+      ./services/vpn.nix
+      ./services/games.nix
+      ./services/base.nix
+#      ./services/bootloader/uefi.nix
+      ./services/bootloader/bios.nix
       ./home.nix
       (import "${builtins.fetchTarball https://github.com/nix-community/home-manager/archive/master.tar.gz}/nixos")
     ];
