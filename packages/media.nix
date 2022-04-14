@@ -5,7 +5,6 @@
     youtube-dl
     ffmpeg
     gimp
-    celluloid
     google-fonts
   ];
 }
