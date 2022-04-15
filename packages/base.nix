@@ -8,5 +8,6 @@
     curl
     rsync
     nfs-utils
+    unzip
   ];
 }
