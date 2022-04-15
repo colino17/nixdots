@@ -76,8 +76,8 @@
         "edge-tiling" = true;
       };
       "org/gnome/desktop/background" = {
-        "picture-uri" = "/etc/nixos/wallpapers/1080/beach.jpg";
-        "picture-uri-dark" = "/etc/nixos/wallpapers/1080/beach.jpg";
+        "picture-uri" = "/etc/nixos/wallpapers/1080/wolfcave.png";
+        "picture-uri-dark" = "/etc/nixos/wallpapers/1080/wolfcave.png";
       };
     };
     
