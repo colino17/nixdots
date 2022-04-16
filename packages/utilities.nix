@@ -4,5 +4,6 @@
   environment.systemPackages = with pkgs; [
     neofetch
     cmatrix
+    appimage-run
   ];
 }
