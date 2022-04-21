@@ -1,23 +1,10 @@
 { config, pkgs, ... }:
 
-#################
-### TODO LIST ###
-#################
-# Remove unwanted gnome apps (ex: gnome-tour)
-# Fix etcher/electron dependency issue
-# Investigate VFIO config
-# Investigate variables
-# Add GPRename
-# RDP stuff in gnome
-
-################
-### IMPORTS ###
-################
 {
   imports =
     [
       ./hardware-configuration.nix
-#      ./devices/pi3.nix
+#      ./devices/cerberus.nix
 #      ./devices/pi2.nix
 #      ./devices/laptop.nix
 #      ./devices/dev.nix
