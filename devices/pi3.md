@@ -1,4 +1,5 @@
-# RASPBERRY PI
+# CERBERUS
+- Machine type: Raspberry Pi B+
 - Wiki entry here: https://nixos.wiki/wiki/NixOS_on_ARM/Raspberry_Pi_3
 - Write AARCH64 image to SD card: https://hydra.nixos.org/job/nixos/release-21.11/nixos.sd_image.aarch64-linux
 - Information on Tailscale subnets here: https://tailscale.com/kb/1019/subnets/
@@ -41,12 +42,7 @@ sudo configuration.nix
   imports =
     [
       ./hardware-configuration.nix
-      ./devices/pi3.nix
-#      ./devices/pi2.nix
-#      ./devices/laptop.nix
-#      ./devices/dev.nix
-#      ./devices/desktop.nix
-#      ./devices/server.nix
+      ./devices/cerberus.nix
     ];
 ```
 
