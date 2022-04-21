@@ -24,26 +24,7 @@
 ##################
   boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.loader.grub.enable = false;
-  boot.loader.generic-extlinux-compatible.enable = false;
-  boot.loader.raspberryPi = {
-    enable = true;
-    version = 3;
-    firmwareConfig = ''
-      disable_splash=1
-      core_freq=250
-      program_usb_boot_mode=1
-    '';
-  };
-  
-##################
-### FILESYSTEM ###
-##################
-  fileSystems = {
-    "/" = {
-      device = "/dev/disk/by-label/NIXOS_SD";
-      fsType = "ext4";
-    };
-  };
+  boot.loader.generic-extlinux-compatible.enable = true;
 
 ##################
 ### NETWORKING ###
