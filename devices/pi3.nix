@@ -25,7 +25,7 @@
   boot.loader.grub.enable = false;
   boot.loader.generic-extlinux-compatible.enable = true;
   boot.kernel.sysctl."net.ipv4.ip_forward" = 1;
-  boot.kernel.sysctl."net.ipv6.conf.all.forwarding = 1" = 1;
+  boot.kernel.sysctl."net.ipv6.conf.all.forwarding" = 1;
 
 
 ##################
