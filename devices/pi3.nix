@@ -15,23 +15,25 @@
   imports =
     [
       ./hardware-configuration.nix
+      ../packages/base.nix
+      ../services/vpn.nix
     ];
 
 ##################
 ### BOOTLOADER ###
 ##################
-  boot.kernelPackages = pkgs.linuxPackages_rpi;
+  boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.loader.grub.enable = false;
-  boot.loader.generic-extlinux-compatible.enable = false;
-  boot.loader.raspberryPi = {
-    enable = true;
-    version = 3;
-    firmwareConfig = ''
-      disable_splash=1
-      core_freq=250
-      program_usb_boot_mode=1
-    '';
-  };
+  boot.loader.generic-extlinux-compatible.enable = true;
+#  boot.loader.raspberryPi = {
+#    enable = true;
+#    version = 3;
+#    firmwareConfig = ''
+#      disable_splash=1
+#      core_freq=250
+#      program_usb_boot_mode=1
+#    '';
+ # };
   
 ##################
 ### FILESYSTEM ###
@@ -50,7 +52,7 @@
     useDHCP = false;
     usePredictableInterfaceNames = false;
     interfaces.eth0.ipv4.addresses = [ {
-      address = "192.168.0.22";
+      address = "192.168.0.33";
       prefixLength = 24;
     } ];
     defaultGateway = "192.168.0.1";
@@ -60,11 +62,6 @@
     ];
     hostName = "cerberus";
   };
-  
-###########
-### VPN ###
-###########
-  services.tailscale = { enable = true; };
 
 ###############
 ### ADGUARD ###
@@ -76,32 +73,8 @@
 ################
 ### PACKAGES ###
 ################
-  nixpkgs.config.allowUnfree = false;
-  documentation.nixos.enable = false;
   environment.systemPackages = with pkgs; [
-    wget
-    curl
     libraspberrypi
   ];
   
-###################
-### SSH SUPPORT ###
-###################
-  services.openssh.enable = true;
-
-##################################
-### SYSTEM VERSION AND UPDATES ###
-##################################
-  nix.autoOptimiseStore = true;
-  nix.gc = {
-    automatic = true;
-    dates = "daily";
-    options = "--delete-older-than 14d";
-  };
-  system = {
-    stateVersion = "21.11";
-    autoUpgrade.enable = true;
-    autoUpgrade.allowReboot = true;
-    autoUpgrade.dates = "daily";
-  };
 }
