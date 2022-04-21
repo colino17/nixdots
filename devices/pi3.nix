@@ -14,7 +14,6 @@
 {
   imports =
     [
-      ./hardware-configuration.nix
       ../packages/base.nix
       ../services/vpn.nix
     ];
