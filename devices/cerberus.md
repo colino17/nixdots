@@ -1,4 +1,4 @@
-# CERBERUS
+# CERBERUS - VPN and DNS Adblocker
 - Machine type: Raspberry Pi B+
 - Wiki entry here: https://nixos.wiki/wiki/NixOS_on_ARM/Raspberry_Pi_3
 - Write AARCH64 image to SD card: https://hydra.nixos.org/job/nixos/release-21.11/nixos.sd_image.aarch64-linux
