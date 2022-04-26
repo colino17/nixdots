@@ -32,41 +32,19 @@
       "8.8.1.1"
     ];
     hostName = "cerberus";
+    firewall = {
+      allowedTCPPorts = [ 53 80 ];
+      allowedUDPPorts = [ 53 ];
+    };
   };
 
 ###############
 ### ADGUARD ###
 ###############
-#  services.adguardhome = {
-#    enable = true;
-#    openFirewall = true;
-#    settings = {
-#      dns = {
-#        bind_hosts = "0.0.0.0";
-#        refuse_any = false;
-#        bootstrap_dns = [
-#          "9.9.9.9"
-#          "149.112.112.112"
-#        ];
-#      };
-#    };
-#  };  
-
-  virtualisation.docker.enable = true;
-  users.users.colin.extraGroups = [ "docker" ];
-  docker-containers = {
-    "adguardhome" = {
-      image = "adguard/adguardhome:latest";
-      ports = [
-        "53:53"
-        "80:80/tcp"
-        "443:443"
-        "3000:3000/tcp"
-      ];
-    };
-  };
-  
-
+  services.adguardhome = {
+    enable = true;
+    openFirewall = true;
+  };  
 
 ################
 ### PACKAGES ###
@@ -74,5 +52,4 @@
   environment.systemPackages = with pkgs; [
     libraspberrypi
   ];
-  
 }
