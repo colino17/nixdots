@@ -25,3 +25,6 @@ sleep 1
 
 # REAPPLY PERMISSIONS
 chmod +x update.sh
+
+# OPEN CONFIG IN NANO TO CHOOSE DEVICE
+nano /etc/nixos/configuration.nix
