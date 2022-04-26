@@ -40,6 +40,16 @@
   services.adguardhome = {
     enable = true;
     openFirewall = true;
+    settings = {
+      dns = {
+        bind_hosts = "0.0.0.0";
+        refuse_any = false;
+        bootstrap_dns = [
+          "9.9.9.9"
+          "149.112.112.112"
+        ];
+      };
+    };
   };  
 
 ################
