@@ -1,6 +1,5 @@
 { pkgs, Gtk3, libintl-perl, perl534Packages }:
 
-{
 pkgs.stdenv.mkDerivation rec {
   pname = "gprename";
   version = "20220206";
@@ -14,4 +13,4 @@ pkgs.stdenv.mkDerivation rec {
     libintl-perl
     Pango
   ];
-}
+};
