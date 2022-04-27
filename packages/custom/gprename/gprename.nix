@@ -1,5 +1,4 @@
-# https://github.com/archlinux/svntogit-community/tree/packages/gprename/trunk
-{ pkgs }:
+{ pkgs, Gtk3, libintl-perl, perl534Packages }:
 
 {
 pkgs.stdenv.mkDerivation rec {
@@ -10,31 +9,9 @@ pkgs.stdenv.mkDerivation rec {
     sha256 = "1f99947efa8d4864afff554b92e956837c7e76870681085663ddd1c8b7524e36";
   };
   
-  buildInputs = [
-    pkgs.perl534Packages.Gtk3
-    pkgs.perl534Packages.libintl-perl
-    pkgs.perl534Packages.LocaleGettext
-    pkgs.perl534Packages.Pango
+  buildInputs = with perl534Packages [
+    Gtk3
+    libintl-perl
+    Pango
   ];
-  
-  patchPhase = ''
-  
-  '';
-  
-  configurePhase = ''
-  
-  '';
-  
-  buildPhase = ''
-  
-  '';
-
-  installPhase = ''
-  
-  '';
-
-  meta = {
-    description = "GPRename is a complete batch renamer for files and directories";
-    homepage = https://sourceforge.net/projects/gprename/;
-  };
 }
