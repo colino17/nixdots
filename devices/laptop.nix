@@ -8,6 +8,7 @@
       ../packages/media.nix
       ../packages/utilities.nix
       ../packages/web.nix
+      ../packages/custom/gprename/gprename.nix
       ../services/vpn.nix
       ../services/sound.nix
       ../services/games.nix
