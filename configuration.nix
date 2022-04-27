@@ -29,6 +29,22 @@
 ### SSH SUPPORT ###
 ###################
   services.openssh.enable = true;
+ 
+###############
+### ALIASES ###
+###############
+  environment.shellAliases = {
+    rs = "sudo nixos-rebuild switch";
+    rsu = "sudo nixos-rebuild switch --upgrade";
+    garbage = "nix-collect-garbage -d";
+    get = "cd /etc/nixos/ && sudo sh update.sh";
+    la = "ls -a";
+    c = "clear";
+    reboot = "sudo reboot";
+    poweroff = "sudo poweroff";
+    shutdown = "sudo shutdown";
+    mount = "sudo mount";
+  };
 
 ##################################
 ### SYSTEM VERSION AND UPDATES ###
