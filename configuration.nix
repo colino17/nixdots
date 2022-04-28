@@ -44,6 +44,7 @@
     poweroff = "sudo poweroff";
     shutdown = "sudo shutdown";
     mount = "sudo mount";
+    fuck = "sudo !!"
   };
 
 ##################################
