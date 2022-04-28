@@ -21,6 +21,6 @@
     useDHCP = false;
     interfaces.enp12s0.useDHCP = true;
     interfaces.wlp3s0.useDHCP = true;
-    hostName = "manticore";
+    hostName = "leviathan";
   };
 }
