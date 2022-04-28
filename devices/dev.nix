@@ -7,6 +7,7 @@
       ../packages/gnome.nix
       ../packages/media.nix
       ../packages/utilities.nix
+      ../packages/custom/gprename/gprename.nix
       ../packages/web.nix
       ../services/vpn.nix
       ../services/sound.nix
