@@ -5,9 +5,9 @@
     [
       ./hardware-configuration.nix
 #      ./devices/cerberus.nix
-#      ./devices/pi2.nix
+#      ./devices/heimdall.nix
 #      ./devices/laptop.nix
-#      ./devices/dev.nix
+#      ./devices/leviathan.nix
 #      ./devices/desktop.nix
 #      ./devices/server.nix
     ];
