@@ -1,6 +1,6 @@
 ```
 sudo fdisk /dev/sda
-g
+o
 n
 default
 default
@@ -30,6 +30,7 @@ sudo nano /mnt/etc/nixos/configuration.nix
 
 ```
 sudo nixos-install
+sudo reboot
 ```
 
 ```
