@@ -1,4 +1,4 @@
-{ stdenv, fetchurl, pkgs, gtk3, perl534Packages }:
+{ stdenv, fetchurl, pkgs, perl, gtk3, perl534Packages }:
 
 stdenv.mkDerivation rec {
   pname = "gprename";
@@ -8,10 +8,11 @@ stdenv.mkDerivation rec {
     sha256 = "1f99947efa8d4864afff554b92e956837c7e76870681085663ddd1c8b7524e36";
   };
   
-  buildInputs = with pkgs.perl534Packages; [
-    Gtk3
-    libintl-perl
-    Pango
+  buildInputs = with pkgs; [
+    perl
+    perl534Packages.Gtk3
+    perl534Packages.libintl-perl
+    perl534Packages.Pango
   ];
   
 }
