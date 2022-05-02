@@ -1,4 +1,4 @@
-{ stdenv, fetchurl, pkgs, perl, gtk3, perl534Packages }:
+{ stdenv, fetchurl, fetchpatch, pkgs, perl, gtk3, perl534Packages }:
 
 stdenv.mkDerivation rec {
   pname = "gprename";
