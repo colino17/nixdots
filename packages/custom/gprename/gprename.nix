@@ -10,12 +10,12 @@ stdenv.mkDerivation rec {
   patches = [
     (fetchpatch {
       url = "https://sources.debian.org/data/main/g/gprename/20201214-0.1/debian/patches/001-Makefile.diff";
-      sha256 = "???";
+      sha256 = "0gdb8a2vj1cwhi4b76k0jg5d7z5abimdik3xn1cl37zl43cv3yyr";
     })
 
     (fetchpatch {
       url = "https://sources.debian.org/data/main/g/gprename/20201214-0.1/debian/patches/002-gprename-path-corrections";
-      sha256 = "???";
+      sha256 = "1w1b39i6mc6x6kdakwnijk7p16c880l6i8mq78amdzgfmdlaj2i5";
     })
   ];
   
