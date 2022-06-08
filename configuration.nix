@@ -6,7 +6,7 @@
       ./hardware-configuration.nix
 #      ./devices/cerberus.nix
 #      ./devices/heimdall.nix
-#      ./devices/laptop.nix
+#      ./devices/manticore.nix
 #      ./devices/leviathan.nix
 #      ./devices/desktop.nix
 #      ./devices/server.nix
