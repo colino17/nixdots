@@ -5,6 +5,5 @@
     neofetch
     cmatrix
     appimage-run
-    (callPackage ../packages/custom/gprename/gprename.nix {})
   ];
 }
