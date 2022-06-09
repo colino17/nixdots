@@ -14,6 +14,7 @@
       ../services/games.nix
       ../services/bios.nix
       ../services/printing.nix
+      ../services/mounts.nix
       ../home.nix
       (import "${builtins.fetchTarball https://github.com/nix-community/home-manager/archive/master.tar.gz}/nixos")
     ];
