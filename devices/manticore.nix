@@ -13,6 +13,7 @@
       ../services/games.nix
       ../services/uefi.nix
       ../services/printing.nix
+      ../services/mounts.nix
       ../home.nix
       (import "${builtins.fetchTarball https://github.com/nix-community/home-manager/archive/master.tar.gz}/nixos")
     ];
