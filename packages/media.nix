@@ -2,7 +2,7 @@
 
 {
   environment.systemPackages = with pkgs; [
-    youtube-dl
+    yt-dlp
     ffmpeg
     gimp
     google-fonts
