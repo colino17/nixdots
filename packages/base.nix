@@ -9,5 +9,6 @@
     rsync
     nfs-utils
     unzip
+    git
   ];
 }
