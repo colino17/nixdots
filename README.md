@@ -3,9 +3,9 @@
 Personal NIXOS device setup stack.
 
 ## TODO
-- Package GPRENAME
 - Remove unwanted gnome apps (ex: gnome-tour)
-- Fix etcher/electron dependency issue
+- Create .apps and .scripts folders
+- Pull down appas and scripts
 - Create device readmes
 - Investigate VFIO config
 - Investigate universal config variables
