@@ -9,6 +9,7 @@
       ../packages/utilities.nix
       ../packages/web.nix
       ../services/vpn.nix
+      ../services/adb.nix
       ../services/sound.nix
       ../services/games.nix
       ../services/uefi.nix
