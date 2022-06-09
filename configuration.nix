@@ -57,7 +57,7 @@
     options = "--delete-older-than 14d";
   };
   system = {
-    stateVersion = "21.11";
+    stateVersion = "22.05";
     autoUpgrade.enable = true;
     autoUpgrade.allowReboot = true;
     autoUpgrade.dates = "daily";
