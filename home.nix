@@ -41,7 +41,7 @@
       };
       "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2" = {
         "binding" = "<Super>w";
-        "command" = "firefox";
+        "command" = "librewolf";
         "name" = "open-browser";
       };
       "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3" = {
@@ -62,7 +62,7 @@
       "org/gnome/shell" = {
         "favorite-apps" = [
           "org.gnome.Nautilus.desktop"
-          "firefox.desktop"
+          "librewolf.desktop"
           "org.gnome.Console.desktop"
           "gimp.desktop"
           "discord.desktop"
