@@ -5,5 +5,6 @@
     neofetch
     cmatrix
     appimage-run
+    pciutils
   ];
 }
