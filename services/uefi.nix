@@ -6,4 +6,5 @@
     configurationLimit = 3;
     editor = false;
   };
+  boot.loader.efi.canTouchEfiVariables = true;
 }
