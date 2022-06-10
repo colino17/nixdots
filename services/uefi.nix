@@ -6,5 +6,9 @@
     configurationLimit = 3;
     editor = false;
   };
-  boot.loader.efi.canTouchEfiVariables = true;
+  
+  boot.loader.efi = {
+    canTouchEfiVariables = true;
+    efiSysMountPoint = "/boot/efi";
+  };
 }
