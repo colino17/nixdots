@@ -20,10 +20,6 @@
     ];
     
   networking = {
-    useDHCP = false;
-    interfaces.enp2s0f0.useDHCP = true;
-    interfaces.wlp3s0.useDHCP = true;
     hostName = "manticore";
-    enableB43Firmware = true;
   };
 }
