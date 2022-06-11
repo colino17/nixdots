@@ -88,7 +88,9 @@
         "picture-uri" = "/etc/nixos/wallpapers/1080/wolfcave.png";
         "picture-uri-dark" = "/etc/nixos/wallpapers/1080/wolfcave.png";
       };
-      "org/gnome/desktop/sound/allow-volume-above-100-percent" = true;
+      "org/gnome/desktop/sound" = {
+        "allow-volume-above-100-percent" = true;
+      };
     };
     
 ################
