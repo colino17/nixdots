@@ -58,7 +58,10 @@
         "close" = [
           "<Super>q"
         ];
-      };     
+      };   
+      "org/gnome/desktop/wm/preferences" = {
+        "button-layout" = "appmenu:minimize,maximize,close";
+      };
       "org/gnome/shell" = {
         "favorite-apps" = [
           "org.gnome.Nautilus.desktop"
@@ -85,6 +88,7 @@
         "picture-uri" = "/etc/nixos/wallpapers/1080/wolfcave.png";
         "picture-uri-dark" = "/etc/nixos/wallpapers/1080/wolfcave.png";
       };
+      "org/gnome/desktop/sound/allow-volume-above-100-percent" = true;
     };
     
 ################
