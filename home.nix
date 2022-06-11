@@ -21,7 +21,7 @@
 ######################
     dconf.settings = {
       "org/gnome/settings-daemon/plugins/media-keys" = {
-        custom-keybindings = [
+        "custom-keybindings" = [
           "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
           "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/"
           "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/"
@@ -30,9 +30,9 @@
         ];
       };   
       "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
-        binding = "<Super>t";
-        command = "kgx";
-        name = "open-terminal";
+        "binding" = "<Super>t";
+        "command" = "kgx";
+        "name" = "open-terminal";
       };
       "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" = {
         "binding" = "<Super>e";
