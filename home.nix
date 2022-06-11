@@ -75,6 +75,12 @@
       "org/gnome/mutter" = {
         "edge-tiling" = true;
       };
+      "org/gnome/desktop/interface" = {
+        "icon-theme" = "Numix-Circle";
+        "clock-format" = "12h";
+        "color-scheme" = "prefer-dark";
+        "show-battery-percentage" = true;
+      };
       "org/gnome/desktop/background" = {
         "picture-uri" = "/etc/nixos/wallpapers/1080/wolfcave.png";
         "picture-uri-dark" = "/etc/nixos/wallpapers/1080/wolfcave.png";
