@@ -60,6 +60,6 @@
     stateVersion = "22.05";
     autoUpgrade.enable = true;
     autoUpgrade.allowReboot = true;
-    autoUpgrade.dates = "daily";
+    autoUpgrade.dates = "weekly";
   };
 }
