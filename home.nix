@@ -15,6 +15,8 @@
         initExtra = "neofetch --ascii ~/.config/neofetch/halsey.txt --ascii_colors 3 2";
       };
     };
+    
+  home.stateVersion = "22.05";
 
 ######################
 ### DCONF SETTINGS ###
