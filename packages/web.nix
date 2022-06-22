@@ -3,6 +3,6 @@
 {
   environment.systemPackages = with pkgs; [
     discord
-    librewolf-wayland
+    firefox-wayland
   ];
 }
