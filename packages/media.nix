@@ -6,5 +6,6 @@
     ffmpeg
     gimp
     google-fonts
+    jellyfin-media-player
   ];
 }
