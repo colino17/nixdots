@@ -18,6 +18,8 @@
     gnome-text-editor
     gnome.nautilus
     gnome.file-roller
+    gnome.gnome-remote-desktop
+    gnome-connections
     numix-icon-theme-circle
     celluloid
     evince
