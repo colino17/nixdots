@@ -19,6 +19,8 @@
     isNormalUser = true;
     extraGroups = [ "wheel" ];
   };
+  
+  nixpkgs.overlays = [ (import ../packages/custom) ];
 
 ################
 ### TIMEZONE ###
