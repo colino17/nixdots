@@ -148,7 +148,12 @@
 #################
 ### APPIMAGES ###
 #################
-    home.file.".apps/renamer.appimage".source = (builtins.fetchurl { url ="https://ocs-dl.fra1.digitaloceanspaces.com/data/files/1617726712/Inviska_Rename-10.0-x86_64.AppImage"; });
+    xdg.desktopEntries.renamer = {
+          name = "Renamer";
+          genericName = "Renamer";
+          exec = "appimage-run /Storage/Files/Packages/APPS/renamer.AppImage";
+          terminal = false;
+    };
     
     
     
