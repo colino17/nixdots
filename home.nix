@@ -145,15 +145,15 @@
            ░░  █▀█ █▀█ █▄▄ ▄█ ██▄ ░█░
     '';
     
-#################
-### APPIMAGES ###
-#################
+#######################
+### DESKTOP ENTRIES ###
+#######################
     xdg.desktopEntries.renamer = {
           name = "Renamer";
           genericName = "Renamer";
           exec = "appimage-run /Storage/Files/Packages/APPS/renamer.AppImage";
           terminal = false;
-          icon = gprename.svg;
+          icon = "gprename.svg";
     };
     
     
