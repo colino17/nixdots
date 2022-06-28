@@ -69,7 +69,7 @@
           "org.gnome.Nautilus.desktop"
           "firefox.desktop"
           "org.gnome.Console.desktop"
-          "gimp.desktop"
+          "com.github.iwalton3.jellyfin-media-player.desktop"
           "discord.desktop"
           "steam.desktop"
         ];
@@ -87,8 +87,8 @@
         "show-battery-percentage" = true;
       };
       "org/gnome/desktop/background" = {
-        "picture-uri" = "/etc/nixos/wallpapers/1080/wolfcave.png";
-        "picture-uri-dark" = "/etc/nixos/wallpapers/1080/wolfcave.png";
+        "picture-uri" = "/etc/nixos/wallpapers/1080/tlou.jpg";
+        "picture-uri-dark" = "/etc/nixos/wallpapers/1080/tlou.jpg";
       };
       "org/gnome/desktop/sound" = {
         "allow-volume-above-100-percent" = true;
