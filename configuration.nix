@@ -20,7 +20,7 @@
     extraGroups = [ "wheel" ];
   };
   
-  nixpkgs.overlays = [ (import ../packages/custom) ];
+  nixpkgs.overlays = [ (import ../pkgs) ];
 
 ################
 ### TIMEZONE ###
