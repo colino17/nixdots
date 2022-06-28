@@ -156,7 +156,12 @@
           icon = "gprename.svg";
     };
     
-    
+##############################
+### TAILSCALE GNOME STATUS ###
+##############################   
+     home.file.".local/share/gnome-shell/extensions/tailscale-status@maxgallup.github.com/extension.js".source = (builtins.fetchurl { url ="https://raw.githubusercontent.com/maxgallup/tailscale-status/main/tailscale-status%40maxgallup.github.com/extension.js"; });    
+     home.file.".local/share/gnome-shell/extensions/tailscale-status@maxgallup.github.com/metadata.json".source = (builtins.fetchurl { url ="https://raw.githubusercontent.com/maxgallup/tailscale-status/main/tailscale-status%40maxgallup.github.com/metadata.json"; });
+     home.file.".local/share/gnome-shell/extensions/tailscale-status@maxgallup.github.com/icon.svg".source = (builtins.fetchurl { url ="https://raw.githubusercontent.com/maxgallup/tailscale-status/main/tailscale-status%40maxgallup.github.com/icon.svg"; });
     
   };   
 }  
