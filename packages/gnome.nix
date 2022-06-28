@@ -23,6 +23,5 @@
     numix-icon-theme-circle
     celluloid
     evince
-    tailscale-gnome
   ];
 }
