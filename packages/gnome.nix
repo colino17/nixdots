@@ -23,6 +23,6 @@
     numix-icon-theme-circle
     celluloid
     evince
-    (callPackage ../packages/custom/tailscale-gnome/default.nix {})
+    tailscale-gnome
   ];
 }
