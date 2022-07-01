@@ -75,7 +75,7 @@
         ];
         "enabled-extensions" = [
           "places-menu@gnome-shell-extensions.gcampax.github.com"
-          "tailscale-status@maxgallup.github.com"
+          "tailscale-status@colino17.github.com"
         ];
       };
       "org/gnome/mutter" = {
