@@ -5,6 +5,7 @@
     [
       ./hardware-configuration.nix
 #      ./devices/cerberus.nix
+#      ./devices/loki.nix
 #      ./devices/heimdall.nix
 #      ./devices/manticore.nix
 #      ./devices/leviathan.nix
