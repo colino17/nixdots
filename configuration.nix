@@ -9,8 +9,6 @@
 #      ./devices/heimdall.nix
 #      ./devices/manticore.nix
 #      ./devices/leviathan.nix
-#      ./devices/desktop.nix
-#      ./devices/server.nix
     ];
 
 #############
