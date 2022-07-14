@@ -23,5 +23,6 @@
     numix-icon-theme-circle
     celluloid
     evince
+    gnomeExtensions.vitals
   ];
 }
