@@ -10,5 +10,6 @@
     nfs-utils
     unzip
     git
+    lm_sensors
   ];
 }
