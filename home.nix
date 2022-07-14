@@ -75,6 +75,7 @@
         ];
         "enabled-extensions" = [
           "places-menu@gnome-shell-extensions.gcampax.github.com"
+          "Vitals@CoreCoding.com"
           "tailscale-status@colino17.github.com"
         ];
       };
