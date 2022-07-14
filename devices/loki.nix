@@ -12,7 +12,7 @@
       ../services/adb.nix
       ../services/sound.nix
 #      ../services/games.nix
-      ../services/uefi.nix
+      ../services/vfio.nix
 #      ../services/printing.nix
       ../services/mounts.nix
       ../home.nix
