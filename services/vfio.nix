@@ -12,6 +12,7 @@
         editor = false;
       };
       efi.canTouchEfiVariables = true;
+      efiSysMountPoint = "/boot/efi";
     };
     kernelParams = [ "amd_iommu=on" ];
     kernelModules = [ "vfio_virqfd" "vfio_pci" "vfio_iommu_type1" "vfio" ];
@@ -32,9 +33,11 @@
   virtualisation = {
       libvirtd = {
         enable = true;
-        qemuOvmf = true;
-        qemuSwtpm = true;
-        qemuOvmfPackage = pkgs.OVMFFull;
+        qemu = {
+          ovmf.enable = true;
+          swtpm.enable = true;
+          ovmf.package = pkgs.OVMFFull;
+        };
       };
     };
 
