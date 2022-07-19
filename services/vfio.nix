@@ -12,7 +12,7 @@
         editor = false;
       };
       efi.canTouchEfiVariables = true;
-      efiSysMountPoint = "/boot/efi";
+      efi.efiSysMountPoint = "/boot/efi";
     };
     kernelParams = [ "amd_iommu=on" ];
     kernelModules = [ "vfio_virqfd" "vfio_pci" "vfio_iommu_type1" "vfio" ];
