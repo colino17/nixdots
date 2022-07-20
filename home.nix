@@ -1,5 +1,12 @@
 { config, pkgs, ... }:
 
+#################
+### VARIABLES ###
+#################
+let
+  varwall = "/home/colin/Pictures/Wallpapers/1080/jordan.jpg";
+in
+
 {
   environment.systemPackages = with pkgs; [
     home-manager
@@ -89,8 +96,8 @@
         "show-battery-percentage" = true;
       };
       "org/gnome/desktop/background" = {
-        "picture-uri" = "/etc/nixos/wallpapers/1080/tlou.jpg";
-        "picture-uri-dark" = "/etc/nixos/wallpapers/1080/tlou.jpg";
+        "picture-uri" = varwall;
+        "picture-uri-dark" = varwall;
       };
       "org/gnome/desktop/sound" = {
         "allow-volume-above-100-percent" = true;
@@ -156,6 +163,14 @@
           exec = "appimage-run /Storage/Files/Packages/APPS/renamer.AppImage";
           terminal = false;
           icon = "gprename.svg";
+    };
+    
+########################
+### WALLPAPER FOLDER ###
+########################
+    home.file."Pictures/Wallpapers" = {
+      source = /etc/nixos/wallpapers;
+      recursive = true;
     };
     
 ##############################
