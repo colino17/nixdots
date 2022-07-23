@@ -18,7 +18,16 @@
     };
     kernelParams = [ "amd_iommu=on" ];
     kernelModules = [ "vfio_virqfd" "vfio_pci" "vfio_iommu_type1" "vfio" ];
-    extraModprobeConfig = "options vfio-pci ids=10de:13c0,10de:0fbb";
+    extraModprobeConfig = "options vfio-pci ids=10de:2488,10de:228b,1022:57a4,1022:7901,1987:5016,8086:24fb,10ec:8161,1022:149c";
+    
+### IOMMU GROUPS AND DEVICE IDS ###
+# GPU - 29 - 10de:2488,10de:228b
+# NVME - 14 - 1987:5016
+# ETHERNET - 28 - 10ec:8161
+# WIFI/BLUETOOTH - 26 - 8086:24fb
+# SATA - 22 - 1022:57a4,1022:7901
+# USB - 33 - 1022:149c
+    
   };
 
 ################
