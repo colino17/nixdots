@@ -11,5 +11,6 @@
     unzip
     git
     lm_sensors
+    usbutils
   ];
 }
