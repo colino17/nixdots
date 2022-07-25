@@ -162,7 +162,7 @@ in
           genericName = "Renamer";
           exec = "appimage-run /Storage/Files/Packages/APPS/renamer.AppImage";
           terminal = false;
-          icon = "gprename.svg";
+          icon = "gprename";
     };
     
 ########################
