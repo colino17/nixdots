@@ -94,6 +94,7 @@ in
         "clock-format" = "12h";
         "color-scheme" = "prefer-dark";
         "show-battery-percentage" = true;
+        "gtk-theme" = "Adwaita-dark";
       };
       "org/gnome/desktop/background" = {
         "picture-uri" = varwall;
@@ -101,9 +102,6 @@ in
       };
       "org/gnome/desktop/sound" = {
         "allow-volume-above-100-percent" = true;
-      };
-      "org/gnome/desktop/interface" = {
-        "gtk-theme" = "Adwaita-dark";
       };
     };
     
