@@ -4,7 +4,7 @@
 ### VARIABLES ###
 #################
 let
-  varwall = "/home/colin/Pictures/Wallpapers/1080/jordan.jpg";
+  varwall = "/home/colin/Pictures/Wallpapers/1080/offline.jpg";
 in
 
 {
@@ -101,6 +101,9 @@ in
       };
       "org/gnome/desktop/sound" = {
         "allow-volume-above-100-percent" = true;
+      };
+      "org/gnome/desktop/interface" = {
+        "gtk-theme" = "Adwaita-dark";
       };
     };
     
