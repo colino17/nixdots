@@ -165,6 +165,7 @@ in
           terminal = false;
           icon = "gprename";
     };
+    xdg.desktopEntries.gnome-tour.noDisplay = true;
     
 ########################
 ### WALLPAPER FOLDER ###
