@@ -25,4 +25,9 @@
     evince
     gnomeExtensions.vitals
   ];
+  
+  environment.gnome.excludePackages = with pkgs; [
+    gnome-tour
+  ];
+  
 }
