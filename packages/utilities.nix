@@ -6,5 +6,6 @@
     cmatrix
     appimage-run
     pciutils
+    geekbench
   ];
 }
