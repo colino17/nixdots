@@ -56,7 +56,7 @@ sudo reboot
 
 ## Setup VM in Virt-Manager
 Using Virt-Manager create a new VM with the Windows 10 ISO as the install media.
-Edit the XML file to include all the various options needed including resource allocations, device passthrough, CPU pinning/isolation, memory hugepages, etc.
+Edit the XML file to include all the various options needed including resource allocations, device passthrough (USB controller + Bluetooth, GPU, NVME, Ethernet Card, WIFI Card), CPU pinning/isolation, memory hugepages, etc.
 ```xml
 temp
 ```
