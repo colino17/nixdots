@@ -35,6 +35,7 @@
 ################
   environment.systemPackages = with pkgs; [
     virt-manager
+    stress-ng
   ];
   
 ######################
