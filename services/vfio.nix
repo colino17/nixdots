@@ -41,7 +41,7 @@
 ################
 ### GOVERNOR ###
 ################
-  powerManagement.cpuFreqGovernor = "ondemand";
+  powerManagement.cpuFreqGovernor = "performance";
   
 ######################
 ### VIRTUALIZATION ###
