@@ -16,7 +16,7 @@
         efiSysMountPoint = "/boot/efi";
       };
     };
-    kernelParams = [ "amd_iommu=on" "default_hugepagesz=1G" "hugepagesz=1G" "hugepages=32" "isolcpus=6-11,18-23" "nohz_full=6-11,18-23" ];
+    kernelParams = [ "mitigations=on" "amd_iommu=on" "default_hugepagesz=1G" "hugepagesz=1G" "hugepages=32" "isolcpus=6-11,18-23" "nohz_full=6-11,18-23" "rcu_nocbs=6-11,18-23" ];
     kernelModules = [ "vfio_virqfd" "vfio_pci" "vfio_iommu_type1" "vfio" ];
     extraModprobeConfig = "options vfio-pci ids=10de:2488,10de:228b,10ec:8161";
     
