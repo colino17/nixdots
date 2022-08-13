@@ -38,6 +38,11 @@
     stress-ng
   ];
   
+################
+### GOVERNOR ###
+################
+  powerManagement.cpuFreqGovernor = "ondemand";
+  
 ######################
 ### VIRTUALIZATION ###
 ######################
