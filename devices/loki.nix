@@ -24,7 +24,7 @@
 
   services.xserver.displayManager.autoLogin = {
     enable = true;
-    user = colin;
+    user = "colin";
   };
 
 
