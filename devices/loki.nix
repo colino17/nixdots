@@ -22,10 +22,13 @@
     hostName = "loki";
   };
 
+################
+## AUTO LOGIN ##
+################
   services.xserver.displayManager.autoLogin = {
     enable = true;
     user = "colin";
   };
-
+  services.xserver.displayManager.gdm.autoLogin.delay = 15;
 
 }
