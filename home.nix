@@ -86,6 +86,7 @@ in
           "discord.desktop"
           "steam.desktop"
         ];
+        "disable-user-extensions" = false;
         "enabled-extensions" = [
           "places-menu@gnome-shell-extensions.gcampax.github.com"
           "Vitals@CoreCoding.com"
