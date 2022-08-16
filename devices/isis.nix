@@ -34,7 +34,7 @@
 ############
 ## BACKUP ##
 ############
-  programs.bash.loginShellInit = "sh /etc/nixos/scripts/backup.sh"
+  programs.bash.loginShellInit = "sh /etc/nixos/scripts/backup.sh";
   
 ############
 ## MOUNTS ##
