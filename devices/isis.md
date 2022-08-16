@@ -1,6 +1,6 @@
 # ISIS - Backup NAS Server
 
-## Partition Disks
+## Partition Disks...
 ```bash
 lsblk
 fdisk /dev/sda
@@ -19,51 +19,47 @@ t
 w
 ```
 
-## Format Disks
+## Format Disks...
 ```bash
 sudo mkfs.fat -F 32 -n boot /dev/sda1
 sudo mkfs.ext4 -L nixos /dev/sda2
 ```
 
-## Install NixOS
+## Install NixOS...
 ```bash
 sudo mount /dev/disk/by-label/nixos /mnt
 sudo mkdir -p /mnt/boot
 sudo mount /dev/disk/by-label/boot /mnt/boot
 ```
 
-## Generate initial config...
+## Generate initial config and install...
 ```bash
 sudo nixos-generate-config --root /mnt
+sudo nixos-install
+reboot
 ```
 
 ## Add packages to initial config...
 ```bash
 sudo nano configuration.nix
 ```
+
 ```nix
-  boot.loader.systemd-boot.enable = true;
-   boot.loader.efi.efiSysMountPoint = "/boot/efi";
-
-...
-
-  environment.systemPackages = with pkgs; [
+environment.systemPackages = with pkgs; [
     wget
     rsync
     unzip
   ];
 ```
 
-## Finish Install...
 ```bash
-sudo nixos-install
-reboot
+sudo nixos-rebuild switch
 ```
 
 ## Pull update script and run to update config...
 ```bash
+cd /etc/nixos
 sudo wget https://raw.githubusercontent.com/colino17/nixdots/main/update.sh
-sudo chmod +x update.sh
 sudo sh update.sh
 ```
 
@@ -75,7 +71,7 @@ sudo configuration.nix
   imports =
     [
       ./hardware-configuration.nix
-      ./devices/cerberus.nix
+      ./devices/isis.nix
     ];
 ```
 
