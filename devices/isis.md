@@ -77,18 +77,13 @@ sudo configuration.nix
 
 ## Rebuild config...
 ```bash
-sudo nixos-rebuild switch
+sudo nixos-rebuild boot
+reboot
 ```
 
 ## Set passwords...
 ```bash
 sudo passwd root
 sudo passwd colin
-sudo reboot
-```
-
-## Start Tailscale...
-```bash
-sudo tailscale up --advertise-routes=192.168.0.0/24
 sudo reboot
 ```
