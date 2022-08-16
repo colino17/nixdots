@@ -3,7 +3,7 @@
 ## Partition Disks...
 ```bash
 lsblk
-fdisk /dev/sda
+sudo fdisk /dev/sda
 g
 n
 default
@@ -28,8 +28,8 @@ sudo mkfs.ext4 -L nixos /dev/sda2
 ## Install NixOS...
 ```bash
 sudo mount /dev/disk/by-label/nixos /mnt
-sudo mkdir -p /mnt/boot
-sudo mount /dev/disk/by-label/boot /mnt/boot
+sudo mkdir -p /mnt/boot/efi
+sudo mount /dev/disk/by-label/boot /mnt/boot/efi
 ```
 
 ## Generate initial config and install...
@@ -41,7 +41,7 @@ reboot
 
 ## Add packages to initial config...
 ```bash
-sudo nano configuration.nix
+sudo nano /etc/nixos/configuration.nix
 ```
 
 ```nix
