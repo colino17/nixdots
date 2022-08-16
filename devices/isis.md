@@ -1,6 +1,6 @@
 # ISIS - Backup NAS Server
 
-## Partion Disks
+## Partition Disks
 ```bash
 lsblk
 fdisk /dev/sda
