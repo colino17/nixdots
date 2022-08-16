@@ -14,6 +14,7 @@
   networking = {
     useDHCP = false;
     usePredictableInterfaceNames = false;
+    interfaces.eth0.wakeOnLan.enable = true;
     interfaces.eth0.ipv4.addresses = [ {
       address = "192.168.0.18";
       prefixLength = 24;
