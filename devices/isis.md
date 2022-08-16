@@ -35,17 +35,16 @@ sudo mount /dev/disk/by-label/boot /mnt/boot/efi
 ## Generate initial config and install...
 ```bash
 sudo nixos-generate-config --root /mnt
-sudo nixos-install
-reboot
 ```
 
-## Add packages to initial config...
 ```bash
-sudo nano /etc/nixos/configuration.nix
+sudo nano /mnt/etc/nixos/configuration.nix
 ```
 
 ```nix
-environment.systemPackages = with pkgs; [
+  boot.loader.efi.efiSysMountPoint = "/boot/efi";
+  ...
+  environment.systemPackages = with pkgs; [
     wget
     rsync
     unzip
@@ -53,7 +52,8 @@ environment.systemPackages = with pkgs; [
 ```
 
 ```bash
-sudo nixos-rebuild switch
+sudo nixos-install
+reboot
 ```
 
 ## Pull update script and run to update config...
