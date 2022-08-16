@@ -5,6 +5,7 @@
     [
       ../packages/base.nix
       ../services/uefi.nix
+      ../services/mounts.nix
     ];
 
 ##################
@@ -23,6 +24,24 @@
       "8.8.1.1"
     ];
     hostName = "isis";
+  };
+
+################
+## AUTO LOGIN ##
+################
+  services.getty.autologinUser = "colin";
+  
+############
+## BACKUP ##
+############
+  programs.bash.loginShellInit = "sh /etc/nixos/scripts/backup.sh"
+  
+############
+## MOUNTS ##
+############
+  fileSystems."/Backup" = {
+    device = "/dev/vg_backup/lv_backup";
+    fsType = "ext4";
   };
 
 }
