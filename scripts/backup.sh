@@ -9,4 +9,25 @@
 # Backup is the detsination folder.
 # https://wiki.archlinux.org/index.php/Rsync
 
-rsync -aAXP --delete --exclude={"Temp","Recordings","lost+found",".Trash-1000"} /Storage/ /Backup/
+sleep 30
+
+echo "Server Backup will begin in 60 seconds. Press CTRL-C to cancel this operation."
+
+sleep 60
+
+if mountpoint -q /Storage 
+then
+   echo "Server Backup is starting..."
+   sleep 5
+   rsync -aAXP --delete --exclude={"Temp","Recordings","lost+found",".Trash-1000"} /Storage/ /Backup/
+else
+   echo "Storage Server is not available. Server Backup has been aborted."
+fi
+
+sleep 30
+
+echo "Server Backup has completed. Server will shutdown in 60 seconds. Press CTRL-C to cancel this operation."
+
+sleep 60
+
+shutdown now
