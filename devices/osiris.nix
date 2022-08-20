@@ -18,7 +18,7 @@
     usePredictableInterfaceNames = false;
     interfaces.eth0.wakeOnLan.enable = true;
     interfaces.eth0.ipv4.addresses = [ {
-      address = "192.168.0.17";
+      address = "192.168.0.19";
       prefixLength = 24;
     } ];
     defaultGateway = "192.168.0.1";
@@ -32,9 +32,17 @@
 ############
 ## MOUNTS ##
 ############
-  fileSystems."/Storage" = {
-    device = "/dev/vg_storage/lv_storage";
-    fsType = "ext4";
-  };
+#  fileSystems."/Storage" = {
+#    device = "/dev/vg_storage/lv_storage";
+#    fsType = "ext4";
+#  };
+
+################
+### PACKAGES ###
+################
+  environment.systemPackages = with pkgs; [
+    yt-dlp
+    ffmpeg
+  ];
   
 }
