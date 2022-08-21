@@ -7,5 +7,6 @@
     appimage-run
     pciutils
     geekbench
+    e2fsprogs
   ];
 }
