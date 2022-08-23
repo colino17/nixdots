@@ -22,4 +22,10 @@
   networking = {
     hostName = "manticore";
   };
+  
+##############
+### REBOOT ###
+##############
+  system.autoUpgrade.allowReboot = false;
+  
 }
