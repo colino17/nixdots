@@ -25,4 +25,10 @@
     interfaces.wlp3s0.useDHCP = true;
     hostName = "leviathan";
   };
+  
+##############
+### REBOOT ###
+##############
+  system.autoUpgrade.allowReboot = false;
+
 }
