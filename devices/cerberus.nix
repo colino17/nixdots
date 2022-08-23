@@ -52,4 +52,10 @@
   environment.systemPackages = with pkgs; [
     libraspberrypi
   ];
+
+##############
+### REBOOT ###
+##############
+  system.autoUpgrade.allowReboot = false;
+
 }
