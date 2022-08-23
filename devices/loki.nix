@@ -34,5 +34,9 @@
     gdm.autoLogin.delay = 15;  
   };
 
+##############
+### REBOOT ###
+##############
+  system.autoUpgrade.allowReboot = false;
 
 }
