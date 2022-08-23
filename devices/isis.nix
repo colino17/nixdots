@@ -45,4 +45,9 @@
     fsType = "ext4";
   };
 
+##############
+### REBOOT ###
+##############
+  system.autoUpgrade.allowReboot = false;
+
 }
