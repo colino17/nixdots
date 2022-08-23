@@ -53,4 +53,9 @@
     libraspberrypi
   ];
   
+##############
+### REBOOT ###
+##############
+  system.autoUpgrade.allowReboot = true;
+  
 }
