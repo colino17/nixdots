@@ -59,7 +59,6 @@
   system = {
     stateVersion = "22.05";
     autoUpgrade.enable = true;
-    autoUpgrade.allowReboot = false;
     autoUpgrade.dates = "weekly";
   };
 }
