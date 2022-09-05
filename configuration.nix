@@ -28,8 +28,17 @@
 ###################
 ### SSH SUPPORT ###
 ###################
-  services.openssh.enable = true;
- 
+  services.openssh = {
+    enable = true;
+    permitRootLogin = "no";
+    ports = [ 1717 ];
+  };
+
+  services.fail2ban = {
+    enable = true;
+    maxretry = 5;
+  };
+
 ###############
 ### ALIASES ###
 ###############
