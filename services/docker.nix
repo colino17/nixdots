@@ -32,7 +32,7 @@
         "/var/run/docker.sock:/var/run/docker.sock"
       ];
       environment = {
-        AUTOHEAL_CONTAINER_LABEL=all
+        AUTOHEAL_CONTAINER_LABEL = "all";
       };
     };
   };
