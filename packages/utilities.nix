@@ -8,5 +8,6 @@
     pciutils
     geekbench
     e2fsprogs
+    iperf
   ];
 }
