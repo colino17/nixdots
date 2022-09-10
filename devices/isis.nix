@@ -16,10 +16,10 @@
     usePredictableInterfaceNames = false;
     interfaces.eth0.wakeOnLan.enable = true;
     interfaces.eth0.ipv4.addresses = [ {
-      address = "192.168.0.18";
+      address = "10.17.10.18";
       prefixLength = 24;
     } ];
-    defaultGateway = "192.168.0.1";
+    defaultGateway = "10.17.10.1";
     nameservers = [
       "8.8.8.8"
       "8.8.1.1"
