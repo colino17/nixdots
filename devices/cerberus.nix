@@ -23,10 +23,10 @@
     useDHCP = false;
     usePredictableInterfaceNames = false;
     interfaces.eth0.ipv4.addresses = [ {
-      address = "192.168.0.33";
+      address = "10.17.10.33";
       prefixLength = 24;
     } ];
-    defaultGateway = "192.168.0.1";
+    defaultGateway = "10.17.10.1";
     nameservers = [
       "8.8.8.8"
       "8.8.1.1"
