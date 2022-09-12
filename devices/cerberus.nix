@@ -15,6 +15,9 @@
   boot.loader.generic-extlinux-compatible.enable = true;
   boot.kernel.sysctl."net.ipv4.ip_forward" = 1;
   boot.kernel.sysctl."net.ipv6.conf.all.forwarding" = 1;
+  boot.loader.raspberryPi.firmwareConfig = ''
+    hdmi_force_hotplug=1
+  '';
 
 ##################
 ### NETWORKING ###
