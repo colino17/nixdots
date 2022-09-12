@@ -19,7 +19,10 @@
       address = "10.17.10.18";
       prefixLength = 24;
     } ];
-    defaultGateway = "10.17.10.1";
+    defaultGateway = {
+      address = "10.17.10.1";
+      interface = "eth0";
+    };
     nameservers = [
       "8.8.8.8"
       "8.8.1.1"
