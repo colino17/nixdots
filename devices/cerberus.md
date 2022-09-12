@@ -63,3 +63,12 @@ sudo reboot
 sudo tailscale up --advertise-routes=192.168.0.0/24
 sudo reboot
 ```
+
+## Edit config.txt...
+Either "hdmi_force_hotplug=1" or "hdmi_safe=1" need to be added manually to the config.txt file in the FIRMWARE partition. This is supposed to be declared in the configuration.nix file using the snippet below, but the firmwareConfig option is currently broken.
+
+```nix
+  boot.loader.raspberryPi.firmwareConfig = ''
+    hdmi_force_hotplug=1
+  '';
+```
