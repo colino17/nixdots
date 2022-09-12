@@ -72,3 +72,4 @@ Either "hdmi_force_hotplug=1" or "hdmi_safe=1" need to be added manually to the 
     hdmi_force_hotplug=1
   '';
 ```
+Without this change the Pi will not boot unless an HDMI output is plugged in.
