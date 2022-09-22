@@ -6,6 +6,7 @@
       ../packages/base.nix
       ../services/uefi.nix
       ../services/mounts.nix
+      ../services/btrfs.nix
     ];
 
 ##################
