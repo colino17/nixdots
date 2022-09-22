@@ -8,6 +8,7 @@
       ../services/vpn.nix
       ../services/docker.nix
       ../services/nvidia.nix
+      ../services/btrfs.nix
     ];
 
 ##################
