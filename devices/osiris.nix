@@ -4,6 +4,7 @@
   imports =
     [
       ../packages/base.nix
+      ../packages/utilities.nix
       ../services/uefi.nix
       ../services/vpn.nix
       ../services/docker.nix
