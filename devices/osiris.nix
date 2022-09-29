@@ -39,6 +39,27 @@
 #    fsType = "ext4";
 #  };
 
+
+  fileSystems."/Storage/Recordings" =
+    { device = "/dev/sdb";
+      fsType = "btrfs";
+      options = [ "subvol=Recordings" ];
+    };
+
+
+  fileSystems."/Storage/Media" =
+    { device = "/dev/sdb";
+      fsType = "btrfs";
+      options = [ "subvol=Media" ];
+    };
+
+  services.nfs.server.enable = true;
+  services.nfs.server.exports = ''
+    /Storage *(rw,insecure,no_root_squash,anonuid=1000,anongid=100)
+  '';
+  
+  
+
 ################
 ### PACKAGES ###
 ################
