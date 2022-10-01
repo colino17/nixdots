@@ -1,6 +1,6 @@
 # OSIRIS - NAS Server
 
-## Partition Disks...
+## Partition Boot Disks...
 ```bash
 lsblk
 sudo fdisk /dev/sda
@@ -26,37 +26,77 @@ g
 n
 default
 default
++512M
+n
 default
+default
+default
+t
+1
+1
 w
 ```
 
-## Format Disks...
+## Remove Partitions on Storage Disks...
+```bash
+lsblk
+sudo fdisk /dev/sdc
+d
+w
+```
+
+```bash
+lsblk
+sudo fdisk /dev/sdd
+d
+w
+```
+
+```bash
+lsblk
+sudo fdisk /dev/sde
+d
+w
+```
+
+## Format Boot Disks...
 ```bash
 sudo mkfs.fat -F 32 -n boot /dev/sda1
-sudo mkfs.ext4 -L nixos /dev/sda2
-sudo mkfs.ext4 -L cctv /dev/sdb1
-sudo mkfs.btrfs -m raid1 -d raid1 /dev/sdc /dev/sdd
+sudo mkfs.btrfs -m raid1 -d raid1  -L nixos /dev/sda2 /dev/sdb2
+```
+
+## Format CCTV Disk...
+```bash
+sudo mkfs.btrfs -L cctv /dev/sdc
+```
+
+## Format Storage Disks...
+```bash
+sudo mkfs.btrfs -L storage -m raid1 -d raid1 /dev/sdc /dev/sdd
+```
+
+## Create Boot Disk Subvolumes...
+```bash
+sudo mount /dev/disk/by-label/nixos /mnt
+sudo btrfs subvolume create /mnt/Configs
+sudo umount /mnt
+```
+
+## Create Storage Disk Subvolumes...
+```bash
+sudo mount /dev/disk/by-label/storage /mnt
+sudo btrfs subvolume create /mnt/Files
+sudo btrfs subvolume create /mnt/Media
+sudo btrfs subvolume create /mnt/Recordings
+sudo btrfs subvolume create /mnt/Snapshots
+sudo umount /mnt
 ```
 
 ## Mount Disks...
 ```bash
-sudo mount /dev/disk/by-label/nixos /mnt
+sudo mount -o compress=zstd,subvol=root /dev/disk/by-label/nixos /mnt
 sudo mkdir -p /mnt/boot/efi
 sudo mount /dev/disk/by-label/boot /mnt/boot/efi
-sudo mkdir /mnt/CCTV
-sudo mount /dev/sdb /mnt/CCTV
-sudo mkdir /mnt/Storage
-sudo mount /dev/sdc /mnt/Storage
-```
-
-## Create BTRFS Subvolumes
-```bash
-sudo btrfs subvolume create /mnt/Storage/Configs
-sudo btrfs subvolume create /mnt/Storage/Files
-sudo btrfs subvolume create /mnt/Storage/Media
-sudo btrfs subvolume create /mnt/Storage/Recordings
-sudo btrfs subvolume create /mnt/Storage/Snapshots
-sudo btrfs subvolume create /mnt/Storage/Temp
 ```
 
 ## Generate Config and Install...
