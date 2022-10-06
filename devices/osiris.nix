@@ -75,7 +75,7 @@
   services.nfs.server = {
     enable = true;
     exports = ''
-      /Storage *(rw,insecure,no_root_squash,anonuid=1000,anongid=1000)
+      /Storage *(rw,anonuid=1000,anongid=100)
     '';
   };  
   
