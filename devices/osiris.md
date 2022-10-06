@@ -3,7 +3,7 @@
 ## Partition Boot Disks...
 ```bash
 lsblk
-sudo fdisk /dev/sda
+sudo fdisk /dev/nvme0n1
 g
 n
 default
@@ -21,7 +21,7 @@ w
 
 ```bash
 lsblk
-sudo fdisk /dev/sdb
+sudo fdisk /dev/nvme1n1
 g
 n
 default
@@ -40,39 +40,39 @@ w
 ## Remove Partitions on Storage Disks...
 ```bash
 lsblk
+sudo fdisk /dev/sda
+d
+w
+```
+
+```bash
+lsblk
+sudo fdisk /dev/sdb
+d
+w
+```
+
+```bash
+lsblk
 sudo fdisk /dev/sdc
-d
-w
-```
-
-```bash
-lsblk
-sudo fdisk /dev/sdd
-d
-w
-```
-
-```bash
-lsblk
-sudo fdisk /dev/sde
 d
 w
 ```
 
 ## Format Boot Disks...
 ```bash
-sudo mkfs.fat -F 32 -n boot /dev/sda1
-sudo mkfs.btrfs -m raid1 -d raid1  -L nixos /dev/sda2 /dev/sdb2
+sudo mkfs.fat -F 32 -n boot /dev/nvme0n1p1
+sudo mkfs.btrfs -L nixos -m raid1 -d raid1 /dev/nvme0n1p2 /dev/nvme1n1p2
 ```
 
 ## Format CCTV Disk...
 ```bash
-sudo mkfs.btrfs -L cctv /dev/sdc
+sudo mkfs.btrfs -L cctv /dev/sda
 ```
 
 ## Format Storage Disks...
 ```bash
-sudo mkfs.btrfs -L storage -m raid1 -d raid1 /dev/sdc /dev/sdd
+sudo mkfs.btrfs -L storage -m raid1 -d raid1 /dev/sdb /dev/sdc
 ```
 
 ## Create Boot Disk Subvolumes...
@@ -138,7 +138,7 @@ sudo configuration.nix
   imports =
     [
       ./hardware-configuration.nix
-      ./devices/isis.nix
+      ./devices/osiris.nix
     ];
 ```
 
@@ -154,4 +154,3 @@ sudo passwd root
 sudo passwd colin
 sudo reboot
 ```
-
