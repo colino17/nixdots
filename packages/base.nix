@@ -7,10 +7,16 @@
     wget
     curl
     rsync
-    nfs-utils
     unzip
     git
-    lm_sensors
+    nfs-utils
     usbutils
+    pciutils
+    lm_sensors
+    yt-dlp
+    ffmpeg
+    cmatrix
+    e2fsprogs
+    iperf
   ];
 }
