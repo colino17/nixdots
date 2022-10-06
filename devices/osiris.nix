@@ -34,39 +34,51 @@
 ############
 ## MOUNTS ##
 ############
-#  fileSystems."/Storage" = {
-#    device = "/dev/vg_storage/lv_storage";
-#    fsType = "ext4";
-#  };
-
-
-  fileSystems."/Storage/Recordings" =
-    { device = "/dev/sdb";
+  fileSystems."/Storage/Configs" =
+    { device = "/dev/nvme0n1p2";
       fsType = "btrfs";
-      options = [ "subvol=Recordings" ];
+      options = [ "compress=zstd" "subvol=Configs" ];
     };
 
+  fileSystems."/Storage/Files" =
+    { device = "/dev/sdb";
+      fsType = "btrfs";
+      options = [ "compress=zstd" "subvol=Files" ];
+    };
 
   fileSystems."/Storage/Media" =
     { device = "/dev/sdb";
       fsType = "btrfs";
-      options = [ "subvol=Media" ];
+      options = [ "compress=zstd" "subvol=Media" ];
     };
 
-  services.nfs.server.enable = true;
-  services.nfs.server.exports = ''
-    /Storage *(rw,insecure,no_root_squash,anonuid=1000,anongid=100)
-  '';
-  
-  
+  fileSystems."/Storage/Recordings" =
+    { device = "/dev/sdb";
+      fsType = "btrfs";
+      options = [ "compress=zstd" "subvol=Recordings" ];
+    };
 
-################
-### PACKAGES ###
-################
-  environment.systemPackages = with pkgs; [
-    yt-dlp
-    ffmpeg
-  ];
+  fileSystems."/Storage/Recordings/CCTV" =
+    { device = "/dev/sda";
+      fsType = "btrfs";
+      options = [ "compress=zstd" "subvol=root" ];
+    };
+
+  fileSystems."/Storage/Snapshots" =
+    { device = "/dev/sdb";
+      fsType = "btrfs";
+      options = [ "compress=zstd" "subvol=Snapshots" ];
+    };
+
+############
+## SHARES ##
+############
+  services.nfs.server = {
+    enable = true;
+    exports = ''
+      /Storage *(rw,insecure,no_root_squash,anonuid=1000,anongid=1000)
+    '';
+  };  
   
 ##############
 ### REBOOT ###
