@@ -9,6 +9,7 @@
       ../services/docker.nix
       ../services/nvidia.nix
       ../services/btrfs.nix
+      ../users/colin.nix
     ];
 
 ##################
