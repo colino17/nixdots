@@ -13,14 +13,6 @@
 #      ./devices/leviathan.nix
     ];
 
-#############
-### USERS ###
-#############
-  users.users.colin = {
-    isNormalUser = true;
-    extraGroups = [ "wheel" ];
-  };
-
 ################
 ### TIMEZONE ###
 ################
