@@ -5,6 +5,7 @@
     [
       ../packages/base.nix
       ../services/vpn.nix
+      ../users/colin.nix
     ];
 
 ##################
