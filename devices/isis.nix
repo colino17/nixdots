@@ -7,6 +7,7 @@
       ../services/uefi.nix
       ../services/mounts.nix
       ../services/btrfs.nix
+      ../users/colin.nix
     ];
 
 ##################
