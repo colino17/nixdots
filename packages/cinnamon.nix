@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 
 {
-  services.gnome.core-utilities.enable = false;
+  services.cinnamon.apps.enable = false;
   services.dbus.packages = [ pkgs.dconf ];
   
   services.xserver = {
@@ -11,13 +11,16 @@
   };
 
   environment.systemPackages = with pkgs; [
-    gnome.dconf-editor
+    thunderbird
+    evince
+    gnome-console
+    blueberry
+    gnome.file-roller
+    gnome.gnome-disk-utility
+    xed-editor
+    celluloid
   ];
   
-  environment.cinnamon.excludePackages = with pkgs; [
-    cinnamon.warpinator
-    cinnamon.pix
-    hexchat
-  ];
+
   
 }
