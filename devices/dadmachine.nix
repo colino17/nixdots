@@ -5,11 +5,8 @@
     [
       ../packages/base.nix
       ../packages/cinnamon.nix
-      ../packages/media.nix
-      ../packages/utilities.nix
       ../packages/web.nix
       ../services/vpn.nix
-      ../services/adb.nix
       ../services/sound.nix
       ../services/uefi.nix
       ../services/printing.nix
@@ -22,7 +19,16 @@
   networking = {
     hostName = "dadmachine";
   };
-  
+ 
+  environment.systemPackages = with pkgs; [
+    google-chrome
+    thunderbird
+    clipgrab
+    wpsoffice
+  ];
+
+  services.teamviewer.enable = true;
+
 ##############
 ### REBOOT ###
 ##############
