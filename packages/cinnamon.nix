@@ -11,8 +11,6 @@
   };
 
   environment.systemPackages = with pkgs; [
-    thunderbird
-    evince
     gnome-console
     blueberry
     gnome.file-roller
