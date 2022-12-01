@@ -4,6 +4,7 @@
   imports =
     [
       ./hardware-configuration.nix
+#      ./devices/dadmachine.nix
 #      ./devices/cerberus.nix
 #      ./devices/loki.nix
 #      ./devices/isis.nix
