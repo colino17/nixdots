@@ -12,7 +12,6 @@
       ../services/printing.nix
       ../services/mounts.nix
       ../users/dad.nix
-      ../home.nix
       (import "${builtins.fetchTarball https://github.com/nix-community/home-manager/archive/release-22.05.tar.gz}/nixos")
     ];
     
