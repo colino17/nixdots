@@ -53,7 +53,7 @@
 ##################################
 ### SYSTEM VERSION AND UPDATES ###
 ##################################
-  nix.autoOptimiseStore = true;
+  nix.settings.autoOptimiseStore = true;
   nix.gc = {
     automatic = true;
     dates = "daily";
