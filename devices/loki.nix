@@ -17,7 +17,7 @@
       ../services/teamviewer.nix
       ../users/colin.nix
       ../home.nix
-      (import "${builtins.fetchTarball https://github.com/nix-community/home-manager/archive/release-22.05.tar.gz}/nixos")
+      (import "${builtins.fetchTarball https://github.com/nix-community/home-manager/archive/master.tar.gz}/nixos")
     ];
     
   networking = {
