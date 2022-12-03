@@ -11,8 +11,9 @@
       ../services/uefi.nix
       ../services/printing.nix
       ../services/mounts.nix
+      ../services/teamviewer.nix
       ../users/dad.nix
-      (import "${builtins.fetchTarball https://github.com/nix-community/home-manager/archive/release-22.05.tar.gz}/nixos")
+      (import "${builtins.fetchTarball https://github.com/nix-community/home-manager/archive/master.tar.gz}/nixos")
     ];
     
   networking = {
@@ -25,8 +26,6 @@
     clipgrab
     wpsoffice
   ];
-
-  services.teamviewer.enable = true;
 
 ##############
 ### REBOOT ###
