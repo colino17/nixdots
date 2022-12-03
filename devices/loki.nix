@@ -14,6 +14,7 @@
       ../services/vfio.nix
       ../services/printing.nix
       ../services/mounts.nix
+      ../services/teamviewer.nix
       ../users/colin.nix
       ../home.nix
       (import "${builtins.fetchTarball https://github.com/nix-community/home-manager/archive/release-22.05.tar.gz}/nixos")
