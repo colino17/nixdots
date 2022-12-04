@@ -3,10 +3,11 @@
 Personal NIXOS device setup stack.
 
 ## TODO
-- Remove unwanted gnome apps (ex: gnome-tour)
 - Create .apps and .scripts folders
 - Pull down apps and scripts
-- Create device readmes
-- Investigate VFIO config
 - Investigate universal config variables
-- Add RDP stuff in gnome
+- Split homes
+- Reconfigure stateversions
+- Server setup
+- Backup server setup
+- Mini server setup
