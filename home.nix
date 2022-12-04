@@ -4,7 +4,7 @@
 ### VARIABLES ###
 #################
 let
-  varwall = "/home/colin/Pictures/Wallpapers/1080/offline.jpg";
+  varwall = "/home/colin/Pictures/Wallpapers/1080/triangles.png";
 in
 
 {
