@@ -80,9 +80,12 @@
     '';
   };  
   
-##############
-### REBOOT ###
-##############
-  system.autoUpgrade.allowReboot = true;
+##########################
+### VERSION AND REBOOT ###
+##########################
+  system = {
+    stateVersion = "22.05";
+    autoUpgrade.allowReboot = true;
+  };
   
 }
