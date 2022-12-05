@@ -36,9 +36,12 @@
     gdm.autoLogin.delay = 15;  
   };
 
-##############
-### REBOOT ###
-##############
-  system.autoUpgrade.allowReboot = false;
+##########################
+### VERSION AND REBOOT ###
+##########################
+  system = {
+    stateVersion = "22.05";
+    autoUpgrade.allowReboot = false;
+  };
 
 }
