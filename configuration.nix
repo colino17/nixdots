@@ -60,8 +60,11 @@
     options = "--delete-older-than 14d";
   };
   system = {
-    stateVersion = "22.05";
     autoUpgrade.enable = true;
     autoUpgrade.dates = "weekly";
+    autoUpgrade.rebootWindow = {
+      lower = "03:00";
+      upper = "05:00";
+    };
   };
 }
