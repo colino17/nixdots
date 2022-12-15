@@ -3,11 +3,11 @@
 {
   imports =
     [
-      ../packages/base.nix
-      ../packages/gnome.nix
-      ../packages/media.nix
-      ../packages/utilities.nix
-      ../packages/web.nix
+      ../services/base.nix
+      ../services/gnome.nix
+      ../services/media.nix
+      ../services/utilities.nix
+      ../services/web.nix
       ../services/vpn.nix
       ../services/adb.nix
       ../services/sound.nix
