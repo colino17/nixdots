@@ -3,7 +3,7 @@
 {
   imports =
     [
-      ../packages/base.nix
+      ../services/base.nix
       ../services/vpn.nix
       ../users/colin.nix
     ];
