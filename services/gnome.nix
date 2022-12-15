@@ -1,6 +1,7 @@
 { config, pkgs, ... }:
 
 {
+
   services.gnome.core-utilities.enable = false;
   services.dbus.packages = [ pkgs.dconf ];
   services.xserver = {
