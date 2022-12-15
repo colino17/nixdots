@@ -3,9 +3,9 @@
 {
   imports =
     [
-      ../packages/base.nix
-      ../packages/cinnamon.nix
-      ../packages/web.nix
+      ../services/base.nix
+      ../services/cinnamon.nix
+      ../services/web.nix
       ../services/vpn.nix
       ../services/sound.nix
       ../services/uefi.nix
