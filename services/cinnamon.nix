@@ -1,6 +1,7 @@
 { config, pkgs, ... }:
 
 {
+
   services.cinnamon.apps.enable = false;
   services.dbus.packages = [ pkgs.dconf ];
   
@@ -18,7 +19,5 @@
     xed-editor
     celluloid
   ];
-  
-
-  
+   
 }

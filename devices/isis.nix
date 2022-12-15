@@ -3,7 +3,7 @@
 {
   imports =
     [
-      ../packages/base.nix
+      ../services/base.nix
       ../services/uefi.nix
       ../services/mounts.nix
       ../services/btrfs.nix
