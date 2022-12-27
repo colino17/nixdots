@@ -7,7 +7,6 @@ Personal NIXOS device setup stack.
 - Pull down apps and scripts
 - Investigate universal config variables
 - Split homes
-- Reconfigure stateversions
 - Server setup
 - Backup server setup
 - Mini server setup
