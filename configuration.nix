@@ -47,7 +47,6 @@
     poweroff = "sudo poweroff";
     shutdown = "sudo shutdown";
     mount = "sudo mount";
-    fuck = "sudo !!";
     upgrade = "upgrade() { sudo nix-channel --add https://nixos.org/channels/nixos-$1 nixos ;}; upgrade";
   };
 
