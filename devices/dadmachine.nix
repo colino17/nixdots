@@ -10,6 +10,7 @@
       ../services/bios.nix
       ../services/printing.nix
       ../services/teamviewer.nix
+      ../services/shotwell.nix
       ../users/dad.nix
       (import "${builtins.fetchTarball https://github.com/nix-community/home-manager/archive/master.tar.gz}/nixos")
     ];
@@ -19,7 +20,7 @@
   };
  
   environment.systemPackages = with pkgs; [
-    google-chrome
+    firefox
     thunderbird
     clipgrab
     wpsoffice
