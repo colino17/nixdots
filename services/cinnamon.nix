@@ -23,6 +23,7 @@
         volumes-visible = false
       '';
     };
+  };
 
   environment.systemPackages = with pkgs; [
     gnome-console
