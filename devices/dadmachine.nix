@@ -7,7 +7,7 @@
       ../services/cinnamon.nix
       ../services/vpn.nix
       ../services/sound.nix
-      ../services/uefi.nix
+      ../services/bios.nix
       ../services/printing.nix
       ../services/teamviewer.nix
       ../users/dad.nix
