@@ -18,6 +18,9 @@
   networking = {
     hostName = "dadmachine";
   };
+  
+  services.xserver.displayManager.autoLogin.enable = true;
+  services.xserver.displayManager.autoLogin.user = "dad";
  
   environment.systemPackages = with pkgs; [
     firefox
