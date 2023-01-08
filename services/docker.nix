@@ -25,6 +25,17 @@
         "/var/run/docker.sock:/var/run/docker.sock"
       ];
     };
+    glances = {
+      image = "nicolargo/glances:latest-alpine";
+      autoStart = true;
+      ports = [
+        "61208:61208"
+        "61209:61209"
+      ];
+      environment = {
+        GLANCES_OPT = "-w";
+      };
+    };
     autoheal = {
       image = "willfarrell/autoheal:latest";
       autoStart = true;
