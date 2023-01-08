@@ -34,15 +34,21 @@
 ## MOUNTS ##
 ############
   fileSystems."/" =
-    { device = "/dev/sda";
+    { device = "/dev/sda1";
       fsType = "btrfs";
       options = [ "compress=zstd" "subvol=root" ];
     };
-
-  fileSystems."/Recordings/CCTV" =
-    { device = "/dev/sda";
+    
+  fileSystems."/Storage/Configs" =
+    { device = "/dev/sda1";
       fsType = "btrfs";
-      options = [ "compress=zstd" "subvol=Recordings" ];
+      options = [ "compress=zstd" "subvol=Storage/Configs" ];
+    }; 
+
+  fileSystems."/Storage/CCTV" =
+    { device = "/dev/sda1";
+      fsType = "btrfs";
+      options = [ "compress=zstd" "subvol=Storage/Recordings" ];
     };
 
 ############
