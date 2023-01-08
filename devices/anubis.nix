@@ -34,19 +34,19 @@
 ## MOUNTS ##
 ############
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/0d537243-dfee-4db9-b317-a798-d030c380";
+    { device = "/dev/disk/by-uuid/0d537243-dfee-4db9-b317-a798d030c380";
       fsType = "btrfs";
       options = [ "compress=zstd" "subvol=root" ];
     };
     
   fileSystems."/Storage/Configs" =
-    { device = "/dev/disk/by-uuid/0d537243-dfee-4db9-b317-a798-d030c380";
+    { device = "/dev/disk/by-uuid/0d537243-dfee-4db9-b317-a798d030c380";
       fsType = "btrfs";
       options = [ "compress=zstd" "subvol=Storage/Configs" ];
     }; 
 
   fileSystems."/Storage/CCTV" =
-    { device = "/dev/disk/by-uuid/0d537243-dfee-4db9-b317-a798-d030c380";
+    { device = "/dev/disk/by-uuid/0d537243-dfee-4db9-b317-a798d030c380";
       fsType = "btrfs";
       options = [ "compress=zstd" "subvol=Storage/Recordings" ];
     };
