@@ -47,7 +47,7 @@
   fileSystems."/Storage/CCTV" =
     { device = "/dev/disk/by-label/nixos";
       fsType = "btrfs";
-      options = [ "compress=zstd" "subvol=Recordings" ];
+      options = [ "compress=zstd" "subvol=CCTV" ];
     };
 
 ############
