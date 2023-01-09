@@ -7,6 +7,7 @@
       ../services/uefi.nix
       ../services/vpn.nix
       ../services/docker.nix
+      ../services/docker-nvidia.nix
       ../services/nvidia.nix
       ../services/btrfs.nix
       ../users/colin.nix
