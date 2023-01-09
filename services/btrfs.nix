@@ -9,10 +9,12 @@
     btrbk
   ];
   
+  services.btrfs.autoScrub = {
+    enable = true;
+    interval = "weekly";
+  };
   
-  
-  ### SNAPPER SERVICE??
-  ### BTRBK SERVICE??
-  
-  
+#############
+### BTRBK ###
+#############
 }
