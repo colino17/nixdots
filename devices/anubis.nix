@@ -41,13 +41,13 @@
   fileSystems."/Storage/Configs" =
     { device = "/dev/disk/by-label/nixos";
       fsType = "btrfs";
-      options = [ "compress=zstd" "subvol=Storage/Configs" ];
+      options = [ "compress=zstd" "subvol=Configs" ];
     }; 
 
   fileSystems."/Storage/CCTV" =
     { device = "/dev/disk/by-label/nixos";
       fsType = "btrfs";
-      options = [ "compress=zstd" "subvol=Storage/Recordings" ];
+      options = [ "compress=zstd" "subvol=Recordings" ];
     };
 
 ############
