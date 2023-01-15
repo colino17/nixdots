@@ -56,7 +56,7 @@
   services.nfs.server = {
     enable = true;
     exports = ''
-      /Recordings/CCTV *(rw,anonuid=1000,anongid=100)
+      /Storage/CCTV *(rw,anonuid=1000,anongid=100)
     '';
   };  
   
