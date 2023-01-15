@@ -82,10 +82,16 @@
 ############
 ## SHARES ##
 ############
+  networking.firewall.allowedTCPPorts = [ 2049 ];
   services.nfs.server = {
     enable = true;
+    createMountPoints = true;
     exports = ''
-      /Storage *(rw,anonuid=1000,anongid=100)
+      /Storage *(ro,no_subtree_check,fsid=0)
+      /Storage/Configs *(fsid=111,rw,sync,no_subtree_check)
+      /Storage/Files *(fsid=222,rw,sync,no_subtree_check)
+      /Storage/Media *(fsid=333,rw,sync,no_subtree_check)
+      /Storage/Recordings *(fsid=444,rw,sync,no_subtree_check)
     '';
   };  
   
