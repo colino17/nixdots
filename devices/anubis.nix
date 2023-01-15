@@ -53,9 +53,12 @@
 ############
 ## SHARES ##
 ############
+  networking.firewall.allowedTCPPorts = [ 2049 ];
   services.nfs.server = {
     enable = true;
+    createMountPoints = true;
     exports = ''
+      /Storage *(ro,no_subtree_check,fsid=0)
       /Storage/CCTV *(fsid=555,rw,sync,no_subtree_check)
     '';
   };  
