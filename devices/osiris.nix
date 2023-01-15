@@ -16,9 +16,6 @@
 ##################
 ### NETWORKING ###
 ##################
-
-
-
   networking = {
     interfaces.enp0s25.wakeOnLan.enable = true;
     useDHCP = false;
@@ -47,38 +44,37 @@
 ############
 ## MOUNTS ##
 ############
+  fileSystems."/" =
+    { fsType = "btrfs";
+      options = [ "compress=zstd" "subvol=root" ];
+    };
+    
   fileSystems."/Storage/Configs" =
-    { device = "/dev/nvme0n1p2";
+    { device = "/dev/disk/by-label/nixos";
       fsType = "btrfs";
       options = [ "compress=zstd" "subvol=Configs" ];
     };
 
   fileSystems."/Storage/Files" =
-    { device = "/dev/sdb";
+    { device = "/dev/disk/by-label/storage";
       fsType = "btrfs";
       options = [ "compress=zstd" "subvol=Files" ];
     };
 
   fileSystems."/Storage/Media" =
-    { device = "/dev/sdb";
+    { device = "/dev/disk/by-label/storage";
       fsType = "btrfs";
       options = [ "compress=zstd" "subvol=Media" ];
     };
 
   fileSystems."/Storage/Recordings" =
-    { device = "/dev/sdb";
+    { device = "/dev/disk/by-label/recordings";
       fsType = "btrfs";
       options = [ "compress=zstd" "subvol=Recordings" ];
     };
 
-  fileSystems."/Storage/Recordings/CCTV" =
-    { device = "/dev/sda";
-      fsType = "btrfs";
-      options = [ "compress=zstd" "subvol=root" ];
-    };
-
   fileSystems."/Storage/Snapshots" =
-    { device = "/dev/sdb";
+    { device = "/dev/disk/by-label/storage";
       fsType = "btrfs";
       options = [ "compress=zstd" "subvol=Snapshots" ];
     };
