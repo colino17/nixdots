@@ -65,9 +65,9 @@ sudo mkfs.fat -F 32 -n boot /dev/nvme0n1p1
 sudo mkfs.btrfs -L nixos -m raid1 -d raid1 /dev/nvme0n1p2 /dev/nvme1n1p2
 ```
 
-## Format CCTV Disk...
+## Format Recordings Disk...
 ```bash
-sudo mkfs.btrfs -L cctv /dev/sda
+sudo mkfs.btrfs -L recordings /dev/sda
 ```
 
 ## Format Storage Disks...
@@ -78,6 +78,7 @@ sudo mkfs.btrfs -L storage -m raid1 -d raid1 /dev/sdb /dev/sdc
 ## Create Boot Disk Subvolumes...
 ```bash
 sudo mount /dev/disk/by-label/nixos /mnt
+sudo btrfs subvolume create /mnt/root
 sudo btrfs subvolume create /mnt/Configs
 sudo umount /mnt
 ```
@@ -87,8 +88,15 @@ sudo umount /mnt
 sudo mount /dev/disk/by-label/storage /mnt
 sudo btrfs subvolume create /mnt/Files
 sudo btrfs subvolume create /mnt/Media
-sudo btrfs subvolume create /mnt/Recordings
 sudo btrfs subvolume create /mnt/Snapshots
+sudo umount /mnt
+```
+
+
+## Create Storage Disk Subvolumes...
+```bash
+sudo mount /dev/disk/by-label/recordings /mnt
+sudo btrfs subvolume create /mnt/Recordings
 sudo umount /mnt
 ```
 
