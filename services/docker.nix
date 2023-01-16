@@ -20,7 +20,7 @@
         "9443:9443"
       ];
       volumes = [
-        "/Configs/portainer:/data"
+        "/Storage/Configs/portainer:/data"
         "/var/run/docker.sock:/var/run/docker.sock"
       ];
     };
