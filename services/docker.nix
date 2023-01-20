@@ -36,7 +36,7 @@
       };
     };
     autoheal = {
-      image = "willfarrell/autoheal:latest";
+      image = "willfarrell/autoheal@sha256:d5a004f6ab41371b3562339d0ca4c03765082fc744a28e4049dd42ac418d60c5";
       autoStart = true;
       volumes = [
         "/var/run/docker.sock:/var/run/docker.sock"
