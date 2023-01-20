@@ -37,17 +37,6 @@
       };
       extraOptions = [ "--pull=always" ];
     };
-    autoheal = {
-      image = "willfarrell/autoheal:latest";
-      autoStart = true;
-      volumes = [
-        "/var/run/docker.sock:/var/run/docker.sock"
-      ];
-      environment = {
-        AUTOHEAL_CONTAINER_LABEL = "all";
-      };
-      extraOptions = [ "--pull=always" ];
-    };
   };
   
 }
