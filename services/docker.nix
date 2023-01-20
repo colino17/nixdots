@@ -23,6 +23,7 @@
         "/Storage/Configs/portainer:/data"
         "/var/run/docker.sock:/var/run/docker.sock"
       ];
+      extraOptions = [ "--pull=always" ];
     };
     glances = {
       image = "nicolargo/glances:latest-alpine";
@@ -34,6 +35,7 @@
       environment = {
         GLANCES_OPT = "-w";
       };
+      extraOptions = [ "--pull=always" ];
     };
     autoheal = {
       image = "willfarrell/autoheal@sha256:d5a004f6ab41371b3562339d0ca4c03765082fc744a28e4049dd42ac418d60c5";
@@ -44,6 +46,7 @@
       environment = {
         AUTOHEAL_CONTAINER_LABEL = "all";
       };
+      extraOptions = [ "--pull=always" ];
     };
   };
   
