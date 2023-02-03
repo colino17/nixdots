@@ -162,3 +162,9 @@ sudo passwd root
 sudo passwd colin
 sudo reboot
 ```
+
+## Start Tailscale...
+```bash
+sudo tailscale up
+sudo reboot
+```
