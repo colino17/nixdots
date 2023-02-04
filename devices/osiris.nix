@@ -82,7 +82,7 @@
 ############
 ## SHARES ##
 ############
-  networking.firewall.allowedTCPPorts = [ 2049 ];
+  networking.firewall.allowedTCPPorts = [ 2049 8123 ];
   services.nfs.server = {
     enable = true;
     createMountPoints = true;
