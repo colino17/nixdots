@@ -17,6 +17,7 @@
 ### NETWORKING ###
 ##################
   networking = {
+    firewall.allowedTCPPorts = [ 2049 1883 8123 ];
     interfaces.enp0s25.wakeOnLan.enable = true;
     useDHCP = false;
     bonds.bond0 = {
@@ -40,7 +41,7 @@
     ];
     hostName = "osiris";
   };
-  
+
 ############
 ## MOUNTS ##
 ############
@@ -82,7 +83,6 @@
 ############
 ## SHARES ##
 ############
-  networking.firewall.allowedTCPPorts = [ 2049 8123 ];
   services.nfs.server = {
     enable = true;
     createMountPoints = true;
