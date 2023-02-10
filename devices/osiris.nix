@@ -102,19 +102,22 @@
     local = {
       onCalendar = "hourly";
       settings = {
-        volume."/" = {
-          snapshot_dir = "/Storage/Snapshots";
-          subvolume."Configs" = {
-            snapshot_create = "onchange";
-            snapshot_preserve = "7d 3w 2m";
-            snapshot_preserve_min = "1d";
-          };
-          subvolume."Media" = {
-            snapshot_create = "onchange";
-            snapshot_preserve = "7d 3w 2m";
-            snapshot_preserve_min = "1d";
-          };
-        };
+        snapshot_dir = "/Storage/Snapshots";
+        snapshot_preserve_min = "1d";
+        snapshot_create = "always";
+        snapshot_preserve = "7d 3w 2m";
+        subvolume."/Storage/Files" = { };
+        subvolume."/Storage/Media" = { };
+      };
+    };
+    config = {
+      onCalendar = "hourly";
+      settings = {
+        snapshot_dir = "/.snapshots";
+        snapshot_preserve_min = "1d";
+        snapshot_create = "always";
+        snapshot_preserve = "4d 2w 1m";
+        subvolume."/Storage/Configs" = { };
       };
     };
   };
