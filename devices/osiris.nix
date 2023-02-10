@@ -103,7 +103,7 @@
       onCalendar = "hourly";
       settings = {
         volume."/" = {
-          snapshot_dir = "/Storage/Snapshots"
+          snapshot_dir = "/Storage/Snapshots";
           subvolume = "Configs" = {
             snapshot_create = "onchange";
             snapshot_preserve = "7d 3w 2m";
