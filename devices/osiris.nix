@@ -95,6 +95,30 @@
     '';
   };  
   
+#############
+## BACKUPS ##
+#############
+  services.btrbk.instances = {
+    local = {
+      onCalendar = "hourly";
+      settings = {
+        volume."/" = {
+          snapshot_dir = "/Storage/Snapshots"
+          subvolume = "Configs" = {
+            snapshot_create = "onchange";
+            snapshot_preserve = "7d 3w 2m";
+            snapshot_preserve_min = "1d";
+          };
+          subvolume = "Media" = {
+            snapshot_create = "onchange";
+            snapshot_preserve = "7d 3w 2m";
+            snapshot_preserve_min = "1d";
+          };
+        };
+      };
+    };
+  };
+  
 ##########################
 ### VERSION AND REBOOT ###
 ##########################
