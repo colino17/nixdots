@@ -104,12 +104,12 @@
       settings = {
         volume."/" = {
           snapshot_dir = "/Storage/Snapshots";
-          subvolume = "Configs" = {
+          subvolume."Configs" = {
             snapshot_create = "onchange";
             snapshot_preserve = "7d 3w 2m";
             snapshot_preserve_min = "1d";
           };
-          subvolume = "Media" = {
+          subvolume."Media" = {
             snapshot_create = "onchange";
             snapshot_preserve = "7d 3w 2m";
             snapshot_preserve_min = "1d";
