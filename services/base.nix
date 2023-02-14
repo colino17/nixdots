@@ -18,5 +18,6 @@
     cmatrix
     e2fsprogs
     iperf
+    tmux
   ];
 }
