@@ -100,10 +100,10 @@
 #############
   services.btrbk.instances = {
     local = {
-      onCalendar = "hourly";
+      onCalendar = "daily";
       settings = {
         snapshot_dir = "/Storage/Snapshots";
-        snapshot_preserve_min = "1d";
+        snapshot_preserve_min = "2d";
         snapshot_create = "always";
         snapshot_preserve = "7d 3w 2m";
         subvolume."/Storage/Files" = { };
@@ -111,12 +111,12 @@
       };
     };
     config = {
-      onCalendar = "hourly";
+      onCalendar = "daily";
       settings = {
         snapshot_dir = "/.snapshots";
-        snapshot_preserve_min = "1d";
+        snapshot_preserve_min = "2d";
         snapshot_create = "always";
-        snapshot_preserve = "4d 2w 1m";
+        snapshot_preserve = "7d 3w 2m";
         subvolume."/Storage/Configs" = { };
       };
     };
