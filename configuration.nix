@@ -7,6 +7,7 @@
 #      ./devices/dadmachine.nix
 #      ./devices/cerberus.nix
 #      ./devices/loki.nix
+#      ./devices/loki-alt.nix
 #      ./devices/isis.nix
 #      ./devices/osiris.nix
 #      ./devices/heimdall.nix
