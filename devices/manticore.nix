@@ -30,6 +30,8 @@
     asusctl
   ];
   
+  services.asusd.enable = true;
+  
 ##########################
 ### VERSION AND REBOOT ###
 ##########################
