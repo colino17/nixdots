@@ -3,18 +3,20 @@
 {
   imports =
     [
+      ../services/adb.nix
       ../services/base.nix
+      ../services/btrfs.nix
+      ../services/games.nix
       ../services/gnome.nix
       ../services/media.nix
-      ../services/utilities.nix
-      ../services/web.nix
-      ../services/vpn.nix
-      ../services/adb.nix
-      ../services/sound.nix
-      ../services/games.nix
-      ../services/uefi.nix
-      ../services/printing.nix
       ../services/mounts.nix
+      ../services/nvidia.nix
+      ../services/sound.nix
+      ../services/teamviewer.nix
+      ../services/utilities.nix
+      ../services/uefi.nix
+      ../services/vpn.nix
+      ../services/web.nix
       ../users/colin.nix
       ../home.nix
       (import "${builtins.fetchTarball https://github.com/nix-community/home-manager/archive/release-22.05.tar.gz}/nixos")
@@ -23,6 +25,10 @@
   networking = {
     hostName = "manticore";
   };
+  
+  environment.systemPackages = with pkgs; [
+    asusctl
+  ];
   
 ##########################
 ### VERSION AND REBOOT ###
