@@ -4,6 +4,7 @@
   imports =
     [
       ../services/base.nix
+      ../services/easyeffects.nix
       ../services/gnome.nix
       ../services/media.nix
       ../services/utilities.nix
