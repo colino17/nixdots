@@ -89,8 +89,8 @@ in
         "disable-user-extensions" = false;
         "enabled-extensions" = [
           "places-menu@gnome-shell-extensions.gcampax.github.com"
+          "tailscale-status@maxgallup.github.com"
           "Vitals@CoreCoding.com"
-          "tailscale-status@colino17.github.com"
         ];
       };
       "org/gnome/mutter" = {
@@ -180,13 +180,6 @@ in
       source = /etc/nixos/wallpapers;
       recursive = true;
     };
-    
-##############################
-### TAILSCALE GNOME STATUS ###
-##############################   
-     home.file.".local/share/gnome-shell/extensions/tailscale-status@colino17.github.com/extension.js".source = (builtins.fetchurl { url ="https://raw.githubusercontent.com/colino17/tailscale-status/main/tailscale-status@colino17.github.com/extension.js"; });    
-     home.file.".local/share/gnome-shell/extensions/tailscale-status@colino17.github.com/metadata.json".source = (builtins.fetchurl { url ="https://raw.githubusercontent.com/colino17/tailscale-status/main/tailscale-status@colino17.github.com/metadata.json"; });
-     home.file.".local/share/gnome-shell/extensions/tailscale-status@colino17.github.com/icon.svg".source = (builtins.fetchurl { url ="https://raw.githubusercontent.com/colino17/tailscale-status/main/tailscale-status@colino17.github.com/icon.svg"; });
-    
+
   };   
 }  
