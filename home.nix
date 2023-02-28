@@ -89,6 +89,7 @@ in
         "disable-user-extensions" = false;
         "enabled-extensions" = [
           "places-menu@gnome-shell-extensions.gcampax.github.com"
+          "trayIconsReloaded@selfmade.pl"
           "tailscale-status@maxgallup.github.com"
           "Vitals@CoreCoding.com"
         ];
