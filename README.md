@@ -9,4 +9,3 @@ Personal NIXOS device setup stack.
 - Split homes
 - Server setup
 - Backup server setup
-- Mini server setup
