@@ -4,16 +4,15 @@
   imports =
     [
       ./hardware-configuration.nix
+# Workstations
 #      ./devices/dadmachine.nix
-#      ./devices/cerberus.nix
 #      ./devices/loki.nix
-#      ./devices/loki-alt.nix
-#      ./devices/isis.nix
-#      ./devices/osiris.nix
-#      ./devices/heimdall.nix
 #      ./devices/manticore.nix
 #      ./devices/leviathan.nix
+# Servers
+#      ./devices/osiris.nix
 #      ./devices/anubis.nix
+#      ./devices/isis.nix
     ];
 
 ################
