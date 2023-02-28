@@ -10,9 +10,10 @@
       ../services/gnome.nix
       ../services/media.nix
       ../services/mounts.nix
-      ../services/nvidia.nix
+      ../services/nvidia-mobile.nix
       ../services/sound.nix
       ../services/teamviewer.nix
+      ../services/tlp.nix
       ../services/utilities.nix
       ../services/uefi.nix
       ../services/vpn.nix
@@ -25,12 +26,6 @@
   networking = {
     hostName = "manticore";
   };
-  
-  environment.systemPackages = with pkgs; [
-    asusctl
-  ];
-  
-  services.asusd.enable = true;
   
 ##########################
 ### VERSION AND REBOOT ###
