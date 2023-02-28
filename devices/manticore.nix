@@ -6,7 +6,7 @@
       ../services/adb.nix
       ../services/base.nix
       ../services/btrfs.nix
-      ../services/games.nix
+      ../services/flatpak.nix
       ../services/gnome.nix
       ../services/media.nix
       ../services/mounts.nix
