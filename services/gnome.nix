@@ -23,6 +23,7 @@
     celluloid
     evince
     gnomeExtensions.vitals
+    gnomeExtensions.tray-icons-reloaded
   ];
   
   environment.gnome.excludePackages = with pkgs; [
