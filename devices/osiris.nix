@@ -105,7 +105,7 @@
         snapshot_dir = "/Storage/Snapshots";
         snapshot_preserve_min = "2d";
         snapshot_create = "always";
-        snapshot_preserve = "7d 3w 2m";
+        snapshot_preserve = "3d 2w 2m";
         subvolume."/Storage/Files" = { };
         subvolume."/Storage/Media" = { };
       };
@@ -116,7 +116,7 @@
         snapshot_dir = "/.snapshots";
         snapshot_preserve_min = "2d";
         snapshot_create = "always";
-        snapshot_preserve = "7d 3w 2m";
+        snapshot_preserve = "3d 2w 2m";
         subvolume."/Storage/Configs" = { };
       };
     };
