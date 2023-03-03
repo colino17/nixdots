@@ -84,7 +84,7 @@ in
           "org.gnome.Console.desktop"
           "com.github.iwalton3.jellyfin-media-player.desktop"
           "discord.desktop"
-          "steam.desktop"
+          "com.valvesoftware.Steam.desktop"
         ];
         "disable-user-extensions" = false;
         "enabled-extensions" = [
