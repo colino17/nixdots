@@ -34,6 +34,6 @@
     ''
       [org.gnome.nautilus.list-view]
       default-visible-columns="['name', 'size', 'detailed_type', 'date_modified_with_time']"
-    ''
+    '';
 
 }
