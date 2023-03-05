@@ -111,6 +111,14 @@ in
       "org/gnome/desktop/sound" = {
         "allow-volume-above-100-percent" = true;
       };
+      "org/gnome/nautilus/list-view" = {
+        "default-visible-columns" = [
+          "name"
+          "size"
+          "detailed_type"
+          date_modified_with_time
+        ];
+      };
     };
     
 ################
