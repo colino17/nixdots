@@ -116,7 +116,7 @@ in
           "name"
           "size"
           "detailed_type"
-          date_modified_with_time
+          "date_modified_with_time"
         ];
       };
     };
