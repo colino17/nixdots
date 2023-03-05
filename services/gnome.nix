@@ -36,8 +36,4 @@
       default-visible-columns="['name', 'size', 'detailed_type', 'date_modified_with_time']"
     ''
 
-  
- 
-  
-  
 }
