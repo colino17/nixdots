@@ -29,11 +29,5 @@
   environment.gnome.excludePackages = with pkgs; [
     gnome-tour
   ];
-  
-  services.xserver.desktopManager.gnome.extraGSettingsOverrides = 
-    ''
-      [org.gnome.nautilus.list-view]
-      default-visible-columns="['name', 'size', 'detailed_type', 'date_modified_with_time']"
-    '';
 
 }
