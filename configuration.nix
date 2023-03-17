@@ -9,6 +9,7 @@
 #      ./devices/loki.nix
 #      ./devices/manticore.nix
 #      ./devices/leviathan.nix
+#      ./devices/maui.nix
 # Servers
 #      ./devices/osiris.nix
 #      ./devices/anubis.nix
