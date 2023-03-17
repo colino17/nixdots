@@ -6,8 +6,9 @@
   };
   
   services.xserver.videoDrivers = [ "amdgpu" ];
-  hardare.opengl = {
+  hardware.opengl = {
     enable = true;
+    driSupport = true;
     driSupport32Bit = true;
     extraPackages = with pkgs; [
       amdvlk
