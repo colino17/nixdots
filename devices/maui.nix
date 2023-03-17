@@ -9,8 +9,8 @@
       ../services/bluetooth.nix
       ../services/btrfs.nix
       ../services/flatpak.nix
-      ../services/gnome.nix
       ../services/mounts.nix
+      ../services/plasma.nix
       ../services/sound.nix
       ../services/web.nix
       ../users/colin.nix
@@ -18,7 +18,7 @@
     
   networking = {
     hostName = "maui";
-    interfaces.enp7s0.wakeOnLan.enable = true;
+    interfaces.enp3s0.wakeOnLan.enable = true;
   };
 
 ################
@@ -29,7 +29,6 @@
       enable = true;
       user = "colin";
     };
-    gdm.autoLogin.delay = 5;  
   };
 
 ##########################
