@@ -7,10 +7,10 @@
       ../services/base.nix
       ../services/bios.nix
       ../services/bluetooth.nix
-      ../services/btrfs.nix
-      ../services/flatpak.nix
+#      ../services/btrfs.nix
+#      ../services/flatpak.nix
       ../services/mounts.nix
-      ../services/plasma.nix
+      ../services/gnome.nix
       ../services/sound.nix
       ../services/web.nix
       ../users/colin.nix
@@ -29,6 +29,7 @@
       enable = true;
       user = "colin";
     };
+    gdm.autoLogin.delay = 15;  
   };
 
 ##########################
