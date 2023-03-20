@@ -12,6 +12,7 @@
       ../services/mounts.nix
       ../services/gnome.nix
       ../services/sound.nix
+      ../services/steamos.nix
       ../services/web.nix
       ../users/colin.nix
     ];
