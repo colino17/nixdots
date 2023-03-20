@@ -26,7 +26,7 @@
         start = "gamescope -e -f -h 1080 -H 1080 -r 60 -- steam --gamepadui --steamos";
       }
     ];
-    defaultSession = "gamescope"
+    defaultSession = "gamescope";
   };
 
 }
