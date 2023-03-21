@@ -1,5 +1,74 @@
-## Install NixOS...
-Complete the partitioning and install NixOS 22.05 using the new GUI installer.
+# MAUI - SteamOS GameBox
+
+## Partition Boot Disk...
+```bash
+lsblk
+sudo fdisk /dev/sda
+o
+n
+p
+default
+default
+default
+a
+1
+w
+```
+
+## Remove Partitions on Storage Disks...
+```bash
+lsblk
+sudo fdisk /dev/sdb
+d
+w
+
+sudo wipefs -a -f /dev/sdb
+```
+
+```bash
+lsblk
+sudo fdisk /dev/sdc
+d
+w
+
+sudo wipefs -a -f /dev/sdc
+```
+
+## Format Boot Disks...
+```bash
+sudo mkfs.btrfs -L nixos /dev/sda1
+```
+
+## Format Backup Disks...
+```bash
+sudo mkfs.btrfs -L backup -m raid1 -d single /dev/sdb /dev/sdc
+```
+
+## Create Boot Disk Subvolumes...
+```bash
+sudo mount /dev/disk/by-label/nixos /mnt
+sudo btrfs subvolume create /mnt/root
+sudo btrfs subvolume create /mnt/Games
+sudo umount /mnt
+```
+
+## Create Backup Disk Subvolumes...
+```bash
+sudo mount /dev/disk/by-label/backup /mnt
+sudo btrfs subvolume create /mnt/Files
+sudo btrfs subvolume create /mnt/Media
+sudo umount /mnt
+```
+
+## Mount Disks...
+```bash
+sudo mount -o compress=zstd,subvol=root /dev/disk/by-label/nixos /mnt
+```
+
+## Generate Config and Install...
+```bash
+sudo nixos-generate-config --root /mnt
+```
 
 ## Add packages to config...
 ```
@@ -7,6 +76,7 @@ sudo nano /mnt/etc/nixos/configuration.nix
 ```
 
 ```
+  boot.loader.grub.device = /dev/sda
   environment.systemPackages = with pkgs; [
     wget
     rsync
@@ -15,7 +85,7 @@ sudo nano /mnt/etc/nixos/configuration.nix
 ```
 
 ```
-sudo nixos-rebuild switch
+sudo nixos-install
 sudo reboot
 ```
 
