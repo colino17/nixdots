@@ -16,7 +16,7 @@
     pcsx2
     dolphin-emu
     mupen64plus
-    snes9x
+    snes9x-gtk
   ];
 
 ## GAMESCOPE SESSION ##
@@ -24,11 +24,11 @@
     session = [
       {
         manage = "desktop";
-        name = "gamescope";
+        name = "Gamescope";
         start = "gamescope -e -f -h 1080 -H 1080 -r 60 -- steam --gamepadui --steamos";
       }
     ];
-    defaultSession = "gamescope";
+    defaultSession = "Gamescope";
   };
 
 }
