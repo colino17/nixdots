@@ -11,6 +11,7 @@
       ../services/media.nix
       ../services/mounts.nix
       ../services/nvidia-mobile.nix
+      ../services/printing.nix
       ../services/sound.nix
       ../services/teamviewer.nix
       ../services/tlp.nix
