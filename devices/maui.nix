@@ -7,8 +7,7 @@
       ../services/base.nix
       ../services/bios.nix
       ../services/bluetooth.nix
-#      ../services/btrfs.nix
-#      ../services/flatpak.nix
+      ../services/btrfs.nix
       ../services/mounts.nix
       ../services/gnome.nix
       ../services/sound.nix
@@ -17,10 +16,50 @@
       ../users/colin.nix
     ];
     
+##################
+### NETWORKING ###
+################## 
   networking = {
     hostName = "maui";
-    interfaces.enp3s0.wakeOnLan.enable = true;
+    interfaces.enp3s0 = {
+      wakeOnLan.enable = true;
+      ipv4.addresses = [ {
+        address = "10.17.80.99";
+        prefixLength = 24;
+      } ];
+    };
+    defaultGateway = "10.17.80.1";
+    nameservers = [
+      "8.8.8.8"
+      "1.1.1.1"
+    ];
   };
+  
+############
+## MOUNTS ##
+############
+  fileSystems."/" =
+    { fsType = "btrfs";
+      options = [ "compress=zstd" "subvol=root" ];
+    };
+    
+  fileSystems."/Games" =
+    { device = "/dev/disk/by-label/nixos";
+      fsType = "btrfs";
+      options = [ "compress=zstd" "subvol=Games" ];
+    };
+
+  fileSystems."/Backup/Files" =
+    { device = "/dev/disk/by-label/backup";
+      fsType = "btrfs";
+      options = [ "compress=zstd" "subvol=Files" ];
+    };
+
+  fileSystems."/Backup/Media" =
+    { device = "/dev/disk/by-label/backup";
+      fsType = "btrfs";
+      options = [ "compress=zstd" "subvol=Media" ];
+    };
 
 ################
 ## AUTO LOGIN ##
