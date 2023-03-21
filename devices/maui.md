@@ -43,14 +43,15 @@ sudo configuration.nix
 sudo nixos-rebuild switch
 ```
 
-## Install Flatpaks
-```bash
-flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-flatpak install flathub com.valvesoftware.Steam
-flatpak install flathub com.valvesoftware.Steam.Utility.MangoHud
-flatpak install flathub com.valvesoftware.Steam.Utility.gamescope
-flatpak install flathub com.steamgriddb.SGDBoop
-
-```
-
+## PS2 GAMES
+### PCSX2 Settings
+- General > BIOS > Set Path
+- General > Folders > Cheats
+- General > GS Window > Aspect Ratio > 16:9
+- General > GS Window > Fullscreen
+- Graphics > Renderer > Internal Resolution > 1080p
+- Gamepad > Gamepad Configuration > Dualshock 4
+### Add to Steam
+- Launch Parameter = "pcsx2 path/to/game/iso"
+- Add custom artwork, custom background, and custom logo
 
