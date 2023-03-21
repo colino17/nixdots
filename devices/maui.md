@@ -54,4 +54,13 @@ sudo nixos-rebuild switch
 ### Add to Steam
 - Launch Parameter = "pcsx2 path/to/game/iso"
 - Add custom artwork, custom background, and custom logo
+- Disable Steam Input
 
+## GAMECUBE GAMES
+### Dolphin Settings
+- Graphics > General > Resolution > 1080
+- Graphics > General > Fullscreen
+- Graphics > Enhancements > Internal Resolution > 3xNative
+### Add to Steam
+- Launch Parameter = "dolphin-emu --batch --exec=/path/to/game/iso"
+- Add custom artwork, custom background, and custom logo
