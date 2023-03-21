@@ -14,7 +14,9 @@
     gamescope
     mangohud
     pcsx2
-    retroarchFull
+    dolphin-emu
+    mupen64plus
+    snes9x
   ];
 
 ## GAMESCOPE SESSION ##
