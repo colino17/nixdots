@@ -4,7 +4,7 @@
 
   users.users.colin = {
     isNormalUser = true;
-    extraGroups = [ "wheel" ];
+    extraGroups = [ "wheel" "scanner" "lp"  ];
   };
   
 }
