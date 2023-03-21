@@ -64,3 +64,14 @@ sudo nixos-rebuild switch
 ### Add to Steam
 - Launch Parameter = "dolphin-emu --batch --exec=/path/to/game/iso"
 - Add custom artwork, custom background, and custom logo
+
+
+## SNES GAMES
+### snes9x-gtk Settings
+- Fullscreen
+- Setup Gamepad
+- Turn on Scanlines
+### Add to Steam
+- Launch Parameter = "snes9x-gtk /path/to/game/rom"
+- Add custom artwork, custom background, and custom logo
+- Disable Steam Input
