@@ -4,7 +4,7 @@
 
   users.users.dad = {
     isNormalUser = true;
-    extraGroups = [ "wheel" ];
+    extraGroups = [ "wheel" "scanner" "lp"  ];
   };
   
 }
