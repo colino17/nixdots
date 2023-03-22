@@ -15,7 +15,7 @@
     mangohud
     pcsx2
     dolphin-emu
-    mupen64plus
+    xemu
     snes9x-gtk
   ];
 
