@@ -135,6 +135,17 @@ sudo nixos-rebuild switch
 - Launch Parameter = "dolphin-emu --batch --exec=/path/to/game/iso"
 - Add custom artwork, custom background, and custom logo
 
+## XBOX GAMES
+### XEMU Settings
+- System > Setup Paths
+- Display > Fullscreen
+- Display > Scale 3X
+- Window Size > 1080
+- Menu Bar > Disable
+### Add to Steam
+- Launch Parameter = "pcsx2 path/to/game/iso"
+- Add custom artwork, custom background, and custom logo
+- Disable Steam Input
 
 ## SNES GAMES
 ### snes9x-gtk Settings
