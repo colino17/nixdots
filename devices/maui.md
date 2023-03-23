@@ -137,15 +137,13 @@ sudo nixos-rebuild switch
 
 ## XBOX GAMES
 ### XEMU Settings
-- System > Setup Paths
-- Display > Fullscreen
-- Display > Scale 3X
-- Window Size > 1080
-- Menu Bar > Disable
+- Setup System Paths
+- Set Resolution Scale to 2X
+- Set Window Size to 1080
+- Disable Menu Bars
 ### Add to Steam
-- Launch Parameter = "pcsx2 path/to/game/iso"
+- Launch Parameter = "xemu -full-screen -dvd_path /path/to/iso"
 - Add custom artwork, custom background, and custom logo
-- Disable Steam Input
 
 ## SNES GAMES
 ### snes9x-gtk Settings
