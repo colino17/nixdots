@@ -25,11 +25,11 @@
     interfaces.enp3s0 = {
       wakeOnLan.enable = true;
       ipv4.addresses = [ {
-        address = "10.17.80.99";
+        address = "10.17.10.18";
         prefixLength = 24;
       } ];
     };
-    defaultGateway = "10.17.80.1";
+    defaultGateway = "10.17.10.1";
     nameservers = [
       "8.8.8.8"
       "1.1.1.1"
