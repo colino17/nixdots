@@ -1,4 +1,9 @@
 { config, pkgs, ... }:
+
+let
+  unstable = import <nixos-unstable> { config = { allowUnfree = true; }; };
+in 
+
 {
 
 ## STEAM INSTALL ##
@@ -15,7 +20,7 @@
     mangohud
     pcsx2
     dolphin-emu
-    xemu
+    unstable.xemu
     snes9x-gtk
   ];
 
