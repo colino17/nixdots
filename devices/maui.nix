@@ -8,6 +8,7 @@
       ../services/bios.nix
       ../services/bluetooth.nix
       ../services/btrfs.nix
+      ../services/media.nix
       ../services/mounts.nix
       ../services/gnome.nix
       ../services/sound.nix
