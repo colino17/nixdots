@@ -17,6 +17,10 @@
     
   networking = {
     hostName = "dadmachine";
+    nameservers = [
+      "8.8.8.8"
+      "1.1.1.1"
+    ];
   };
   
   services.xserver.displayManager.autoLogin.enable = true;
