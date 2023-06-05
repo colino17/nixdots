@@ -26,7 +26,7 @@
 ###################
   services.openssh = {
     enable = true;
-    settings.permitRootLogin = "no";
+    settings.PermitRootLogin = "no";
     ports = [ 1717 ];
   };
 
