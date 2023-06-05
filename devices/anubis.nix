@@ -4,10 +4,11 @@
   imports =
     [
       ../services/base.nix
+      ../services/btrfs.nix
+      ../services/coral.nix
+      ../services/docker.nix
       ../services/uefi.nix
       ../services/vpn.nix
-      ../services/docker.nix
-      ../services/btrfs.nix
       ../users/colin.nix
     ];
 
