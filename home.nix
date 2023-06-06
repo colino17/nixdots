@@ -3,9 +3,8 @@
 #################
 ### VARIABLES ###
 #################
-let
-  varwall = "/home/colin/Pictures/Wallpapers/1080/triangles.png";
-in
+
+let inherit (import ./variables.nix) var_wallpaper; in
 
 {
   environment.systemPackages = with pkgs; [
@@ -105,8 +104,8 @@ in
         "gtk-theme" = "Adwaita-dark";
       };
       "org/gnome/desktop/background" = {
-        "picture-uri" = varwall;
-        "picture-uri-dark" = varwall;
+        "picture-uri" = var_wallpaper;
+        "picture-uri-dark" = var_wallpaper;
       };
       "org/gnome/desktop/sound" = {
         "allow-volume-above-100-percent" = true;
