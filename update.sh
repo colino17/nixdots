@@ -23,6 +23,14 @@ sleep 1
 rm main.zip
 sleep 1
 
+# CREATE VARIABLES FILE IF IT DOESN'T EXIST
+if [ -f "variables.nix" ]; then
+  echo "VARIABLES found. No need to overwrite."
+else
+  echo "No VARIABLES found. Creating default VARIABLES file."
+  cp defaults/variables.nix variables.nix
+fi
+
 # REAPPLY PERMISSIONS
 chmod +x update.sh
 
