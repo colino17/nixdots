@@ -1,9 +1,6 @@
 { config, pkgs, ... }:
 
+let gasket = config.boot.kernelPackages.callPackage /etc/nixos/packages/coral.nix {}; in
 {
-
-  environment.systemPackages = with pkgs; [
-    gasket
-  ];
-  
+  boot.extraModulePackages = [ gasket ];
 }
