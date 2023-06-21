@@ -12,7 +12,6 @@
       ../services/teamviewer.nix
       ../services/shotwell.nix
       ../users/dad.nix
-      (import "${builtins.fetchTarball https://github.com/nix-community/home-manager/archive/master.tar.gz}/nixos")
     ];
     
   networking = {
