@@ -30,7 +30,6 @@ sudo nixos-rebuild switch
 ## Pull update script and run to update config...
 ```bash
 sudo wget https://raw.githubusercontent.com/colino17/nixdots/main/update.sh
-sudo chmod +x update.sh
 sudo sh update.sh
 ```
 
