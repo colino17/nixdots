@@ -23,7 +23,6 @@ sudo reboot
 ```
 cd /etc/nixos
 sudo wget https://raw.githubusercontent.com/colino17/nixdots/main/update.sh
-sudo chmod +x update.sh
 sudo sh update.sh
 ```
 
