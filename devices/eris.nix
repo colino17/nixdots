@@ -39,7 +39,7 @@
 ### VERSION AND REBOOT ###
 ##########################
   system = {
-    stateVersion = "23.05";
+    stateVersion = "22.11";
     autoUpgrade.allowReboot = false;
   };
 
