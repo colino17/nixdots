@@ -1,5 +1,7 @@
 { config, pkgs, ... }:
 
+let inherit (import ./variables.nix) var_hmversion; in
+
 {
   imports =
     [
@@ -18,7 +20,7 @@
       ../services/teamviewer.nix
       ../users/colin.nix
       ../home.nix
-      (import "${builtins.fetchTarball https://github.com/nix-community/home-manager/archive/master.tar.gz}/nixos")
+      (import "${builtins.fetchTarball var_hmversion}/nixos")
     ];
     
   networking = {
