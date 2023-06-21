@@ -10,6 +10,7 @@
 #      ./devices/manticore.nix
 #      ./devices/leviathan.nix
 #      ./devices/maui.nix
+#      ./devices/eris.nix
 # Servers
 #      ./devices/osiris.nix
 #      ./devices/anubis.nix
