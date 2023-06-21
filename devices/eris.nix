@@ -12,11 +12,11 @@
       ../services/utilities.nix
       ../services/web.nix
       ../services/sound.nix
-      ../services/uefi.nix
+      ../services/boot.nix
       ../services/mounts.nix
       ../users/colin.nix
       ../home.nix
-      (import "${builtins.fetchTarball https://github.com/nix-community/home-manager/archive/master.tar.gz}/nixos")
+      (import "${builtins.fetchTarball https://github.com/nix-community/home-manager/archive/release23.05.tar.gz}/nixos")
     ];
     
   networking = {
