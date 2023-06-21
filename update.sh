@@ -25,7 +25,13 @@ sleep 1
 
 # CREATE VARIABLES FILE IF IT DOESN'T EXIST
 if [ -f "variables.nix" ]; then
-  echo "VARIABLES found. No need to overwrite."
+  read -p "VARIABLES file already exists. Would you like to overwrite? (yes/no) " yn
+  case $yn in 
+  	yes ) cp defaults/variables.nix variables.nix;
+	  	break;;
+  	no ) echo "Custom VARIABLES have been retained.";
+	  	break;;
+  esac
 else
   echo "No VARIABLES found. Creating default VARIABLES file."
   cp defaults/variables.nix variables.nix
