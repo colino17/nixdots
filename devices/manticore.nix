@@ -28,6 +28,10 @@ let inherit (import ../variables.nix) var_hmversion; in
   networking = {
     hostName = "manticore";
   };
+
+  environment.systemPackages = with pkgs; [
+    cabextract
+  ];
   
 ##########################
 ### VERSION AND REBOOT ###
