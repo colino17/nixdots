@@ -58,11 +58,15 @@ Using Virt-Manager create a new VM with the Windows 10 ISO as the install media.
 Edit the XML file to include all the various options needed including resource allocations, device passthrough (USB controller + Bluetooth, GPU, NVME, Ethernet Card, WIFI Card), CPU pinning/isolation, memory hugepages, etc.
 ```xml
 <domain type="kvm">
-  
-...
-  
-  <memory unit="KiB">67108864</memory>
-  <currentMemory unit="KiB">67108864</currentMemory>
+  <name>steampod</name>
+  <uuid>d2ffabf7-f3b0-4806-9729-c8ccec2ce2e5</uuid>
+  <metadata>
+    <libosinfo:libosinfo xmlns:libosinfo="http://libosinfo.org/xmlns/libvirt/domain/1.0">
+      <libosinfo:os id="http://microsoft.com/win/10"/>
+    </libosinfo:libosinfo>
+  </metadata>
+  <memory unit="KiB">32768000</memory>
+  <currentMemory unit="KiB">32768000</currentMemory>
   <memoryBacking>
     <hugepages/>
   </memoryBacking>
@@ -85,8 +89,9 @@ Edit the XML file to include all the various options needed including resource a
   <os>
     <type arch="x86_64" machine="pc-q35-7.0">hvm</type>
     <loader readonly="yes" type="pflash">/run/libvirt/nix-ovmf/OVMF_CODE.fd</loader>
-    <nvram>/var/lib/libvirt/qemu/nvram/steampod_VARS.fd</nvram>
+    <nvram template="/run/libvirt/nix-ovmf/OVMF_VARS.fd">/var/lib/libvirt/qemu/nvram/steampod_VARS.fd</nvram>
     <bootmenu enable="no"/>
+    <smbios mode="host"/>
   </os>
   <features>
     <acpi/>
@@ -106,11 +111,13 @@ Edit the XML file to include all the various options needed including resource a
       <hidden state="on"/>
     </kvm>
     <vmport state="off"/>
+    <ioapic driver="kvm"/>
   </features>
   <cpu mode="host-passthrough" check="none" migratable="on">
     <topology sockets="1" dies="1" cores="6" threads="2"/>
     <cache mode="passthrough"/>
     <feature policy="require" name="topoext"/>
+    <feature policy="disable" name="hypervisor"/>
   </cpu>
   <clock offset="localtime">
     <timer name="rtc" tickpolicy="catchup"/>
@@ -208,7 +215,7 @@ Edit the XML file to include all the various options needed including resource a
     <input type="keyboard" bus="ps2"/>
     <audio id="1" type="none"/>
     <video>
-      <model type="vga" vram="16384" heads="1" primary="yes"/>
+      <model type="qxl" ram="65536" vram="65536" vgamem="16384" heads="1" primary="yes"/>
       <address type="pci" domain="0x0000" bus="0x00" slot="0x01" function="0x0"/>
     </video>
     <hostdev mode="subsystem" type="pci" managed="yes">
@@ -221,14 +228,8 @@ Edit the XML file to include all the various options needed including resource a
       <source>
         <address domain="0x0000" bus="0x01" slot="0x00" function="0x0"/>
       </source>
-      <boot order="1"/>
+      <boot order="2"/>
       <address type="pci" domain="0x0000" bus="0x04" slot="0x00" function="0x0"/>
-    </hostdev>
-    <hostdev mode="subsystem" type="pci" managed="yes">
-      <source>
-        <address domain="0x0000" bus="0x0c" slot="0x00" function="0x1"/>
-      </source>
-      <address type="pci" domain="0x0000" bus="0x05" slot="0x00" function="0x0"/>
     </hostdev>
     <hostdev mode="subsystem" type="pci" managed="yes">
       <source>
@@ -244,28 +245,41 @@ Edit the XML file to include all the various options needed including resource a
     </hostdev>
     <hostdev mode="subsystem" type="pci" managed="yes">
       <source>
-        <address domain="0x0000" bus="0x09" slot="0x00" function="0x0"/>
+        <address domain="0x0000" bus="0x0d" slot="0x00" function="0x0"/>
+      </source>
+      <address type="pci" domain="0x0000" bus="0x02" slot="0x00" function="0x0"/>
+    </hostdev>
+    <hostdev mode="subsystem" type="pci" managed="yes">
+      <source>
+        <address domain="0x0000" bus="0x0d" slot="0x00" function="0x1"/>
+      </source>
+      <address type="pci" domain="0x0000" bus="0x05" slot="0x00" function="0x0"/>
+    </hostdev>
+    <hostdev mode="subsystem" type="pci" managed="yes">
+      <source>
+        <address domain="0x0000" bus="0x0a" slot="0x00" function="0x0"/>
+      </source>
+      <address type="pci" domain="0x0000" bus="0x08" slot="0x00" function="0x0"/>
+    </hostdev>
+    <hostdev mode="subsystem" type="pci" managed="yes">
+      <source>
+        <address domain="0x0000" bus="0x0a" slot="0x00" function="0x1"/>
       </source>
       <address type="pci" domain="0x0000" bus="0x09" slot="0x00" function="0x0"/>
     </hostdev>
     <hostdev mode="subsystem" type="pci" managed="yes">
       <source>
-        <address domain="0x0000" bus="0x09" slot="0x00" function="0x1"/>
+        <address domain="0x0000" bus="0x0a" slot="0x00" function="0x3"/>
       </source>
       <address type="pci" domain="0x0000" bus="0x0a" slot="0x00" function="0x0"/>
     </hostdev>
     <hostdev mode="subsystem" type="pci" managed="yes">
       <source>
-        <address domain="0x0000" bus="0x09" slot="0x00" function="0x3"/>
+        <address domain="0x0000" bus="0x09" slot="0x00" function="0x0"/>
       </source>
       <address type="pci" domain="0x0000" bus="0x0b" slot="0x00" function="0x0"/>
     </hostdev>
-    <hostdev mode="subsystem" type="pci" managed="yes">
-      <source>
-        <address domain="0x0000" bus="0x0b" slot="0x00" function="0x0"/>
-      </source>
-      <address type="pci" domain="0x0000" bus="0x02" slot="0x00" function="0x0"/>
-    </hostdev>
+    <watchdog model="itco" action="reset"/>
     <memballoon model="virtio">
       <address type="pci" domain="0x0000" bus="0x0c" slot="0x00" function="0x0"/>
     </memballoon>
