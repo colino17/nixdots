@@ -2,8 +2,8 @@
 
 {
   
-environment.systemPackages = [
-  realesrgan-ncnn-vulkan
-];
+  environment.systemPackages = with pkgs; [
+    realesrgan-ncnn-vulkan
+  ];
 
 }
