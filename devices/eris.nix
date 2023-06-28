@@ -10,6 +10,7 @@ let inherit (import ../variables.nix) var_hmversion; in
       ../services/docker-nvidia.nix
       ../services/realesrgan.nix
       ../services/nvidia.nix
+      ../services/makemkv.nix
       ../services/gnome.nix
       ../services/media.nix
       ../services/utilities.nix
