@@ -94,14 +94,20 @@ let inherit (import ./variables.nix) var_wallpaper; in
           "forge@jmmaranan.com"
           "auto-move-windows@gnome-shell-extensions.gcampax.github.com"
         ];
-        "extensions" = {
-          "auto-move-windows/application-list" = [
-            "io.github.celluloid_player.Celluloid.desktop:3"
-            "firefox.desktop:2"
-            "org.gnome.Nautilus.desktop:1"
-          ];
-        };
       };
+      "org/gnome/shell/extensions/auto-move-windows" = {
+          "application-list" = [
+            "org.gnome.Nautilus.desktop:1"
+            "org.gnome.Console.desktop:1"
+            "firefox.desktop:2"
+            "discord.desktop:2" 
+            "com.github.iwalton3.jellyfin-media-player.desktop:3"
+            "io.github.celluloid_player.Celluloid.desktop:3"
+            "gimp.desktop:4"
+            "com.valvesoftware.Steam.desktop:5"
+          ];
+      };
+
       "org/gnome/mutter" = {
         "edge-tiling" = true;
       };
