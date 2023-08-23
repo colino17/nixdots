@@ -92,7 +92,15 @@ let inherit (import ./variables.nix) var_wallpaper; in
           "tailscale-status@maxgallup.github.com"
           "Vitals@CoreCoding.com"
           "forge@jmmaranan.com"
+          "auto-move-windows@gnome-shell-extensions.gcampax.github.com"
         ];
+        "extensions" = {
+          "auto-move-windows/application-list" = [
+            "io.github.celluloid_player.Celluloid.desktop:3"
+            "firefox.desktop:2"
+            "org.gnome.Nautilus.desktop:1"
+          ];
+        };
       };
       "org/gnome/mutter" = {
         "edge-tiling" = true;
