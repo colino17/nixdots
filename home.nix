@@ -91,6 +91,7 @@ let inherit (import ./variables.nix) var_wallpaper; in
           "trayIconsReloaded@selfmade.pl"
           "tailscale-status@maxgallup.github.com"
           "Vitals@CoreCoding.com"
+          "forge@jmmaranan.com"
         ];
       };
       "org/gnome/mutter" = {
