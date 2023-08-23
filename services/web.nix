@@ -4,7 +4,7 @@
 
   environment.systemPackages = with pkgs; [
     discord
-    firefox-wayland
+    firefox
   ];
   
 }
