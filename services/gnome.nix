@@ -24,6 +24,7 @@
     evince
     gnomeExtensions.vitals
     gnomeExtensions.tray-icons-reloaded
+    gnomeExtensions.forge
   ];
   
   environment.gnome.excludePackages = with pkgs; [
