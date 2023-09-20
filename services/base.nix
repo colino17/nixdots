@@ -16,6 +16,7 @@
     yt-dlp
     ffmpeg
     cmatrix
+    hollywood
     e2fsprogs
     iperf
     tmux
