@@ -37,84 +37,29 @@
     };
     
   fileSystems."/Storage/Configs" =
-    { device = "/dev/disk/by-label/nixos";
+    { device = "/dev/disk/by-label/backup";
       fsType = "btrfs";
       options = [ "compress=zstd" "subvol=Configs" ];
     };
 
   fileSystems."/Storage/Files" =
-    { device = "/dev/disk/by-label/storage";
+    { device = "/dev/disk/by-label/backup";
       fsType = "btrfs";
       options = [ "compress=zstd" "subvol=Files" ];
     };
 
   fileSystems."/Storage/Media" =
-    { device = "/dev/disk/by-label/storage";
+    { device = "/dev/disk/by-label/backup";
       fsType = "btrfs";
       options = [ "compress=zstd" "subvol=Media" ];
     };
-
-  fileSystems."/Storage/Recordings" =
-    { device = "/dev/disk/by-label/recordings";
-      fsType = "btrfs";
-      options = [ "compress=zstd" "subvol=Recordings" ];
-    };
-
-  fileSystems."/Storage/Snapshots" =
-    { device = "/dev/disk/by-label/storage";
-      fsType = "btrfs";
-      options = [ "compress=zstd" "subvol=Snapshots" ];
-    };
-
-############
-## SHARES ##
-############
-  services.nfs.server = {
-    enable = true;
-    createMountPoints = true;
-    exports = ''
-      /Storage *(ro,no_subtree_check,fsid=0)
-      /Storage/Configs *(fsid=111,rw,sync,no_subtree_check)
-      /Storage/Files *(fsid=222,rw,sync,no_subtree_check)
-      /Storage/Media *(fsid=333,rw,sync,no_subtree_check)
-      /Storage/Recordings *(fsid=444,rw,sync,no_subtree_check)
-      /Storage/Snapshots *(fsid=555,rw,sync,no_subtree_check)
-    '';
-  };  
-  
-#############
-## BACKUPS ##
-#############
-  services.btrbk.instances = {
-    local = {
-      onCalendar = "daily";
-      settings = {
-        snapshot_dir = "/Storage/Snapshots";
-        snapshot_preserve_min = "2d";
-        snapshot_create = "always";
-        snapshot_preserve = "3d 2w 2m";
-        subvolume."/Storage/Files" = { };
-        subvolume."/Storage/Media" = { };
-      };
-    };
-    config = {
-      onCalendar = "daily";
-      settings = {
-        snapshot_dir = "/.snapshots";
-        snapshot_preserve_min = "2d";
-        snapshot_create = "always";
-        snapshot_preserve = "3d 2w 2m";
-        subvolume."/Storage/Configs" = { };
-      };
-    };
-  };
   
 ##########################
 ### VERSION AND REBOOT ###
 ##########################
   system = {
-    stateVersion = "22.11";
-    autoUpgrade.allowReboot = true;
+    stateVersion = "23.11";
+    autoUpgrade.allowReboot = false;
   };
   
 }
