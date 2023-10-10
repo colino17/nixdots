@@ -104,7 +104,7 @@ sudo sh update.sh
   imports =
     [
       ./hardware-configuration.nix
-      ./devices/osiris.nix
+      ./devices/khonsu.nix
     ];
 ```
 
@@ -116,7 +116,6 @@ reboot
 
 ## Set passwords...
 ```bash
-sudo passwd root
 sudo passwd colin
 sudo reboot
 ```
