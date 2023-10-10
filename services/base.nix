@@ -7,6 +7,7 @@
     wget
     curl
     rsync
+    rclone
     unzip
     git
     nfs-utils
@@ -16,7 +17,6 @@
     yt-dlp
     ffmpeg
     cmatrix
-    hollywood
     e2fsprogs
     iperf
     tmux
