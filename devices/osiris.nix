@@ -94,6 +94,7 @@
       /Storage/Media *(fsid=333,rw,sync,no_subtree_check)
       /Storage/Recordings *(fsid=444,rw,sync,no_subtree_check)
       /Storage/Snapshots *(fsid=555,rw,sync,no_subtree_check)
+      /.snapshots *(fsid=666,rw,sync,no_subtree_check)
     '';
   };  
   
