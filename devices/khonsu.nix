@@ -36,29 +36,33 @@
       options = [ "compress=zstd" "subvol=root" ];
     };
     
-  fileSystems."/Storage/Configs" =
+  fileSystems."/Backup" =
     { device = "/dev/disk/by-label/backup";
       fsType = "btrfs";
-      options = [ "compress=zstd" "subvol=Configs" ];
+      options = [ "compress=zstd" "subvol=Backup" ];
     };
 
-  fileSystems."/Storage/Files" =
-    { device = "/dev/disk/by-label/backup";
-      fsType = "btrfs";
-      options = [ "compress=zstd" "subvol=Files" ];
-    };
+################
+## NFS MOUNTS ##
+################
 
-  fileSystems."/Storage/Media" =
-    { device = "/dev/disk/by-label/backup";
-      fsType = "btrfs";
-      options = [ "compress=zstd" "subvol=Media" ];
-    };
+  fileSystems."/Storage/Files" = {
+    device = "10.17.10.17:/Snapshots";
+    fsType = "nfs";
+    options = [ "x-systemd.automount" "noauto" "x-systemd.mount-timeout=10" "timeo=14" "x-systemd.idle-timeout=60min" ];
+  };
+
+  fileSystems."/Storage/Configs" = {
+    device = "10.17.10.17:/.snapshots";
+    fsType = "nfs";
+    options = [ "x-systemd.automount" "noauto" "x-systemd.mount-timeout=10" "timeo=14" "x-systemd.idle-timeout=60min" ];
+  };
   
 ##########################
 ### VERSION AND REBOOT ###
 ##########################
   system = {
-    stateVersion = "23.11";
+    stateVersion = "23.05";
     autoUpgrade.allowReboot = false;
   };
   
