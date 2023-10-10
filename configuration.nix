@@ -15,6 +15,7 @@
 #      ./devices/osiris.nix
 #      ./devices/anubis.nix
 #      ./devices/isis.nix
+#      ./devices/khonsu.nix
     ];
 
 ################
