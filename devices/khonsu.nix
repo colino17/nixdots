@@ -46,14 +46,8 @@
 ## NFS MOUNTS ##
 ################
 
-  fileSystems."/Storage/Files" = {
+  fileSystems."/Storage" = {
     device = "10.17.10.17:/Snapshots";
-    fsType = "nfs";
-    options = [ "x-systemd.automount" "noauto" "x-systemd.mount-timeout=10" "timeo=14" "x-systemd.idle-timeout=60min" ];
-  };
-
-  fileSystems."/Storage/Configs" = {
-    device = "10.17.10.17:/.snapshots";
     fsType = "nfs";
     options = [ "x-systemd.automount" "noauto" "x-systemd.mount-timeout=10" "timeo=14" "x-systemd.idle-timeout=60min" ];
   };
