@@ -25,6 +25,7 @@ lsblk
 sudo fdisk /dev/sdb
 d
 w
+sudo wipefs -a -f /dev/sdb
 ```
 
 ```bash
@@ -32,6 +33,7 @@ lsblk
 sudo fdisk /dev/sdc
 d
 w
+sudo wipefs -a -f /dev/sdc
 ```
 
 ## Format Boot Disks...
