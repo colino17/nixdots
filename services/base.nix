@@ -7,7 +7,6 @@
     wget
     curl
     rsync
-    rclone
     unzip
     git
     nfs-utils
