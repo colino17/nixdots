@@ -119,3 +119,8 @@ reboot
 sudo passwd colin
 sudo reboot
 ```
+## Start Tailscale...
+```bash
+sudo tailscale up -ssh
+sudo reboot
+```
