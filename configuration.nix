@@ -51,6 +51,7 @@
     poweroff = "sudo poweroff";
     shutdown = "sudo shutdown";
     mount = "sudo mount";
+    usage = "sudo btrfs filesystem usage";
     upgrade = "upgrade() { sudo nix-channel --add https://nixos.org/channels/nixos-$1 nixos ;}; upgrade";
   };
 
