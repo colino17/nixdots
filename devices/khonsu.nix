@@ -4,8 +4,9 @@
   imports =
     [
       ../services/base.nix
-      ../services/uefi.nix
       ../services/btrfs.nix
+      ../services/uefi.nix
+      ../services/vpn.nix
       ../users/colin.nix
     ];
 
