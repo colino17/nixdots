@@ -1,6 +1,7 @@
 { config, pkgs, ... }:
 
-let gasket = config.boot.kernelPackages.callPackage /etc/nixos/packages/coral.nix {}; in
+let libedgetpu = config.boot.kernelPackages.callPackage /etc/nixos/packages/coral.nix {}; in
 {
-  boot.extraModulePackages = [ gasket ];
+  services.udev.packages = [ libedgetpu ];                                                                                                                                                                                              
+  users.groups.plugdev = {};  
 }
