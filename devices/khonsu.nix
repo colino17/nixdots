@@ -43,16 +43,17 @@
       options = [ "compress=zstd" "subvol=Backup" ];
     };
 
-################
-## NFS MOUNTS ##
-################
+############
+## SHARES ##
+############
+  services.nfs.server = {
+    enable = true;
+    createMountPoints = true;
+    exports = ''
+      /Backup *(ro,no_subtree_check,fsid=0)
+    '';
+  };  
 
-  fileSystems."/Storage" = {
-    device = "10.17.10.17:/Snapshots";
-    fsType = "nfs";
-    options = [ "x-systemd.automount" "noauto" "x-systemd.mount-timeout=10" "timeo=14" "x-systemd.idle-timeout=60min" ];
-  };
-  
 ##########################
 ### VERSION AND REBOOT ###
 ##########################
