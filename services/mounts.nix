@@ -25,8 +25,20 @@
     options = [ "x-systemd.automount" "noauto" "x-systemd.mount-timeout=10" "timeo=14" "x-systemd.idle-timeout=60min" ];
   };
 
-    fileSystems."/Backup/Khonsu" = {
-    device = "10.17.10.19:/Backup";
+    fileSystems."/Backup/Khonsu/Media" = {
+    device = "10.17.10.19:/Backup/Media";
+    fsType = "nfs";
+    options = [ "x-systemd.automount" "noauto" "x-systemd.mount-timeout=10" "timeo=14" "x-systemd.idle-timeout=60min" ];
+  };
+
+    fileSystems."/Backup/Khonsu/Files" = {
+    device = "10.17.10.19:/Files";
+    fsType = "nfs";
+    options = [ "x-systemd.automount" "noauto" "x-systemd.mount-timeout=10" "timeo=14" "x-systemd.idle-timeout=60min" ];
+  };
+
+    fileSystems."/Backup/Khonsu/Configs" = {
+    device = "10.17.10.19:/Configs";
     fsType = "nfs";
     options = [ "x-systemd.automount" "noauto" "x-systemd.mount-timeout=10" "timeo=14" "x-systemd.idle-timeout=60min" ];
   };
