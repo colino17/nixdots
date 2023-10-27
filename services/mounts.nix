@@ -26,7 +26,7 @@
   };
 
     fileSystems."/Backup/Khonsu/Media" = {
-    device = "10.17.10.19:/Backup/Media";
+    device = "10.17.10.19:/Media";
     fsType = "nfs";
     options = [ "x-systemd.automount" "noauto" "x-systemd.mount-timeout=10" "timeo=14" "x-systemd.idle-timeout=60min" ];
   };
