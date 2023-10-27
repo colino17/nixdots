@@ -51,6 +51,9 @@
     createMountPoints = true;
     exports = ''
       /Backup *(ro,no_subtree_check,fsid=0)
+      /Backup/Configs *(fsid=1111,ro,sync,no_subtree_check)
+      /Backup/Files *(fsid=2222,ro,sync,no_subtree_check)
+      /Backup/Media *(fsid=3333,ro,sync,no_subtree_check)
     '';
   };  
 
