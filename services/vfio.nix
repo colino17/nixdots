@@ -41,7 +41,20 @@ in
     virt-manager
     stress-ng
   ];
-  
+
+######################
+### QEMU EAC PATCH ###
+######################
+  nixpkgs.overlays = [
+    (final: prev: {
+      qemu_kvm = prev.qemu_kvm.overrideAttrs (old: {
+        patches = (old.patches or []) ++ [
+          /etc/nixos/patches/qemu-8.0.5.patch
+        ];
+      });
+    })
+  ];
+
 ################
 ### GOVERNOR ###
 ################
