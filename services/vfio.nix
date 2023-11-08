@@ -1,9 +1,5 @@
 { config, pkgs, ... }:
 
-let 
-  qemu_patch = config.boot.kernelPackages.callPackage /etc/nixos/packages/qemu.nix {}; 
-in
-
 {
 ############
 ### BOOT ###
