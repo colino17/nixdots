@@ -25,6 +25,7 @@
     gnomeExtensions.vitals
     gnomeExtensions.tray-icons-reloaded
     gnomeExtensions.forge
+    virt-viewer
   ];
   
   environment.gnome.excludePackages = with pkgs; [
