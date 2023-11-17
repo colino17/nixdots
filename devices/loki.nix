@@ -17,7 +17,7 @@ let inherit (import ../variables.nix) var_hmversion; in
       ../services/vfio.nix
       ../services/printing.nix
       ../services/mounts.nix
-      ../services/teamviewer.nix
+      ../services/x2go.nix
       ../users/colin.nix
       ../home.nix
       (import "${builtins.fetchTarball var_hmversion}/nixos")
