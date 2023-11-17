@@ -9,7 +9,6 @@
       ../services/sound.nix
       ../services/bios.nix
       ../services/printing.nix
-      ../services/teamviewer.nix
       ../services/shotwell.nix
       ../users/dad.nix
     ];
