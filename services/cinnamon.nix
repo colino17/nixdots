@@ -4,6 +4,8 @@
 
   services.cinnamon.apps.enable = false;
   services.dbus.packages = [ pkgs.dconf ];
+
+  services.x2goserver.enable = true;
   
   services.xserver = {
     enable = true;
