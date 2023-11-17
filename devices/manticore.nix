@@ -14,12 +14,12 @@ let inherit (import ../variables.nix) var_hmversion; in
       ../services/mounts.nix
       ../services/nvidia-mobile.nix
       ../services/sound.nix
-      ../services/teamviewer.nix
       ../services/tlp.nix
       ../services/utilities.nix
       ../services/uefi.nix
       ../services/vpn.nix
       ../services/web.nix
+      ../services/x2go.nix
       ../users/colin.nix
       ../home.nix
       (import "${builtins.fetchTarball var_hmversion}/nixos")
