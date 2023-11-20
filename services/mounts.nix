@@ -25,6 +25,24 @@
     options = [ "x-systemd.automount" "noauto" "x-systemd.mount-timeout=10" "timeo=14" "x-systemd.idle-timeout=60min" ];
   };
 
+    fileSystems."/Backup/Khepri/Media" = {
+    device = "10.17.10.18:/Media";
+    fsType = "nfs";
+    options = [ "x-systemd.automount" "noauto" "x-systemd.mount-timeout=10" "timeo=14" "x-systemd.idle-timeout=60min" ];
+  };
+
+    fileSystems."/Backup/Khepri/Files" = {
+    device = "10.17.10.18:/Files";
+    fsType = "nfs";
+    options = [ "x-systemd.automount" "noauto" "x-systemd.mount-timeout=10" "timeo=14" "x-systemd.idle-timeout=60min" ];
+  };
+
+    fileSystems."/Backup/Khepri/Configs" = {
+    device = "10.17.10.18:/Configs";
+    fsType = "nfs";
+    options = [ "x-systemd.automount" "noauto" "x-systemd.mount-timeout=10" "timeo=14" "x-systemd.idle-timeout=60min" ];
+  };
+
     fileSystems."/Backup/Khonsu/Media" = {
     device = "10.17.10.19:/Media";
     fsType = "nfs";
