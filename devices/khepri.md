@@ -11,7 +11,6 @@ default
 default
 default
 a
-1
 w
 ```
 
@@ -75,8 +74,6 @@ sudo umount /mnt
 ## Mount Disks...
 ```bash
 sudo mount -o compress=zstd,subvol=root /dev/disk/by-label/nixos /mnt
-sudo mkdir -p /mnt/boot/efi
-sudo mount /dev/disk/by-label/boot /mnt/boot/efi
 ```
 
 ## Generate Config and Install...
