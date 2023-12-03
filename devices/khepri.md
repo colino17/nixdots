@@ -4,17 +4,13 @@
 ```bash
 lsblk
 sudo fdisk /dev/sda
-g
+o
 n
-default
-default
-+512M
-n
+p
 default
 default
 default
-t
-1
+a
 1
 w
 ```
@@ -54,8 +50,7 @@ sudo wipefs -a -f /dev/sde
 
 ## Format Boot Disks...
 ```bash
-sudo mkfs.fat -F 32 -n boot /dev/sda1
-sudo mkfs.btrfs -L nixos /dev/sda2
+sudo mkfs.btrfs -L nixos /dev/sda1
 ```
 
 ## Format Backup Disks...
