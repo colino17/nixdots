@@ -8,14 +8,12 @@
 #      ./devices/dadmachine.nix
 #      ./devices/loki.nix
 #      ./devices/manticore.nix
-#      ./devices/leviathan.nix
 #      ./devices/eris.nix
 # Servers
 #      ./devices/osiris.nix
 #      ./devices/anubis.nix
-#      ./devices/isis.nix
 #      ./devices/khonsu.nix
-#     ./devices/khepri.nix
+#      ./devices/khepri.nix
     ];
 
 ################
