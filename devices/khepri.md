@@ -86,7 +86,7 @@ sudo nano /mnt/etc/nixos/configuration.nix
 ```
 
 ```nix
-  boot.loader.efi.efiSysMountPoint = "/boot/efi";
+  boot.loader.grub.device = /dev/sda
   ...
   environment.systemPackages = with pkgs; [
     wget
