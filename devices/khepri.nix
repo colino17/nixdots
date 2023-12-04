@@ -15,7 +15,7 @@
 ### NETWORKING ###
 ##################
   networking = {
-    hostName = "khonsu";
+    hostName = "khepri";
     firewall.allowedTCPPorts = [ 2049 ];
     interfaces.enp3s0 = {
       wakeOnLan.enable = true;
