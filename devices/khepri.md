@@ -1,4 +1,4 @@
-# KHONSU - Backup Server
+# KHEPRI - Backup Server
 
 ## Partition Boot Disks...
 ```bash
