@@ -2,6 +2,7 @@
 
 {
 
+## GNOME DESKTOP ##
   services.gnome.core-utilities.enable = false;
   services.dbus.packages = [ pkgs.dconf ];
   services.xserver = {
@@ -10,6 +11,7 @@
     desktopManager.gnome.enable = true;
   };
 
+## PACKAGES ##
   environment.systemPackages = with pkgs; [
     gnome.gnome-system-monitor
     gnome-console
@@ -28,9 +30,13 @@
     gnomeExtensions.tailscale-status
     virt-viewer
   ];
-  
+
+## EXCLUSIONS ##
   environment.gnome.excludePackages = with pkgs; [
     gnome-tour
   ];
+
+## SETUP USB REDIRECTION FOR REMOTE-VIEWER ##
+  virtualisation.spiceUSBRedirection.enable = true;
 
 }
