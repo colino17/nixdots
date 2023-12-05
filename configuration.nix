@@ -51,7 +51,7 @@
     mount = "sudo mount";
     usage = "sudo btrfs filesystem usage";
     upgrade = "upgrade() { sudo nix-channel --add https://nixos.org/channels/nixos-$1 nixos ;}; upgrade";
-    quickemu = "quickemu --display spice --viewer none --access remote --vm";
+    vm = "quickemu --display spice --viewer none --access remote --vm";
   };
 
 ##################################
