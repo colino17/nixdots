@@ -16,7 +16,7 @@
 ##################
   networking = {
     hostName = "khepri";
-    firewall.allowedTCPPorts = [ 2049 ];
+    firewall.allowedTCPPorts = [ 2049 5930 ];
     interfaces.enp3s0 = {
       wakeOnLan.enable = true;
       ipv4.addresses = [ {
