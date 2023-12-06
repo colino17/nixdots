@@ -89,7 +89,7 @@ let inherit (import ./variables.nix) var_wallpaper; in
         "enabled-extensions" = [
           "places-menu@gnome-shell-extensions.gcampax.github.com"
           "trayIconsReloaded@selfmade.pl"
-          "tailscale-status@maxgallup.github.com"
+          "tailscale@joaophi.github.com"
           "Vitals@CoreCoding.com"
           "forge@jmmaranan.com"
           "auto-move-windows@gnome-shell-extensions.gcampax.github.com"
