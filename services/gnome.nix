@@ -27,7 +27,7 @@
     gnomeExtensions.vitals
     gnomeExtensions.tray-icons-reloaded
     gnomeExtensions.forge
-    gnomeExtensions.tailscale-status
+    gnomeExtensions.tailscale-qs
     virt-viewer
   ];
 
