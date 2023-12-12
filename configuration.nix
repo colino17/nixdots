@@ -41,6 +41,7 @@
   environment.shellAliases = {
     rs = "sudo nixos-rebuild switch";
     rsu = "sudo nixos-rebuild switch --upgrade";
+    rb = "sudo nixos-rebuild boot";
     garbage = "nix-collect-garbage -d";
     get = "cd /etc/nixos/ && sudo sh update.sh";
     la = "ls -a";
