@@ -4,13 +4,14 @@
   imports =
     [
       ../services/base.nix
-      ../services/uefi.nix
-      ../services/vpn.nix
+      ../services/btrfs.nix
       ../services/docker.nix
       ../services/docker-nvidia.nix
-      ../services/realesrgan.nix
       ../services/nvidia.nix
-      ../services/btrfs.nix
+      ../services/realesrgan.nix
+      ../services/uefi.nix
+      ../services/ups.nix
+      ../services/vpn.nix
       ../users/colin.nix
     ];
 
