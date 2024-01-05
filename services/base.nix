@@ -22,6 +22,6 @@
   ];
 
 ## IPERF PORT ##
-  networking.firewall.allowedTCPPorts = [ 2049 1883 8123 8096 5201 ];
+  networking.firewall.allowedTCPPorts = [ 5201 ];
 
 }
