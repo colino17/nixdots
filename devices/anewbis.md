@@ -1,9 +1,9 @@
 # ANUBIS - NVR Server
 
-## Partition Disk...
+## Partition Boot Disks...
 ```bash
 lsblk
-sudo fdisk /dev/sda
+sudo fdisk /dev/nvme0n1
 g
 n
 default
@@ -19,16 +19,36 @@ t
 w
 ```
 
-## Format Disk...
+## Remove Partitions on Storage Disks...
 ```bash
-sudo mkfs.fat -F 32 -n boot /dev/sda1
-sudo mkfs.btrfs -L nixos  /dev/sda2
+lsblk
+sudo fdisk /dev/sda
+d
+w
+sudo wipefs -a -f /dev/sda
 ```
 
-## Create Subvolumes...
+## Format Boot Disks...
+```bash
+sudo mkfs.fat -F 32 -n boot /dev/nvme0n1p1
+sudo mkfs.btrfs -L nixos /dev/nvme0n1p2
+```
+
+## Format Storage Disk...
+```bash
+sudo mkfs.btrfs -L storage /dev/sda
+```
+
+## Create Boot Disk Subvolumes...
 ```bash
 sudo mount /dev/disk/by-label/nixos /mnt
 sudo btrfs subvolume create /mnt/root
+sudo umount /mnt
+```
+
+## Create Storage Disk Subvolumes...
+```bash
+sudo mount /dev/disk/by-label/storage /mnt
 sudo btrfs subvolume create /mnt/Configs
 sudo btrfs subvolume create /mnt/CCTV
 sudo umount /mnt
