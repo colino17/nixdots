@@ -5,7 +5,6 @@
     [
       ../services/base.nix
       ../services/btrfs.nix
-      ../services/coral.nix
       ../services/docker.nix
       ../services/uefi.nix
       ../services/vpn.nix
