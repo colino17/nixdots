@@ -20,15 +20,15 @@
     usePredictableInterfaceNames = false;
     interfaces.eth0.wakeOnLan.enable = true;
     interfaces.eth0.ipv4.addresses = [ {
-      address = "10.17.80.16";
+      address = "10.17.10.16";
       prefixLength = 24;
     } ];
-    defaultGateway = "10.17.80.1";
+    defaultGateway = "10.17.10.1";
     nameservers = [
       "8.8.8.8"
       "8.8.1.1"
     ];
-    hostName = "anewbis";
+    hostName = "anubis";
   };
   
 ############
