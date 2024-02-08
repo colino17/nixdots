@@ -116,3 +116,9 @@ sudo passwd root
 sudo passwd colin
 sudo reboot
 ```
+
+## Start Tailscale...
+```bash
+sudo tailscale up --advertise-routes=10.17.10.0/24
+sudo reboot
+```
