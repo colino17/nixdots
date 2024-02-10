@@ -61,4 +61,16 @@
     options = [ "x-systemd.automount" "noauto" "x-systemd.mount-timeout=10" "timeo=14" "x-systemd.idle-timeout=60min" ];
   };
 
+  fileSystems."/Backup/Anubis/Configs" = {
+    device = "10.17.10.16:/Configs";
+    fsType = "nfs";
+    options = [ "x-systemd.automount" "noauto" "x-systemd.mount-timeout=10" "timeo=14" "x-systemd.idle-timeout=60min" ];
+  };
+  
+  fileSystems."/Backup/Anubis/Files" = {
+    device = "10.17.10.16:/CCTV";
+    fsType = "nfs";
+    options = [ "x-systemd.automount" "noauto" "x-systemd.mount-timeout=10" "timeo=14" "x-systemd.idle-timeout=60min" ];
+  };
+
 }
