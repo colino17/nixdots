@@ -5,7 +5,7 @@
     [
       ../services/base.nix
       ../services/btrfs.nix
-      ../services/docker.nix
+      ../services/docker-agent.nix
       ../services/uefi.nix
       ../services/vpn.nix
       ../users/colin.nix
