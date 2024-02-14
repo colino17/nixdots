@@ -3,7 +3,7 @@
 
   users.users.colin.extraGroups = [ "docker" ];
 
-  networking.firewall.allowedTCPPorts = [ 2375 ]
+  networking.firewall.allowedTCPPorts = [ 2375 ];
   
   virtualisation.docker = {
     enable = true;
