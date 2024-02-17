@@ -19,7 +19,7 @@
 ### NETWORKING ###
 ##################
   networking = {
-    firewall.allowedTCPPorts = [ 2049 1883 8123 8096 11434 ];
+    firewall.allowedTCPPorts = [ 2049 1883 8123 8096 11434 49152 ];
     interfaces.enp0s25.wakeOnLan.enable = true;
     useDHCP = false;
     bonds.bond0 = {
