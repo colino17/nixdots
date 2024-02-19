@@ -33,7 +33,8 @@ in stdenv.mkDerivation rec {
     sha256 = "sha256-73hwItimf88Iqnb40lk4ul/PzmCNIfdt6Afi+xjNiBE=";
   };
 
-  patches = [ ./libedgetpu-stddef.diff ];
+  # add [ ./libedgetpu-stddef.diff ] if the patch file exists.
+  patches = [ ];
 
   makeFlags = ["-f" "makefile_build/Makefile" "libedgetpu" ];
 
