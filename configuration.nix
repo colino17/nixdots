@@ -6,6 +6,7 @@
       ./hardware-configuration.nix
 # Workstations
 #      ./devices/dadmachine.nix
+#      ./devices/karenmachine.nix
 #      ./devices/loki.nix
 #      ./devices/manticore.nix
 #      ./devices/eris.nix
