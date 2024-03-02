@@ -25,7 +25,6 @@
   environment.systemPackages = with pkgs; [
     firefox
     gnome.aisleriot
-    space-cadet-pinball
     gnome.quadrapassel
     gnome.gnome-mahjongg
     gnome.gnome-mines
