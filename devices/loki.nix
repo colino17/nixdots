@@ -6,6 +6,7 @@ let inherit (import ../variables.nix) var_hmversion; in
   imports =
     [
       ../services/base.nix
+      ../services/cad.nix
       ../services/easyeffects.nix
       ../services/gnome.nix
       ../services/media.nix
