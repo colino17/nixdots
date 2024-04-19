@@ -8,6 +8,7 @@ let inherit (import ../variables.nix) var_hmversion; in
       ../services/adb.nix
       ../services/base.nix
       ../services/btrfs.nix
+      ../services/cad.nix
       ../services/flatpak.nix
       ../services/gnome.nix
       ../services/media.nix
