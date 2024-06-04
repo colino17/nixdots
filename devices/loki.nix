@@ -32,7 +32,7 @@ let inherit (import ../variables.nix) var_hmversion; in
 ################
 ## AUTO LOGIN ##
 ################
-  services.xserver.displayManager = {
+  services.displayManager = {
     autoLogin = {
       enable = true;
       user = "colin";
