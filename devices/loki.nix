@@ -37,8 +37,9 @@ let inherit (import ../variables.nix) var_hmversion; in
       enable = true;
       user = "colin";
     };
-    gdm.autoLogin.delay = 15;  
   };
+
+  services.xserver.displayManager.gdm.autoLogin.delay = 15; 
 
 ##########################
 ### VERSION AND REBOOT ###
