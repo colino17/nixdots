@@ -36,9 +36,12 @@ let inherit (import ../variables.nix) var_hmversion; in
     autoLogin = {
       enable = true;
       user = "colin";
-    };
-    gdm.autoLogin.delay = 15;  
+    }; 
   };
+
+  # Workaround for Current Gnome Bug
+  systemd.services."getty@tty1".enable = false;
+  systemd.services."autovt@tty1".enable = false;
 
 ##########################
 ### VERSION AND REBOOT ###
