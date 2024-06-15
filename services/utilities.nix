@@ -3,7 +3,7 @@
 {
 
   environment.systemPackages = with pkgs; [
-    neofetch
+    fastfetch
     appimage-run
     geekbench
   ];
