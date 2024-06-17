@@ -1,14 +1,16 @@
 { config, pkgs, ... }:
+
 {
   power.ups = { 
     enable = true;
     mode = "netserver";
     openFirewall = true;
-    ups = {
+    ups.${config.networking.hostName} = {
       port = "auto";
       driver = "usbhid-ups";
-      pollinterval = "15";
-      maxretry = "5";
+      summary = ''
+        pollinterval = 15
+      '';
     };
     upsd = {
       enable = true;
@@ -16,6 +18,11 @@
         address = "0.0.0.0";
       } ];
       extraConfig = "MAXAGE 25";
+    };
+    upsmon = {
+      settings = {
+        MINSUPPLIES = 0;
+      };
     };
   };
 }
