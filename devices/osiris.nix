@@ -20,21 +20,11 @@
 ##################
   networking = {
     firewall.allowedTCPPorts = [ 2049 1883 8123 8096 11434 49152 ];
-    interfaces.enp0s25.wakeOnLan.enable = true;
+    interfaces.enp4s0.wakeOnLan.enable = true;
     useDHCP = false;
-    bonds.bond0 = {
-      interfaces = [
-        "enp0s25"
-        "enp6s1"
-      ];
-      driverOptions = {
-        mode = "active-backup";
-        primary = "enp0s25";
-      };
-    };
-    interfaces.bond0.ipv4.addresses = [ {
+    interfaces.enp4s0.ipv4.addresses = [ {
       address = "10.17.10.17";
-      prefixLength = 24;
+      prefixLength = 25;
     } ];
     defaultGateway = "10.17.10.1";
     nameservers = [
