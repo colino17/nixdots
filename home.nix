@@ -143,7 +143,7 @@ let inherit (import ./variables.nix) var_wallpaper; in
           "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
           "logo": {
               "padding": {
-                  "top": 2
+                  "top": 0
               }
           },
           "modules": [
