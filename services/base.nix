@@ -14,6 +14,7 @@
     pciutils
     lm_sensors
     yt-dlp
+    internetarchive
     ffmpeg
     cmatrix
     e2fsprogs
