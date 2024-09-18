@@ -25,7 +25,7 @@ sleep 1
 
 # CREATE VARIABLES FILE IF IT DOESN'T EXIST
 if [ -f "variables.nix" ]; then
-  read -p "VARIABLES file already exists. Would you like to overwrite? (yes/no) " yn
+  read -p "VARIABLES file already exists. Would you like to overwrite? (yes/no) " yn -i no
   case $yn in 
   	yes ) cp defaults/variables.nix variables.nix;
 	  	break;;
@@ -39,6 +39,3 @@ fi
 
 # REAPPLY PERMISSIONS
 chmod +x update.sh
-
-# OPEN CONFIG IN NANO TO CHOOSE DEVICE
-nano /etc/nixos/configuration.nix
