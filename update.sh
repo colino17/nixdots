@@ -25,7 +25,7 @@ sleep 1
 
 # CREATE VARIABLES FILE IF IT DOESN'T EXIST
 if [ -f "variables.nix" ]; then
-  read -p "VARIABLES file already exists. Would you like to overwrite? (yes/no) " yn -i no
+  read -p "VARIABLES file already exists. Would you like to overwrite? (yes/no) " yn
   case $yn in 
   	yes ) cp defaults/variables.nix variables.nix;
 	  	break;;
