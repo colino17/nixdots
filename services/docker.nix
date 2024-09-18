@@ -35,8 +35,8 @@ let inherit (import ./variables.nix) var_hostname; in
         "5001:5001"
       ];
       volumes = [
-        "/Storage/Configs/dockge/var_hostname:/opt/stacks"
-        "/Storage/Configs/compose:/app/data"
+        "/Storage/Configs/compose/var_hostname:/opt/stacks"
+        "/Storage/Configs/dockge:/app/data"
         "/var/run/docker.sock:/var/run/docker.sock"
       ];
       extraOptions = [ "--pull=always" ];
