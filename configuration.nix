@@ -1,6 +1,6 @@
 { config, pkgs, ... }:
 
-let inherit (import ../variables.nix) var_hostname; in
+let inherit (import ./variables.nix) var_hostname; in
 
 {
   imports =
