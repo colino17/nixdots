@@ -1,4 +1,7 @@
 { config, pkgs, ... }:
+
+let inherit (import ./variables.nix) var_hostname; in
+
 {
 
   users.users.colin.extraGroups = [ "docker" ];
@@ -21,6 +24,19 @@
       ];
       volumes = [
         "/Storage/Configs/portainer:/data"
+        "/var/run/docker.sock:/var/run/docker.sock"
+      ];
+      extraOptions = [ "--pull=always" ];
+    };
+    dockge = {
+      image = "louislam/dockge:latest";
+      autoStart = true;
+      ports = [
+        "5001:5001"
+      ];
+      volumes = [
+        "/Storage/Configs/dockge/var_hostname:/opt/stacks"
+        "/Storage/Configs/compose:/app/data"
         "/var/run/docker.sock:/var/run/docker.sock"
       ];
       extraOptions = [ "--pull=always" ];
