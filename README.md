@@ -14,3 +14,6 @@ As this is a personal repo it is not particulary useful for others, however it c
 - Investigate universal config variables (wallpaper, neofetch, stateversion)
 - Split homes
 
+## JANKY WORKAROUNDS TO REMOVE EVENTUALLY
+- Pinned NVIDIA driver
+- Pinned DOCKER version
