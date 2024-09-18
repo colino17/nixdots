@@ -4,17 +4,7 @@
   imports =
     [
       ./hardware-configuration.nix
-# Workstations
-#      ./devices/dadmachine.nix
-#      ./devices/karenmachine.nix
-#      ./devices/loki.nix
-#      ./devices/manticore.nix
-#      ./devices/eris.nix
-# Servers
-#      ./devices/osiris.nix
-#      ./devices/anubis.nix
-#      ./devices/khonsu.nix
-#      ./devices/khepri.nix
+      ./devices/${var_hostname}.nix
     ];
 
 ################
@@ -44,6 +34,7 @@
     rsu = "sudo nixos-rebuild switch --upgrade";
     rb = "sudo nixos-rebuild boot";
     garbage = "nix-collect-garbage -d";
+    repair = "sudo nix-store --verify --repair --check-contents";
     get = "cd /etc/nixos/ && sudo sh update.sh";
     la = "ls -a";
     c = "clear";
@@ -55,7 +46,6 @@
     upgrade = "upgrade() { sudo nix-channel --add https://nixos.org/channels/nixos-$1 nixos ;}; upgrade";
     channel = "sudo nix-channel --list | cut -d'-' -f2";
     vm = "quickemu --display spice --viewer none --access remote --vm";
-    repair = "sudo nix-store --verify --repair --check-contents";
   };
 
 ##################################
