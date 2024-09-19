@@ -72,8 +72,8 @@
       options = [ "compress=zstd" "subvol=Snapshots" ];
     };
 
-  fileSystems."/Storage/Configs/compose/anubis" = {
-    device = "10.17.10.16:/Configs/compose/anubis";
+  fileSystems."/Backup/Anubis/Configs" = {
+    device = "10.17.10.16:/Configs";
     fsType = "nfs";
     options = [ "x-systemd.automount" "noauto" "x-systemd.mount-timeout=10" "timeo=14" "x-systemd.idle-timeout=60min" ];
   };
@@ -91,7 +91,6 @@
       /Storage/Media *(fsid=333,rw,sync,no_subtree_check)
       /Storage/Recordings *(fsid=444,rw,sync,no_subtree_check)
       /Storage/Snapshots *(fsid=555,rw,sync,no_subtree_check)
-      /Storage/Configs/compose/anubis *(fsid=999,rw,sync,no_subtree_check)
     '';
   };  
   
