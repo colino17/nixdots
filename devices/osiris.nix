@@ -72,6 +72,12 @@
       options = [ "compress=zstd" "subvol=Snapshots" ];
     };
 
+  fileSystems."/Storage/Configs/compose/anubis" = {
+    device = "10.17.10.16:/Configs/compose/anubis";
+    fsType = "nfs";
+    options = [ "x-systemd.automount" "noauto" "x-systemd.mount-timeout=10" "timeo=14" "x-systemd.idle-timeout=60min" ];
+  };
+
 ############
 ## SHARES ##
 ############
