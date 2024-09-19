@@ -91,6 +91,7 @@
       /Storage/Media *(fsid=333,rw,sync,no_subtree_check)
       /Storage/Recordings *(fsid=444,rw,sync,no_subtree_check)
       /Storage/Snapshots *(fsid=555,rw,sync,no_subtree_check)
+      /Storage/Configs/compose/anubis *(fsid=999,rw,sync,no_subtree_check)
     '';
   };  
   
