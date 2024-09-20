@@ -8,7 +8,9 @@ set -e
 ##################
 ## BACKUP FILES ##
 ##################
-
+# BACKUP ANUBIS CONFIGS
+echo -e "${coloron}Backing Up Anubis Configs...${coloroff}"
+sudo rsync -uav --progress --exclude "esphome/.esphome/" /Backup/Anubis/Configs/* /Storage/Configs/anubis/
 # CREATE NEW SNAPSHOT
 echo -e "${coloron}Creating new FILES snapshot...${coloroff}"
 btrfs subvolume snapshot -r /Storage/Files /Storage/Snapshots/Files_New
