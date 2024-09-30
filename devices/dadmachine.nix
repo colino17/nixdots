@@ -21,8 +21,8 @@
     ];
   };
   
-  services.xserver.displayManager.autoLogin.enable = true;
-  services.xserver.displayManager.autoLogin.user = "dad";
+  services.displayManager.autoLogin.enable = true;
+  services.displayManager.autoLogin.user = "dad";
  
   environment.systemPackages = with pkgs; [
     firefox
