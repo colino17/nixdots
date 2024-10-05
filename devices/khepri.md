@@ -3,7 +3,7 @@
 ## Partition Boot Disks...
 ```bash
 lsblk
-sudo fdisk /dev/sda
+sudo fdisk /dev/sdd
 o
 n
 p
@@ -15,6 +15,14 @@ w
 ```
 
 ## Remove Partitions on Storage Disks...
+```bash
+lsblk
+sudo fdisk /dev/sda
+d
+w
+sudo wipefs -a -f /dev/sda
+```
+
 ```bash
 lsblk
 sudo fdisk /dev/sdb
@@ -31,30 +39,14 @@ w
 sudo wipefs -a -f /dev/sdc
 ```
 
-```bash
-lsblk
-sudo fdisk /dev/sdd
-d
-w
-sudo wipefs -a -f /dev/sdd
-```
-
-```bash
-lsblk
-sudo fdisk /dev/sde
-d
-w
-sudo wipefs -a -f /dev/sde
-```
-
 ## Format Boot Disks...
 ```bash
-sudo mkfs.btrfs -L nixos /dev/sda1
+sudo mkfs.btrfs -L nixos /dev/sdd1
 ```
 
 ## Format Backup Disks...
 ```bash
-sudo mkfs.btrfs -L backup -m raid1c4 -d single /dev/sdb /dev/sdc /dev/sdd /dev/sde
+sudo mkfs.btrfs -L backup -m raid1c3 -d single /dev/sda /dev/sdb /dev/sdc
 ```
 
 ## Create Boot Disk Subvolumes...
