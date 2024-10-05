@@ -78,7 +78,7 @@ sudo nano /mnt/etc/nixos/configuration.nix
 ```
 
 ```nix
-  boot.loader.grub.device = "/dev/sda";
+  boot.loader.grub.device = "/dev/sdd";
   ...
   environment.systemPackages = with pkgs; [
     wget
