@@ -36,6 +36,14 @@ w
 sudo wipefs -a -f /dev/sdc
 ```
 
+```bash
+lsblk
+sudo fdisk /dev/sdd
+d
+w
+sudo wipefs -a -f /dev/sdd
+```
+
 ## Format Boot Disks...
 ```bash
 sudo mkfs.fat -F 32 -n boot /dev/sda1
@@ -44,7 +52,7 @@ sudo mkfs.btrfs -L nixos /dev/sda2
 
 ## Format Backup Disks...
 ```bash
-sudo mkfs.btrfs -L backup -m raid1 -d raid1 /dev/sdb /dev/sdc
+sudo mkfs.btrfs -L backup -m raid1c3 -d single /dev/sda /dev/sdb /dev/sdc
 ```
 
 ## Create Boot Disk Subvolumes...
@@ -101,11 +109,11 @@ sudo sh update.sh
 
 ## Choose device in configuration...
 ```nix
-  imports =
-    [
-      ./hardware-configuration.nix
-      ./devices/khonsu.nix
-    ];
+{
+  var_wallpaper = "/home/colin/Pictures/Wallpapers/1080/triangles.png";
+  var_hmversion = "https://github.com/nix-community/home-manager/archive/release-24.05.tar.gz";
+  var_hostname = "khonsu";
+}
 ```
 
 ## Rebuild config...
