@@ -52,7 +52,7 @@ sudo mkfs.btrfs -L nixos /dev/sda2
 
 ## Format Backup Disks...
 ```bash
-sudo mkfs.btrfs -L backup -m raid1c3 -d single /dev/sda /dev/sdb /dev/sdc
+sudo mkfs.btrfs -L backup -m raid1c3 -d single /dev/sdb /dev/sdc /dev/sdd
 ```
 
 ## Create Boot Disk Subvolumes...
