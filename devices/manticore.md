@@ -28,14 +28,14 @@ sudo sh update.sh
 
 ## Choose device in configuration...
 ```bash
-sudo configuration.nix
+sudo variables.nix
 ```
 ```nix
-  imports =
-    [
-      ./hardware-configuration.nix
-      ./devices/manticore.nix
-    ];
+{
+  var_wallpaper = "/home/colin/Pictures/Wallpapers/1080/triangles.png";
+  var_hmversion = "https://github.com/nix-community/home-manager/archive/release-24.05.tar.gz";
+  var_hostname = "manticore";
+}
 ```
 
 ## Rebuild config...
