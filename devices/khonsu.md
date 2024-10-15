@@ -108,6 +108,9 @@ sudo sh update.sh
 ```
 
 ## Choose device in configuration...
+```bash
+sudo variables.nix
+```
 ```nix
 {
   var_wallpaper = "/home/colin/Pictures/Wallpapers/1080/triangles.png";
