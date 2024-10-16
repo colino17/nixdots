@@ -9,6 +9,11 @@ let inherit (import ./variables.nix) var_hostname; in
       ./devices/${var_hostname}.nix
     ];
 
+############
+### BOOT ###
+############
+  boot.loader.timeout = 30;
+
 ################
 ### TIMEZONE ###
 ################
