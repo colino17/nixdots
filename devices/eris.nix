@@ -6,8 +6,7 @@ let inherit (import ../variables.nix) var_hmversion; in
   imports =
     [
       ../services/base.nix
-      ../services/docker.nix
-      ../services/docker-nvidia.nix
+      ../services/cad.nix
       ../services/realesrgan.nix
       ../services/nvidia.nix
       ../services/makemkv.nix
@@ -46,7 +45,7 @@ let inherit (import ../variables.nix) var_hmversion; in
 ### VERSION AND REBOOT ###
 ##########################
   system = {
-    stateVersion = "23.05";
+    stateVersion = "24.05";
     autoUpgrade.allowReboot = false;
   };
 
