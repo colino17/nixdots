@@ -24,7 +24,7 @@ let inherit (import ../variables.nix) var_hmversion; in
     
   networking = {
     hostName = "eris";
-    interfaces.enp7s0.wakeOnLan.enable = true;
+    interfaces.enp6s0.wakeOnLan.enable = true;
   };
 
 ################
