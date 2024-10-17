@@ -18,7 +18,7 @@ let inherit (import ./variables.nix) var_wallpaper; in
     programs = {
       bash = {
         enable = true;
-        initExtra = "fastfetch -c ~/.config/fastfetch/config.jsonc -l ~/.config/fastfetch/halsey.txt";
+        initExtra = "fastfetch -c ~/.config/fastfetch/config.jsonc -l none";
       };
     };
     
@@ -135,9 +135,9 @@ let inherit (import ./variables.nix) var_wallpaper; in
       };
     };
     
-################
-### NEOFETCH ###
-################
+#################
+### FASTFETCH ###
+#################
     home.file.".config/fastfetch/config.jsonc".text = ''
       {
           "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
@@ -198,22 +198,6 @@ let inherit (import ./variables.nix) var_wallpaper; in
               "colors"
           ]
       }
-    '';
-    home.file.".config/fastfetch/halsey.txt".text = ''
-     █ ▀ █▀▄▀█   █▄░█ █▀█ ▀█▀  
-     █ ░ █░▀░█   █░▀█ █▄█ ░█░  
-    
-     ▄▀█   █▀▄▀█ ▄▀█ █▀█ ▀█▀ █▄█ █▀█  
-     █▀█   █░▀░█ █▀█ █▀▄ ░█░ ░█░ █▀▄  
-    
-     █ ▀ █▀▄▀█   ▄▀█  
-     █ ░ █░▀░█   █▀█  
-    
-     █▀█ █▀█ █▀█ █▄▄ █░░ █▀▀ █▀▄▀█
-     █▀▀ █▀▄ █▄█ █▄█ █▄▄ ██▄ █░▀░█
-    
-           ▄▄  █░█ ▄▀█ █░░ █▀ █▀▀ █▄█
-           ░░  █▀█ █▀█ █▄▄ ▄█ ██▄ ░█░
     '';
     
 #######################
