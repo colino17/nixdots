@@ -29,7 +29,7 @@ let inherit (import ../variables.nix) var_hostname; in
       extraOptions = [ "--pull=always" ];
     };
     glances = {
-      image = "nicolargo/glances:latest-alpine";
+      image = "nicolargo/glances:latest-full";
       autoStart = true;
       ports = [
         "61208:61208"
