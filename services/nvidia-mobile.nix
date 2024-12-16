@@ -2,8 +2,11 @@
 
 {
   services.xserver.videoDrivers = [ "nvidia" ];
-  hardware.opengl.enable = true;
-  hardware.opengl.driSupport32Bit = true;
+  hardware.nvidia.open = false;
+  hardware.graphics = {
+    enable = true;
+    enable32Bit = true;
+  };
   services.switcherooControl.enable = true;
   hardware.nvidia.prime = {
     offload.enable = true;
