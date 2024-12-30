@@ -30,8 +30,8 @@
   environment.systemPackages = with pkgs; [
     gnome-console
     blueberry
-    gnome.file-roller
-    gnome.gnome-disk-utility
+    file-roller
+    gnome-disk-utility
     xed-editor
     celluloid
   ];
