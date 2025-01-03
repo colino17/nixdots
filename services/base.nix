@@ -20,6 +20,7 @@
     e2fsprogs
     iperf
     tmux
+    fastfetch
   ];
 
 ## IPERF PORT ##
