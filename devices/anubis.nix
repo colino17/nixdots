@@ -8,6 +8,7 @@
       ../services/docker.nix
       ../services/docker-agent.nix
       ../services/uefi.nix
+      ../services/ups.nix
       ../services/vpn.nix
       ../users/colin.nix
     ];
