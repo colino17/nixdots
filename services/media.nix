@@ -7,6 +7,7 @@
     inkscape
     google-fonts
     jellyfin-media-player
+    picard
   ];
   
 }
