@@ -9,6 +9,7 @@
       ../services/sound.nix
       ../services/bios.nix
       ../services/printing.nix
+      ../services/scanning.nix
       ../services/shotwell.nix
       ../users/dad.nix
     ];
