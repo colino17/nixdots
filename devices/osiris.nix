@@ -20,9 +20,9 @@
 ##################
   networking = {
     firewall.allowedTCPPorts = [ 2049 1883 8123 8096 11434 49152 ];
-    interfaces.enp4s0.wakeOnLan.enable = true;
+    interfaces.enp6s0.wakeOnLan.enable = true;
     useDHCP = false;
-    interfaces.enp4s0.ipv4.addresses = [ {
+    interfaces.enp6s0.ipv4.addresses = [ {
       address = "10.17.10.17";
       prefixLength = 25;
     } ];
