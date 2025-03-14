@@ -16,7 +16,7 @@
   networking = {
     hostName = "khonsu";
     firewall.allowedTCPPorts = [ 2049 ];
-    interfaces.enp2s0 = {
+    interfaces.enp1s0 = {
       wakeOnLan.enable = true;
       ipv4.addresses = [ {
         address = "10.17.10.19";
