@@ -17,6 +17,7 @@
 ### NETWORKING ###
 ##################
   networking = {
+    firewall.allowedTCPPorts = [ 80 443 2049 ];
     useDHCP = false;
     usePredictableInterfaceNames = false;
     interfaces.eth0.wakeOnLan.enable = true;
@@ -55,7 +56,6 @@
 ############
 ## SHARES ##
 ############
-  networking.firewall.allowedTCPPorts = [ 2049 ];
   services.nfs.server = {
     enable = true;
     createMountPoints = true;
