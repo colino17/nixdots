@@ -16,7 +16,7 @@
       reverse_proxy 10.17.10.16:6052
     '';
     virtualHosts."threadfin.local".extraConfig = ''
-      reverse_proxy /web 10.17.10.16:34400
+      reverse_proxy 10.17.10.16:34400
     '';
     virtualHosts."logs.local".extraConfig = ''
       reverse_proxy 10.17.10.17:7373
