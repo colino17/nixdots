@@ -1,6 +1,5 @@
 { config, pkgs, ... }:
 {
-
   services.caddy = {
     enable = true;
     virtualHosts."dockge.local".extraConfig = ''
@@ -36,12 +35,26 @@
     virtualHosts."search.local".extraConfig = ''
       reverse_proxy 10.17.10.17:2727
     '';
-    virtualHosts."dl.local".extraConfig = ''
+    virtualHosts."bt.local".extraConfig = ''
       reverse_proxy 10.17.10.17:9099
     '';
+    virtualHosts."dl.local".extraConfig = ''
+      reverse_proxy 10.17.10.17:9696
+    '';
+    virtualHosts."movies.local".extraConfig = ''
+      reverse_proxy 10.17.10.17:7878
+    '';
+    virtualHosts."shows.local".extraConfig = ''
+      reverse_proxy 10.17.10.17:8989
+    '';
+    virtualHosts."ersatz.local".extraConfig = ''
+      reverse_proxy 10.17.10.17:8409
+    '';
+    virtualHosts."photos.local".extraConfig = ''
+      reverse_proxy 10.17.10.17:2283
+    '';
+    virtualHosts."wud.local".extraConfig = ''
+      reverse_proxy 10.17.10.17:3333
+    '';
   };
-
-
-
-  
 }
