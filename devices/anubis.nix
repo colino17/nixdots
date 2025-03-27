@@ -5,7 +5,6 @@
     [
       ../services/base.nix
       ../services/btrfs.nix
-      ../services/caddy.nix
       ../services/docker.nix
       ../services/docker-agent.nix
       ../services/uefi.nix
