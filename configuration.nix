@@ -53,6 +53,7 @@ let inherit (import ./variables.nix) var_hostname; in
     upgrade = "upgrade() { sudo nix-channel --add https://nixos.org/channels/nixos-$1 nixos ;}; upgrade";
     channel = "sudo nix-channel --list | cut -d'-' -f2";
     vm = "quickemu --display spice --viewer none --access remote --vm";
+    prune = "docker image prune -a";
   };
 
 ##################################
