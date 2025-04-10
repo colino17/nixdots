@@ -33,6 +33,11 @@ let inherit (import ./variables.nix) var_hostname; in
     maxretry = 5;
   };
 
+  services.endlessh-go = {
+    enable = true;
+    port = 22;
+  };
+
 ###############
 ### ALIASES ###
 ###############
