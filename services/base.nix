@@ -37,7 +37,7 @@ let inherit (import ../variables.nix) var_username var_stateversion; in
     };
     home.file.".config/fastfetch/config.jsonc".text = ''
       {
-          "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json>
+          "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json"
           "logo": {
               "padding": {
                   "top": 0
