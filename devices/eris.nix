@@ -7,6 +7,7 @@ let inherit (import ../variables.nix) var_username; in
     [
       ../services/base.nix
       ../services/cad.nix
+      ../services/desktop.nix
       ../services/realesrgan.nix
       ../services/nvidia.nix
       ../services/makemkv.nix
