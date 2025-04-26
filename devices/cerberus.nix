@@ -9,6 +9,7 @@ let inherit (import ../variables.nix) var_username; in
 #      ../services/cad.nix
 #      ../services/easyeffects.nix
 #      ../services/flatpak.nix
+      ../services/desktop.nix
       ../services/gnome.nix
 #      ../services/media.nix
       ../services/utilities.nix
