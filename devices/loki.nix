@@ -1,6 +1,6 @@
 { config, pkgs, ... }:
 
-let inherit (import ../variables.nix) var_username var_hmversion; in
+let inherit (import ../variables.nix) var_username; in
 
 {
   imports =
@@ -22,7 +22,6 @@ let inherit (import ../variables.nix) var_username var_hmversion; in
       ../services/x2go.nix
       ../users/${var_username}.nix
       ../home.nix
-      (import "${builtins.fetchTarball var_hmversion}/nixos")
     ];
     
   networking = {
@@ -47,9 +46,6 @@ let inherit (import ../variables.nix) var_username var_hmversion; in
 ##########################
 ### VERSION AND REBOOT ###
 ##########################
-  system = {
-    stateVersion = "24.05";
-    autoUpgrade.allowReboot = false;
-  };
+system.autoUpgrade.allowReboot = false;
 
 }
