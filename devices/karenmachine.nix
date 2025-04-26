@@ -22,7 +22,7 @@ let inherit (import ../variables.nix) var_username; in
   };
   
   services.xserver.displayManager.autoLogin.enable = true;
-  services.xserver.displayManager.autoLogin.user = "karen";
+  services.xserver.displayManager.autoLogin.user = "${var_username}";
  
   environment.systemPackages = with pkgs; [
     firefox
