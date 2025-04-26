@@ -30,7 +30,7 @@ let inherit (import ../variables.nix) var_username var_stateversion; in
 
 ## FASTFETCH SETTINGS ##
   home-manager.users.${var_username} = { config, ... }: {
-    home.stateVersion = "${var_statevesion}";
+    home.stateVersion = "${var_stateversion}";
     programs.bash = {
       enable = true;
       initExtra = "fastfetch -c ~/.config/fastfetch/config.jsonc -l none";
