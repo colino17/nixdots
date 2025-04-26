@@ -19,7 +19,6 @@ let inherit (import ../variables.nix) var_username; in
       ../services/boot.nix
       ../services/mounts.nix
       ../users/${var_username}.nix
-      ../home.nix
     ];
     
   networking = {
