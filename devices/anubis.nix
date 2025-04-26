@@ -1,5 +1,7 @@
 { config, pkgs, ... }:
 
+let inherit (import ../variables.nix) var_username var_hmversion; in
+
 {
   imports =
     [
@@ -10,7 +12,8 @@
       ../services/uefi.nix
       ../services/ups.nix
       ../services/vpn.nix
-      ../users/colin.nix
+      ../users/${var_username}.nix
+      (import "${builtins.fetchTarball var_hmversion}/nixos")
     ];
 
 ##################
