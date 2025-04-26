@@ -9,21 +9,19 @@ let inherit (import ../variables.nix) var_username; in
 #      ../services/cad.nix
 #      ../services/easyeffects.nix
 #      ../services/flatpak.nix
-#      ../services/gnome.nix
+      ../services/gnome.nix
 #      ../services/media.nix
       ../services/utilities.nix
       ../services/web.nix
 #      ../services/vpn.nix
 #      ../services/adb.nix
       ../services/sound.nix
-#      ../services/uefi.nix
       ../services/bios.nix
 #      ../services/printing.nix
 #      ../services/mounts.nix
       ../services/virt-viewer.nix
 #      ../services/x2go.nix
       ../users/${var_username}.nix
-#      ../home.nix
     ];
     
   networking = {
