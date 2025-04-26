@@ -1,12 +1,13 @@
 { config, pkgs, ... }:
 
-let inherit (import ./variables.nix) var_hostname; in
+let inherit (import ./variables.nix) var_hostname var_hmversion var_stateversion; in
 
 {
   imports =
     [
       ./hardware-configuration.nix
       ./devices/${var_hostname}.nix
+      (import "${builtins.fetchTarball var_hmversion}/nixos")
     ];
 
 ############
@@ -71,6 +72,7 @@ let inherit (import ./variables.nix) var_hostname; in
     options = "--delete-older-than 14d";
   };
   system = {
+    stateVersion = "${var_stateversion};
     autoUpgrade.enable = true;
     autoUpgrade.dates = "weekly";
     autoUpgrade.rebootWindow = {
@@ -78,4 +80,5 @@ let inherit (import ./variables.nix) var_hostname; in
       upper = "05:00";
     };
   };
+
 }
