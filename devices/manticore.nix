@@ -36,6 +36,6 @@ let inherit (import ../variables.nix) var_username; in
 ##########################
 ### VERSION AND REBOOT ###
 ##########################
-system.autoUpgrade.allowReboot = true;
+system.autoUpgrade.allowReboot = false;
   
 }
