@@ -1,6 +1,6 @@
 { config, pkgs, ... }:
 
-let inherit (import ../variables.nix) var_username var_hmversion; in
+let inherit (import ../variables.nix) var_username; in
 
 {
   imports =
@@ -13,7 +13,6 @@ let inherit (import ../variables.nix) var_username var_hmversion; in
       ../services/ups.nix
       ../services/vpn.nix
       ../users/${var_username}.nix
-      (import "${builtins.fetchTarball var_hmversion}/nixos")
     ];
 
 ##################
@@ -72,9 +71,6 @@ let inherit (import ../variables.nix) var_username var_hmversion; in
 ##########################
 ### VERSION AND REBOOT ###
 ##########################
-  system = {
-    stateVersion = "23.11";
-    autoUpgrade.allowReboot = true;
-  };
+  system.autoUpgrade.allowReboot = true;
   
 }
