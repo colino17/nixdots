@@ -20,6 +20,7 @@ let inherit (import ../variables.nix) var_username; in
       ../services/uefi.nix
       ../services/vpn.nix
       ../services/web.nix
+      ../services/virt-viewer.nix
       ../services/x2go.nix
       ../users/${var_username}.nix
       ../home.nix
