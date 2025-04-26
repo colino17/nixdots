@@ -72,7 +72,7 @@ let inherit (import ./variables.nix) var_hostname var_hmversion var_stateversion
     options = "--delete-older-than 14d";
   };
   system = {
-    stateVersion = "${var_stateversion};
+    stateVersion = "${var_stateversion}";
     autoUpgrade.enable = true;
     autoUpgrade.dates = "weekly";
     autoUpgrade.rebootWindow = {
