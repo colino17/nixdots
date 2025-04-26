@@ -14,7 +14,7 @@ let inherit (import ../variables.nix) var_username; in
       ../services/uefi.nix
       ../services/ups.nix
       ../services/vpn.nix
-      ../users/colin.nix
+      ../users/${var_username}.nix
     ];
 
 ##################
