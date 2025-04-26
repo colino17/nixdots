@@ -14,4 +14,4 @@ The repo also relies on a variables.nix file with custom configuration values. T
 As this is a personal repo it is not particulary useful for others, however it could be forked and used as a framework for your own NixOS setup with the appropriate modifications.
 
 ## TODO
-- Split homes
+- Cosmic Desktop Configuration
