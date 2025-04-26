@@ -4,7 +4,7 @@
 ### VARIABLES ###
 #################
 
-let inherit (import ./variables.nix) var_wallpaper; in
+let inherit (import ./variables.nix) var_wallpaper var_username; in
 
 {
   environment.systemPackages = with pkgs; [
@@ -14,7 +14,7 @@ let inherit (import ./variables.nix) var_wallpaper; in
 ####################
 ### HOME MANAGER ###
 ####################
-  home-manager.users.colin = { pkg, ...}: {
+  home-manager.users.${var_username} = { pkg, ...}: {
     programs = {
       bash = {
         enable = true;
