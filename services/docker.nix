@@ -1,10 +1,10 @@
 { config, pkgs, ... }:
 
-let inherit (import ../variables.nix) var_hostname; in
+let inherit (import ../variables.nix) var_username var_hostname; in
 
 {
 
-  users.users.colin.extraGroups = [ "docker" ];
+  users.users.${var_username}.extraGroups = [ "docker" ];
 
   virtualisation.docker = {
     enable = true;
