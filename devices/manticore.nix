@@ -1,6 +1,6 @@
 { config, pkgs, ... }:
 
-let inherit (import ../variables.nix) var_hmversion; in
+let inherit (import ../variables.nix) var_username; in
 
 {
   imports =
@@ -21,9 +21,8 @@ let inherit (import ../variables.nix) var_hmversion; in
       ../services/vpn.nix
       ../services/web.nix
       ../services/x2go.nix
-      ../users/colin.nix
+      ../users/${var_username}.nix
       ../home.nix
-      (import "${builtins.fetchTarball var_hmversion}/nixos")
     ];
     
   networking = {
