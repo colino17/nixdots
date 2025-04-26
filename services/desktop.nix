@@ -23,5 +23,5 @@ let inherit (import ../variables.nix) var_username; in
       source = /etc/nixos/wallpapers;
       recursive = true;
     };
-
+  };
 }
