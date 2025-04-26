@@ -1,5 +1,7 @@
 { config, pkgs, ... }:
 
+let inherit (import ../variables.nix) var_username; in
+
 {
 ############
 ### BOOT ###
@@ -73,7 +75,7 @@
     };
 
     environment.sessionVariables.LIBVIRT_DEFAULT_URI = [ "qemu:///system" ];
-    users.users.colin = {
+    users.users.${var_username} = {
       extraGroups = [ "libvirtd" "kvm" "qemu-libvirtd" ];
     };
   
