@@ -25,7 +25,7 @@ let inherit (import ../variables.nix) var_username; in
   };
   
   services.displayManager.autoLogin.enable = true;
-  services.displayManager.autoLogin.user = "dad";
+  services.displayManager.autoLogin.user = "${var_username}";
  
   environment.systemPackages = with pkgs; [
     firefox
