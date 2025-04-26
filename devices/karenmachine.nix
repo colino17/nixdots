@@ -1,5 +1,7 @@
 { config, pkgs, ... }:
 
+let inherit (import ../variables.nix) var_username; in
+
 {
   imports =
     [
@@ -8,7 +10,7 @@
       ../services/sound.nix
       ../services/bios.nix
       ../services/printing.nix
-      ../users/karen.nix
+      ../users/${var_username}.nix
     ];
     
   networking = {
