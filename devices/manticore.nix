@@ -23,7 +23,6 @@ let inherit (import ../variables.nix) var_username; in
       ../services/virt-viewer.nix
       ../services/x2go.nix
       ../users/${var_username}.nix
-      ../home.nix
     ];
     
   networking = {
