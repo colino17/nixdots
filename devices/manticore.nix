@@ -36,9 +36,6 @@ let inherit (import ../variables.nix) var_username; in
 ##########################
 ### VERSION AND REBOOT ###
 ##########################
-  system = {
-    stateVersion = "22.11";
-    autoUpgrade.allowReboot = false;
-  };
+system.autoUpgrade.allowReboot = true;
   
 }
