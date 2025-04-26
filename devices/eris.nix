@@ -1,12 +1,13 @@
 { config, pkgs, ... }:
 
-let inherit (import ../variables.nix) var_hmversion; in
+let inherit (import ../variables.nix) var_username; in
 
 {
   imports =
     [
       ../services/base.nix
       ../services/cad.nix
+      ../services/desktop.nix
       ../services/realesrgan.nix
       ../services/nvidia.nix
       ../services/makemkv.nix
@@ -17,9 +18,7 @@ let inherit (import ../variables.nix) var_hmversion; in
       ../services/sound.nix
       ../services/boot.nix
       ../services/mounts.nix
-      ../users/colin.nix
-      ../home.nix
-      (import "${builtins.fetchTarball var_hmversion}/nixos")
+      ../users/${var_username}.nix
     ];
     
   networking = {
@@ -33,7 +32,7 @@ let inherit (import ../variables.nix) var_hmversion; in
   services.xserver.displayManager = {
     autoLogin = {
       enable = true;
-      user = "colin";
+      user = "${var_username}";
     }; 
   };
 
@@ -44,9 +43,6 @@ let inherit (import ../variables.nix) var_hmversion; in
 ##########################
 ### VERSION AND REBOOT ###
 ##########################
-  system = {
-    stateVersion = "24.05";
-    autoUpgrade.allowReboot = false;
-  };
+system.autoUpgrade.allowReboot = false;
 
 }

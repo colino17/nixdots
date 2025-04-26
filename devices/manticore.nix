@@ -1,6 +1,6 @@
 { config, pkgs, ... }:
 
-let inherit (import ../variables.nix) var_hmversion; in
+let inherit (import ../variables.nix) var_username; in
 
 {
   imports =
@@ -9,6 +9,7 @@ let inherit (import ../variables.nix) var_hmversion; in
       ../services/base.nix
       ../services/btrfs.nix
       ../services/cad.nix
+      ../services/desktop.nix
       ../services/flatpak.nix
       ../services/gnome.nix
       ../services/media.nix
@@ -20,10 +21,9 @@ let inherit (import ../variables.nix) var_hmversion; in
       ../services/uefi.nix
       ../services/vpn.nix
       ../services/web.nix
+      ../services/virt-viewer.nix
       ../services/x2go.nix
-      ../users/colin.nix
-      ../home.nix
-      (import "${builtins.fetchTarball var_hmversion}/nixos")
+      ../users/${var_username}.nix
     ];
     
   networking = {
@@ -37,9 +37,6 @@ let inherit (import ../variables.nix) var_hmversion; in
 ##########################
 ### VERSION AND REBOOT ###
 ##########################
-  system = {
-    stateVersion = "22.11";
-    autoUpgrade.allowReboot = false;
-  };
+system.autoUpgrade.allowReboot = false;
   
 }

@@ -1,5 +1,7 @@
 { config, pkgs, ... }:
 
+let inherit (import ../variables.nix) var_username; in
+
 {
   imports =
     [
@@ -8,7 +10,7 @@
       ../services/sound.nix
       ../services/bios.nix
       ../services/printing.nix
-      ../users/karen.nix
+      ../users/${var_username}.nix
     ];
     
   networking = {
@@ -20,7 +22,7 @@
   };
   
   services.xserver.displayManager.autoLogin.enable = true;
-  services.xserver.displayManager.autoLogin.user = "karen";
+  services.xserver.displayManager.autoLogin.user = "${var_username}";
  
   environment.systemPackages = with pkgs; [
     firefox
@@ -35,9 +37,6 @@
 ##########################
 ### VERSION AND REBOOT ###
 ##########################
-  system = {
-    stateVersion = "23.11";
-    autoUpgrade.allowReboot = false;
-  };
+system.autoUpgrade.allowReboot = false;
   
 }

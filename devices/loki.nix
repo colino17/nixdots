@@ -1,12 +1,13 @@
 { config, pkgs, ... }:
 
-let inherit (import ../variables.nix) var_hmversion; in
+let inherit (import ../variables.nix) var_username; in
 
 {
   imports =
     [
       ../services/base.nix
       ../services/cad.nix
+      ../services/desktop.nix
       ../services/easyeffects.nix
       ../services/flatpak.nix
       ../services/gnome.nix
@@ -19,10 +20,9 @@ let inherit (import ../variables.nix) var_hmversion; in
       ../services/uefi.nix
       ../services/printing.nix
       ../services/mounts.nix
+      ../services/virt-viewer.nix
       ../services/x2go.nix
-      ../users/colin.nix
-      ../home.nix
-      (import "${builtins.fetchTarball var_hmversion}/nixos")
+      ../users/${var_username}.nix
     ];
     
   networking = {
@@ -36,7 +36,7 @@ let inherit (import ../variables.nix) var_hmversion; in
   services.xserver.displayManager = {
     autoLogin = {
       enable = true;
-      user = "colin";
+      user = "${var_username}";
     }; 
   };
 
@@ -47,9 +47,6 @@ let inherit (import ../variables.nix) var_hmversion; in
 ##########################
 ### VERSION AND REBOOT ###
 ##########################
-  system = {
-    stateVersion = "24.05";
-    autoUpgrade.allowReboot = false;
-  };
+system.autoUpgrade.allowReboot = false;
 
 }

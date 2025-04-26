@@ -1,5 +1,7 @@
 { config, pkgs, ... }:
 
+let inherit (import ../variables.nix) var_username; in
+
 {
   imports =
     [
@@ -12,7 +14,7 @@
       ../services/uefi.nix
       ../services/ups.nix
       ../services/vpn.nix
-      ../users/colin.nix
+      ../users/${var_username}.nix
     ];
 
 ##################
@@ -128,9 +130,6 @@
 ##########################
 ### VERSION AND REBOOT ###
 ##########################
-  system = {
-    stateVersion = "22.11";
-    autoUpgrade.allowReboot = true;
-  };
+system.autoUpgrade.allowReboot = true;
   
 }

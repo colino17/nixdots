@@ -1,5 +1,7 @@
 { config, pkgs, ... }:
 
+let inherit (import ../variables.nix) var_username; in
+
 {
   imports =
     [
@@ -8,7 +10,7 @@
       ../services/bios.nix
       ../services/quickemu.nix
       ../services/vpn.nix
-      ../users/colin.nix
+      ../users/${var_username}.nix
     ];
 
 ##################
@@ -62,9 +64,6 @@
 ##########################
 ### VERSION AND REBOOT ###
 ##########################
-  system = {
-    stateVersion = "24.05";
-    autoUpgrade.allowReboot = false;
-  };
+system.autoUpgrade.allowReboot = false;
   
 }
