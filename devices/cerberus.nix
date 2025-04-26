@@ -1,6 +1,6 @@
 { config, pkgs, ... }:
 
-let inherit (import ../variables.nix) var_hmversion; in
+let inherit (import ../variables.nix) var_username var_hmversion; in
 
 {
   imports =
@@ -21,7 +21,7 @@ let inherit (import ../variables.nix) var_hmversion; in
 #      ../services/printing.nix
 #      ../services/mounts.nix
 #      ../services/x2go.nix
-      ../users/colin.nix
+      ../users/${var_username}.nix
 #      ../home.nix
       (import "${builtins.fetchTarball var_hmversion}/nixos")
     ];
@@ -35,7 +35,7 @@ let inherit (import ../variables.nix) var_hmversion; in
 ## HOME MANAGER ##
 ##################
 
-  home-manager.users.${config.users.users} = { pkg, ...}: {
+  home-manager.users.${var_username} = { pkg, ...}: {
     programs = {
       bash = {
         enable = true;
@@ -113,7 +113,7 @@ let inherit (import ../variables.nix) var_hmversion; in
   services.xserver.displayManager = {
     autoLogin = {
       enable = true;
-      user = "${config.users.users}";
+      user = "${var_username}";
     }; 
   };
 
