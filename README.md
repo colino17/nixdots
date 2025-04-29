@@ -15,3 +15,19 @@ As this is a personal repo it is not particulary useful for others, however it c
 
 ## TODO
 - Cosmic Desktop Configuration
+  - Exclude Packages
+  - Settings
+    - Autotile
+    - Disable Dock
+    - Panel Items
+      - Numbered Workspaces | Calendar | Notifications Tray, Tiling, Sound, Network, Power, Bluetooth, Session
+    - Accent Color
+    - Wallpapers
+    - Icons (and apply to Gnome Apps)
+    - Shortcuts
+      - Firefox Private
+      - Discord
+    - Window Hint Size
+    - Gap Size
+    - Remove Maximize and Minimize
+    - Focus Follows Cursor
