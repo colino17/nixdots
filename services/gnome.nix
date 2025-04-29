@@ -24,7 +24,6 @@ let inherit (import ../variables.nix) var_username var_wallpaper; in
     nautilus
     file-roller
     numix-icon-theme-circle
-    celluloid
     evince
     gnomeExtensions.vitals
     gnomeExtensions.tray-icons-reloaded
