@@ -5,7 +5,7 @@ let inherit (import ../variables.nix) var_username var_wallpaper; in
 {
 
 ## GNOME DESKTOP ##
-  services.gnome.core-utilities.enable = false;
+  services.gnome.core-apps.enable = false;
   services.dbus.packages = [ pkgs.dconf ];
   services.xserver = {
     enable = true;
