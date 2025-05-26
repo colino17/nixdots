@@ -33,7 +33,7 @@ let inherit (import ../variables.nix) var_username; in
 ################
 ## AUTO LOGIN ##
 ################
-  services.xserver.displayManager = {
+  services.displayManager = {
     autoLogin = {
       enable = true;
       user = "${var_username}";
