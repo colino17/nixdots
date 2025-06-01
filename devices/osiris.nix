@@ -80,6 +80,12 @@ let inherit (import ../variables.nix) var_username; in
     options = [ "x-systemd.automount" "noauto" "x-systemd.mount-timeout=10" "timeo=14" "x-systemd.idle-timeout=60min" ];
   };
 
+  fileSystems."/Backup/Local" = {
+      device = "/dev/disk/by-label/ubackup";
+      fsType = "btrfs";
+      options = [ "defaults" "subvol=Local" "noatime" "x-systemd.automount" "x-systemd.device-timeout=5" "noauto" ];
+  };
+
 ############
 ## SHARES ##
 ############
