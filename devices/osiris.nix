@@ -11,6 +11,7 @@ let inherit (import ../variables.nix) var_username; in
       ../services/docker-nvidia.nix
       ../services/nvidia.nix
       ../services/realesrgan.nix
+      ../services/speedtest.nix
       ../services/uefi.nix
       ../services/ups.nix
       ../services/vpn.nix
