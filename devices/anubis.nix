@@ -29,8 +29,8 @@ let inherit (import ../variables.nix) var_username; in
     } ];
     defaultGateway = "10.17.10.1";
     nameservers = [
+      "1.1.1.1"
       "8.8.8.8"
-      "8.8.1.1"
     ];
     hostName = "anubis";
   };
