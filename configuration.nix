@@ -60,6 +60,7 @@ let inherit (import ./variables.nix) var_hostname var_hmversion var_stateversion
     channel = "sudo nix-channel --list | cut -d'-' -f2";
     vm = "quickemu --display spice --viewer none --access remote --vm";
     prune = "docker image prune -a";
+    fu = "flatpak update:;
   };
 
 ##################################
