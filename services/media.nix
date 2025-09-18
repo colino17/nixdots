@@ -9,7 +9,6 @@
     google-fonts
     jellyfin-media-player
     picard
-    mpv
   ];
 
 # MPV INTERFACE
