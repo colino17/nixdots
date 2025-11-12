@@ -12,6 +12,7 @@ let inherit (import ../variables.nix) var_username; in
       ../services/desktop.nix
       ../services/flatpak.nix
       ../services/gnome.nix
+      ../services/ide.nix
       ../services/media.nix
       ../services/mounts.nix
       ../services/nvidia-mobile.nix
