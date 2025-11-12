@@ -46,6 +46,7 @@ let inherit (import ./variables.nix) var_hostname var_hmversion var_stateversion
     rs = "sudo nixos-rebuild switch";
     rsu = "sudo nixos-rebuild switch --upgrade";
     rb = "sudo nixos-rebuild boot";
+    rbu = "sudo nixos-rebuild boot --upgrade";
     garbage = "nix-collect-garbage -d";
     repair = "sudo nix-store --verify --repair --check-contents";
     get = "cd /etc/nixos/ && sudo sh update.sh";
