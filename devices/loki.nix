@@ -5,12 +5,14 @@ let inherit (import ../variables.nix) var_username; in
 {
   imports =
     [
+      ../services/android.nix
       ../services/base.nix
       ../services/cad.nix
       ../services/desktop.nix
       ../services/easyeffects.nix
       ../services/flatpak.nix
       ../services/gnome.nix
+      ../services/ide.nix
       ../services/media.nix
       ../services/utilities.nix
       ../services/web.nix
