@@ -5,7 +5,6 @@ let inherit (import ../variables.nix) var_username; in
 {
   imports =
     [
-      ../services/android.nix
       ../services/base.nix
       ../services/cad.nix
       ../services/desktop.nix
