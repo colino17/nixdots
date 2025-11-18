@@ -5,6 +5,7 @@ let inherit (import ../variables.nix) var_username; in
 {
   environment.systemPackages = with pkgs; [
     zed-editor
+    nixd
   ];
 
 ## ZED SETTINGS ##
@@ -31,6 +32,11 @@ let inherit (import ../variables.nix) var_username; in
             api_url = "http://10.17.10.17:11434";
           };
         };
+        languages = { 
+          Nix = { 
+            language_servers = [ "nixd" "!nil" ];
+          }; 
+        }; 
         title_bar = {
           show_branch_icon = false;
           show_menus = true;
@@ -39,6 +45,22 @@ let inherit (import ../variables.nix) var_username; in
           show_onboarding_banner = false;
           show_user_picture = false;
           show_sign_in = false;
+        };
+        git_panel = {
+          button = false;
+        };
+        outline_panel = {
+          button = false;
+        };
+        collaboration_panel = {
+          button = false;
+        };
+        features = {
+          edit_prediction_provider = "none";
+        };
+        telemetry = {
+          diagnostics = true;
+          metrics = true;
         };
       };
   };
