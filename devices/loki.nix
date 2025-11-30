@@ -7,10 +7,10 @@ let inherit (import ../variables.nix) var_username; in
     [
       ../services/base.nix
       ../services/cad.nix
+      ../services/cosmic.nix
       ../services/desktop.nix
       ../services/easyeffects.nix
       ../services/flatpak.nix
-      ../services/gnome.nix
       ../services/ide.nix
       ../services/media.nix
       ../services/utilities.nix
@@ -40,10 +40,6 @@ let inherit (import ../variables.nix) var_username; in
       user = "${var_username}";
     }; 
   };
-
-  # Workaround for Current Gnome Bug
-  systemd.services."getty@tty1".enable = false;
-  systemd.services."autovt@tty1".enable = false;
 
 ##########################
 ### VERSION AND REBOOT ###
