@@ -12,4 +12,9 @@
     cosmic-edit
   ];
 
+## PACKAGES ##
+  environment.systemPackages = with pkgs; [
+    numix-icon-theme-circle
+  ];
+
 }
