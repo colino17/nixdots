@@ -7,11 +7,8 @@ let inherit (import ../variables.nix) var_username var_wallpaper; in
 ## GNOME DESKTOP ##
   services.gnome.core-apps.enable = false;
   services.dbus.packages = [ pkgs.dconf ];
-  services.xserver = {
-    enable = true;
-    displayManager.gdm.enable = true;
-    desktopManager.gnome.enable = true;
-  };
+  services.displayManager.gdm.enable = true;
+  services.desktopManager.gnome.enable = true;
 
 ## PACKAGES ##
   environment.systemPackages = with pkgs; [
