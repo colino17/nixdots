@@ -7,17 +7,7 @@
     gimp
     inkscape
     google-fonts
-    jellyfin-media-player
     picard
-  ];
-
-# MPV INTERFACE
-  nixpkgs.overlays = [
-    (self: super: {
-      mpv = super.mpv.override {
-        scripts = [ self.mpvScripts.modernx ];
-      };
-    })
   ];
 
 }
