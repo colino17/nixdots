@@ -11,12 +11,14 @@
   environment.cosmic.excludePackages = with pkgs; [
     cosmic-edit
     cosmic-player
+    cosmic-files
   ];
 
 ## PACKAGES ##
   environment.systemPackages = with pkgs; [
     numix-icon-theme-circle
     clapper
+    nautilus
   ];
 
 }
