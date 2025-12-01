@@ -5,6 +5,7 @@
 ## COSMIC DESKTOP ##
   services.displayManager.cosmic-greeter.enable = true;
   services.desktopManager.cosmic.enable = true;
+  services.system76-scheduler.enable = true;
 
 ## EXCLUSIONS ##
   services.desktopManager.cosmic.showExcludedPkgsWarning = false;
@@ -20,5 +21,10 @@
     clapper
     nautilus
   ];
+
+## THEMING ##
+  programs.firefox.preferences = {
+    "widget.gtk.libadwaita-colors.enabled" = false;
+  };
 
 }
