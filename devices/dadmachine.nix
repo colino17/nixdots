@@ -30,7 +30,7 @@ let inherit (import ../variables.nix) var_username; in
   environment.systemPackages = with pkgs; [
     firefox
     thunderbird
-    clipgrab
+    video-downloader
     wpsoffice
   ];
 
