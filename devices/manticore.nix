@@ -17,6 +17,7 @@ let inherit (import ../variables.nix) var_username; in
       ../services/media.nix
       ../services/mounts.nix
       ../services/nvidia-mobile.nix
+      ../services/rustdesk.nix
       ../services/sound.nix
       ../services/tlp.nix
       ../services/utilities.nix
