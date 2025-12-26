@@ -11,6 +11,7 @@ let inherit (import ../variables.nix) var_username; in
       ../services/sound.nix
       ../services/bios.nix
       ../services/printing.nix
+      ../services/rustdesk.nix
       ../services/scanning.nix
       ../services/shotwell.nix
       ../users/${var_username}.nix
