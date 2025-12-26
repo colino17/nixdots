@@ -25,7 +25,6 @@ let inherit (import ../variables.nix) var_username; in
       ../services/vpn.nix
       ../services/web.nix
       ../services/virt-viewer.nix
-      ../services/x2go.nix
       ../users/${var_username}.nix
     ];
     
