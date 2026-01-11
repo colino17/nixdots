@@ -11,7 +11,7 @@ let inherit (import ../variables.nix) var_username; in
 ## ZED SETTINGS ##
   home-manager.users.${var_username} = { config, ... }: {
     programs.zed-editor.enable = true;
-    programs.zed-editor.extensions = [ "nix" "dark-pop-ui" ];
+    programs.zed-editor.extensions = [ "nix" "tokyo-night-themes" ];
     programs.zed-editor.userSettings = {
         agent = {
           version = "2";
@@ -24,8 +24,8 @@ let inherit (import ../variables.nix) var_username; in
         buffer_font_size = 14;
         theme = {
           mode = "system";
-          dark = "Dark Pop UI";
-          light = "Dark Pop UI";
+          dark = "Tokyo Night";
+          light = "Tokyo Night";
         };
         language_models = {
           ollama = {
