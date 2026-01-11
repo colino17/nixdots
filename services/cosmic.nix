@@ -1,5 +1,7 @@
 { config, pkgs, ... }:
 
+let inherit (import ../variables.nix) var_username; in
+
 {
 
 ## COSMIC DESKTOP ##
@@ -19,12 +21,26 @@
   environment.systemPackages = with pkgs; [
     numix-icon-theme-circle
     clapper
-    nautilus
+    pcmanfm
   ];
 
 ## THEMING ##
   programs.firefox.preferences = {
     "widget.gtk.libadwaita-colors.enabled" = false;
+  };
+
+  home-manager.users.${var_username} = { config, ... }: {
+    gtk = {
+      enable = true;
+      theme = {
+        name = "Tokyonight-Storm-BL";
+        package = pkgs.tokyonight-gtk-theme;
+      };
+      iconTheme = {
+        name = "Tela-circle-dark";
+        package = pkgs.tela-circle-icon-theme;
+      };
+    };
   };
 
 }
