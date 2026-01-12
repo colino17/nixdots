@@ -25,16 +25,11 @@ let inherit (import ../variables.nix) var_username; in
   ];
 
 ## THEMING ##
-  programs.firefox.preferences = {
-    "widget.gtk.libadwaita-colors.enabled" = false;
-  };
-
   home-manager.users.${var_username} = { config, ... }: {
     gtk = {
       enable = true;
       theme = {
-        name = "Tokyonight-Storm-BL";
-        package = pkgs.tokyonight-gtk-theme;
+y        package = pkgs.tokyonight-gtk-theme;
       };
       iconTheme = {
         name = "Tela-circle-dark";
