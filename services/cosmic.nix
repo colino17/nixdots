@@ -28,7 +28,7 @@ let inherit (import ../variables.nix) var_username; in
   home-manager.users.${var_username} = { config, ... }: {
     gtk = {
       enable = true;
-      gtk.enable = false;
+      gtk4.enable = false;
       theme = {
         package = pkgs.tokyonight-gtk-theme;
         name = "Tokyonight-Dark";
