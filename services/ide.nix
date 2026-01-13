@@ -11,7 +11,7 @@ let inherit (import ../variables.nix) var_username; in
 ## ZED SETTINGS ##
   home-manager.users.${var_username} = { config, ... }: {
     programs.zed-editor.enable = true;
-    programs.zed-editor.extensions = [ "nix" "tokyo-night-themes" ];
+    programs.zed-editor.extensions = [ "nix" "tokyo-night" ];
     programs.zed-editor.userSettings = {
         agent = {
           version = "2";
