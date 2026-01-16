@@ -15,6 +15,7 @@ let inherit (import ../variables.nix) var_username; in
     cosmic-edit
     cosmic-player
     cosmic-files
+    cosmic-store
   ];
 
 ## PACKAGES ##
@@ -22,6 +23,7 @@ let inherit (import ../variables.nix) var_username; in
     numix-icon-theme-circle
     clapper
     pcmanfm
+    file-roller
   ];
 
 ## THEMING ##
