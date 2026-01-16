@@ -4,7 +4,6 @@ let inherit (import ../variables.nix) var_username; in
 
 {
   environment.systemPackages = with pkgs; [
-    zed-editor
     nixd
   ];
 
@@ -17,7 +16,7 @@ let inherit (import ../variables.nix) var_username; in
           version = "2";
           default_model = {
             provider = "ollama";
-            model = "qwen2.5:7b";
+            model = "qwen2.5-coder:14b";
           };
         };
         ui_font_size = 14;
