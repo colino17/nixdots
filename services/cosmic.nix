@@ -21,7 +21,6 @@ let inherit (import ../variables.nix) var_username; in
 ## PACKAGES ##
   environment.systemPackages = with pkgs; [
     numix-icon-theme-circle
-    clapper
     pcmanfm
     file-roller
   ];
