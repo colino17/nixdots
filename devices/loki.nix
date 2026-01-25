@@ -8,6 +8,7 @@ let inherit (import ../variables.nix) var_username; in
       ../services/android.nix
       ../services/base.nix
       ../services/cad.nix
+      ../services/calibre.nix
       ../services/cosmic.nix
       ../services/desktop.nix
       ../services/easyeffects.nix
