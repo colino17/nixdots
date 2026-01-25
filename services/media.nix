@@ -8,6 +8,17 @@
     inkscape
     google-fonts
     picard
+#    mpv
+  ];
+
+
+# MPV INTERFACE
+  nixpkgs.overlays = [
+    (self: super: {
+      mpv = super.mpv.override {
+        scripts = [ self.mpvScripts.modernz ];
+      };
+    })
   ];
 
 }
