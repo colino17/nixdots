@@ -8,7 +8,7 @@
     inkscape
     google-fonts
     picard
-#    mpv
+    mpv
   ];
 
 
