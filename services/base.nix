@@ -23,6 +23,7 @@ let inherit (import ../variables.nix) var_username var_stateversion; in
     iperf
     tmux
     fastfetch
+    btop
   ];
 
 ## IPERF SETTINGS ##
