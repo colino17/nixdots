@@ -29,6 +29,7 @@ let inherit (import ../variables.nix) var_username; in
     thunderbird
     video-downloader
     wpsoffice
+    ookla-speedtest
   ];
 
 ##########################
