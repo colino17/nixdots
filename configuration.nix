@@ -62,6 +62,7 @@ let inherit (import ./variables.nix) var_hostname var_hmversion var_stateversion
     vm = "quickemu --display spice --viewer none --access remote --vm";
     prune = "docker image prune -a";
     fu = "flatpak update";
+    fuck = "sudo $(history -p !!)";
   };
 
 ##################################
