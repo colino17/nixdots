@@ -10,6 +10,7 @@ let inherit (import ../variables.nix) var_username var_hostname; in
     enable = true;
     enableOnBoot = true;
     autoPrune.enable = true;
+    storageDriver = "overlay2";
   };
   
   virtualisation.oci-containers.backend = "docker";
