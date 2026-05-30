@@ -3,6 +3,8 @@
 let inherit (import ../variables.nix) var_username; in
 
 {
-  programs.adb.enable = true;
+  environment.systemPackages = with pkgs; [
+    android-tools
+  ];
   users.users.${var_username}.extraGroups = ["adbusers"];
 }
