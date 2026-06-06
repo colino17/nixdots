@@ -11,6 +11,7 @@ let inherit (import ../variables.nix) var_username; in
       ../services/calibre.nix
       ../services/cosmic.nix
       ../services/desktop.nix
+      ../services/docker.nix
       ../services/easyeffects.nix
       ../services/flatpak.nix
       ../services/ide.nix
