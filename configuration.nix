@@ -45,8 +45,10 @@ let inherit (import ./variables.nix) var_hostname var_hmversion var_stateversion
   environment.shellAliases = {
     rs = "sudo nixos-rebuild switch";
     rsu = "sudo nixos-rebuild switch --upgrade";
+    rsn = "sudo nixos-rebuild switch --upgrade && curl -H 'Title: SERVER UPDATED' -d '${HOSTNAME^^} has been updated!' https://ntfy.interna.casa/Servers";
     rb = "sudo nixos-rebuild boot";
     rbu = "sudo nixos-rebuild boot --upgrade";
+    rbn = "sudo nixos-rebuild boot --upgrade && curl -H 'Title: SERVER UPDATED' -d '${HOSTNAME^^} has been updated!' https://ntfy.interna.casa/Servers";
     garbage = "nix-collect-garbage -d";
     repair = "sudo nix-store --verify --repair --check-contents";
     get = "cd /etc/nixos/ && sudo sh update.sh";
