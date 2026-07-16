@@ -14,6 +14,7 @@ let inherit (import ../variables.nix) var_username; in
       ../services/docker-dev.nix
       ../services/easyeffects.nix
       ../services/flatpak.nix
+      ../services/floppy.nix
       ../services/ide.nix
       ../services/media.nix
       ../services/utilities.nix
