@@ -36,11 +36,6 @@ let inherit (import ../variables.nix) var_username; in
 ############
 ## MOUNTS ##
 ############
-  fileSystems."/" =
-    { fsType = "btrfs";
-      options = [ "compress=zstd" "subvol=root" ];
-    };
-    
   fileSystems."/Backup" =
     { device = "/dev/disk/by-label/backup";
       fsType = "btrfs";
