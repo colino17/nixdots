@@ -6,6 +6,7 @@ let inherit (import ../variables.nix) var_username; in
   imports =
     [
       ../services/adb.nix
+      ../services/asus.nix
       ../services/base.nix
       ../services/btrfs.nix
       ../services/cad.nix
@@ -15,7 +16,6 @@ let inherit (import ../variables.nix) var_username; in
       ../services/ide.nix
       ../services/media.nix
       ../services/mounts.nix
-      ../services/nvidia-mobile.nix
       ../services/rustdesk.nix
       ../services/sound.nix
       ../services/tlp.nix
