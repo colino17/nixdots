@@ -18,7 +18,6 @@ let inherit (import ../variables.nix) var_username; in
       ../services/mounts.nix
       ../services/rustdesk.nix
       ../services/sound.nix
-      ../services/tlp.nix
       ../services/utilities.nix
       ../services/uefi.nix
       ../services/vpn.nix
