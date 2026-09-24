@@ -31,3 +31,13 @@ As this is a personal repo it is not particulary useful for others, however it c
     - Gap Size
     - Remove Maximize and Minimize
     - Focus Follows Cursor
+
+- Asus G14 Customizations
+  - asusd optimizations
+    - customize power limits for each power profile
+  - custom battery applet
+    - similar to default widget
+    - display battery percentage
+    - add charge limit slider
+    - add power draw/charge rate
+  - update "Gaming" specialization once NVIDIA drivers update to account for kernel changes (currently uses older kernel than default and asusd needs at least kernel 6.19 to be fully functional)
