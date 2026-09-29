@@ -24,10 +24,10 @@ rustPlatform.buildRustPackage {
     owner = "colino17";
     repo = "cosmic-applet-superpower";
     rev = "4d72d1d6fa54f3d0736ae50c7fee8e211295889a";
-    hash = "sha256-wt0i2jO4vCrpAzaP2hS6vmTn1xnB3s90ttjkl1dNqy4=";
+    hash = "sha256-JsIP1y1OLxBGpdHYJ3hzA7ULzp+iOZrUrc1PN2GLaQ0=";
   };
 
-  cargoHash = "sha256-rgthHruuXRa2tPSKFyYkC/EJRmOEYnpnO5ETtQigqnY=";
+  cargoHash = "sha256-KwcA0C7tVWBSlV7jwr4dHpjyhLO7CPn3/i1dJwuBIrQ=";
 
   nativeBuildInputs = [
     libcosmicAppHook
