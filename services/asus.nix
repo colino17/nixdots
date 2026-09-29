@@ -22,9 +22,10 @@ let inherit (import ../variables.nix) var_username; in
   };
   environment = {
     etc."asusd/.keep".text = "";
-    systemPackages = with pkgs; [
-      asusctl
-      brightnessctl
+    systemPackages = [
+      pkgs.asusctl
+      pkgs.brightnessctl
+      (pkgs.callPackage ./packages/cosmic-applet-superpower.nix { })
     ];
   };
 
