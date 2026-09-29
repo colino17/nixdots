@@ -25,7 +25,7 @@ let inherit (import ../variables.nix) var_username; in
     systemPackages = [
       pkgs.asusctl
       pkgs.brightnessctl
-      (pkgs.callPackage ./packages/cosmic-applet-superpower.nix { })
+      (pkgs.callPackage ../packages/cosmic-applet-superpower.nix { })
     ];
   };
 
