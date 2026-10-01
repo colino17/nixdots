@@ -16,7 +16,7 @@ let inherit (import ../variables.nix) var_username; in
           version = "2";
           default_model = {
             provider = "ollama";
-            model = "qwen2.5-coder:14b";
+            model = "qwen3.5:9b-q4_K_M";
           };
         };
         ui_font_size = 14;
