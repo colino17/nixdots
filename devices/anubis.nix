@@ -9,6 +9,7 @@ let inherit (import ../variables.nix) var_username; in
       ../services/btrfs.nix
       ../services/docker.nix
       ../services/docker-agent.nix
+      ../services/mdns.nix
       ../services/uefi.nix
       ../services/ups.nix
       ../services/vpn.nix
@@ -19,7 +20,7 @@ let inherit (import ../variables.nix) var_username; in
 ### NETWORKING ###
 ##################
   networking = {
-    firewall.allowedTCPPorts = [ 80 443 2049 8383 3000 3002 8883 990 6000 322 ];
+    firewall.allowedTCPPorts = [ 80 443 2049 8383 3000 3002 8883 990 6000 322 6052 ];
     firewall.allowedTCPPortRanges = [
       { from = 50000; to = 50029; }
       { from = 2024; to = 2026; }
