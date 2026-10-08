@@ -29,10 +29,20 @@ let inherit (import ../variables.nix) var_username; in
     useDHCP = false;
     usePredictableInterfaceNames = false;
     interfaces.eth0.wakeOnLan.enable = true;
-    interfaces.eth0.ipv4.addresses = [ {
-      address = "10.17.10.16";
-      prefixLength = 25;
-    } ];
+    interfaces.eth0.ipv4.addresses = [ 
+      {
+        address = "10.17.10.16";
+        prefixLength = 25;
+      }
+      {
+        address = "10.17.10.20";
+        prefixLength = 24;
+      }
+      {
+        address = "10.17.10.21";
+        prefixLength = 24;
+      }
+    ];
     defaultGateway = "10.17.10.1";
     nameservers = [
       "1.1.1.1"
