@@ -23,7 +23,7 @@ rustPlatform.buildRustPackage {
   src = fetchFromGitHub {
     owner = "colino17";
     repo = "cosmic-applet-superpower";
-    rev = "4d72d1d6fa54f3d0736ae50c7fee8e211295889a";
+    rev = "4151d4a9c831032a0becb98c9025367157fe6614";
     hash = "sha256-JsIP1y1OLxBGpdHYJ3hzA7ULzp+iOZrUrc1PN2GLaQ0=";
   };
 
