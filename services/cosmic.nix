@@ -35,8 +35,8 @@ let inherit (import ../variables.nix) var_username; in
         name = "Tokyonight-Dark";
       };
       iconTheme = {
-        name = "Tela-circle-dark";
-        package = pkgs.tela-circle-icon-theme;
+        name = "Colloid-Dark";
+        package = pkgs.colloid-icon-theme;
       };
     };
   };
