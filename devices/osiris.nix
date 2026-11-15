@@ -22,7 +22,7 @@ let inherit (import ../variables.nix) var_username; in
 ### NETWORKING ###
 ##################
   networking = {
-    firewall.allowedTCPPorts = [ 2049 1883 8123 8096 11434 49152 ];
+    firewall.allowedTCPPorts = [ 2049 1883 8123 8095 8096 11434 49152 ];
     interfaces.enp6s0.wakeOnLan.enable = true;
     useDHCP = false;
     interfaces.enp6s0.ipv4.addresses = [ {
