@@ -29,7 +29,15 @@ let inherit (import ../variables.nix) var_username; in
         language_models = {
           ollama = {
             api_url = "http://10.17.10.17:11434";
-            context_window = 32768;
+            auto_discover = false;
+            available_models = [
+              {
+                name = "qwen3.5:9b-q4_K_M";
+                display_name = "Qwen3.5 9B";
+                max_tokens = 32768;
+                keep_alive = -1;
+                supports_tools = true;
+              }
           };
         };
         languages = { 
