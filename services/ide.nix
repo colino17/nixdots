@@ -29,6 +29,7 @@ let inherit (import ../variables.nix) var_username; in
         language_models = {
           ollama = {
             api_url = "http://10.17.10.17:11434";
+            context_window = 32768;
           };
         };
         languages = { 
