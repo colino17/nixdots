@@ -38,6 +38,7 @@ let inherit (import ../variables.nix) var_username; in
                 keep_alive = -1;
                 supports_tools = true;
               }
+            ];
           };
         };
         languages = { 
